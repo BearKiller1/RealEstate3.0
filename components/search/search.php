@@ -35,7 +35,15 @@
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
                             LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE products.actived = 1 ".$this->priceFilter." ".$this->areaFilter." ".$this->titleFilter."
+                            WHERE products.actived = 1 
+                            ".$this->priceFilter." 
+                            ".$this->areaFilter." 
+                            ".$this->titleFilter." 
+                            ".$this->transactionFilter." 
+                            ".$this->buildingFilter."
+                            ".$this->building_statusFilter."
+                            ".$this->districtFilter ."
+                            ".$this->child_districtFilter."
                             GROUP BY products.id
                             ".$this->request['sorting'];
 
@@ -81,18 +89,27 @@
                 ";
             }
 
+            $this->transaction = $this->request['transaction'];
+            $this->building_type = $this->request['building_type'];
+            $this->building_status = $this->request['building_status'];
+            $this->district = $this->request['district'];
+            $this->child_district = $this->request['child_district'];
+
             if($this->transaction  != 0 && $this->transaction != ''){
-                $this->transactionFilter = " AND transaction_id = ".$this->transaction;
+                $this->transactionFilter = " AND transaction_type = ".$this->transaction;
             }
             if($this->building_type  != 0 && $this->building_type != ''){
-                $this->buildingFilter = " AND building_id = ".$this->building_type;
+                $this->buildingFilter = " AND building_type = ".$this->building_type;
             }
-            if($this->)
-            $this->building_status
-            $this->district
-            $this->child_district
-
-
+            if($this->building_status != 0 && $this->building_status != ''){
+                $this->building_statusFilter = " AND building_status_id = ".$this->building_status;
+            }
+            if($this->district != 0 && $this->district != ''){
+                $this->districtFilter = " AND district_id = ".$this->district;
+            }
+            if($this->child_district != 0 && $this->child_district != ''){
+                $this->child_districtFilter = " AND type_id = ".$this->child_district;
+            }
         }
 
         /**

@@ -1,4 +1,4 @@
-var MainPage    = "search";
+var MainPage    = "index";
 var MainGroup   = "";
 
 window.onload = () => {

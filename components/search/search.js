@@ -1,8 +1,14 @@
 $(document).ready(() => {
-    GetProduct();
+    var search = window.localStorage.getItem("search");
+    if(search != ''){
+        GetProduct(JSON.parse(search));
+    }
+    else{
+        GetProduct();
+    }
 })
 
-GetProduct = () => {
+GetProduct = (search = [] ) => {
     var sort;
 
     if($("#sort").val() == "oldest")
@@ -15,20 +21,25 @@ GetProduct = () => {
         sort = "ORDER BY price DESC";
     else
         sort = "ORDER BY id";
-
-    var data = {
-        title   : $("#searchbox123").val(),
-        sorting : $("#sorting").val(),
-        price   : $("#price").val(),
-        area    : $("#area").val(),
-
-        min_price   :   $("#ipmin").val(),
-        max_price   :   $("#ipmax").val(),
-
-        min_area    :   $("#iAmin").val(),
-        max_area    :   $("#iAmax").val(),
-
-        sorting     :   sort,
+    var data = [];
+    if(search != []){
+        data = search;
+    }
+    else{
+        data = {
+            title   : $("#searchbox123").val(),
+            sorting : $("#sorting").val(),
+            price   : $("#price").val(),
+            area    : $("#area").val(),
+    
+            min_price   :   $("#ipmin").val(),
+            max_price   :   $("#ipmax").val(),
+    
+            min_area    :   $("#iAmin").val(),
+            max_area    :   $("#iAmax").val(),
+    
+            sorting     :   sort,
+        }
     }
     Ajax({
         url:"search",
@@ -46,6 +57,7 @@ GetProduct = () => {
             else{
                 $("#prod_container").html("<h1>No results found</h1>");
             }
+            localStorage['search'] = '';
         }
     })
 }
