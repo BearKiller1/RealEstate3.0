@@ -83,10 +83,10 @@ BuildImages = (images) => {
     images.forEach(e => {
         const imageArray = `
         <div class="carousel-item `+ string +` " id="`+e.id+`">
-            <a href="" role="button" data-toggle="modal" data-target="#c-1">
+            <a href="" role="button" data-toggle="modal" data-target="#c-`+e.id+`">
                 <img class="d-block col-12 mb-1 rounded px-0" style="object-fit: cover; height: 350px;" src="`+e.path+`" alt="">
             </a>
-            <div class="modal fade" id="c-1">
+            <div class="modal fade" id="c-`+e.id+`">
                 <div class="modal-dialog">
                     <div class="modal-body">
                         <img class="img-fluid rounded" src="`+e.path+`" alt="">

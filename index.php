@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/279a4e675c.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="LangSwitch.js"></script>
     <!-- MD5 -->
     <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
     <title>Document</title>
