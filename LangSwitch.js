@@ -1,0 +1,540 @@
+var LangSwitch = {
+    "English":
+    {
+        "navBuy": "Buy",
+        "navMortgage": "Mortgage",
+        "navRent": "Rent",
+        "navDrent": "Daily Rent",
+        "navAdd": "Add",
+        "navLogin": "Log in",
+        "searchbox": "Enter an adress, neighborhood, city, or ZIP code...",
+        "msearchbox": "Enter an adress, neighborhood, city, or ZIP code...",
+        "advsearch": "advanced search",
+        "Madvsearch": "advanced search",
+        "transactionT": "transaction type",
+        "Tsale": "For Sale",
+        "Tmortgage": "Mortgage",
+        "Trent": "For Rent",
+        "Tdrent": "For daily rent",
+        "Btype": "building type",
+        "Bapartment": "Apartments",
+        "Bhouse": "Houses and Cottages",
+        "Bcommerical": "Commerical Real Estate",
+        "BLand": "Lands",
+        "Bhotel": "Hotels",
+        "Precard1": "Whether you’re buying, selling or renting,",
+        "Precard2": " we can help you move forward.",
+        "Card1Header": "Rent a home",
+        "Card1Body": "we're creating a seamless online experience - we can help you easily find a home or apartment for rent that you'll love.",
+        "Card2Header": "Sell a home",
+        "Card2Body": "we're making it simpler to sell your home and move forward. No matter where is your house located , we can help you navigate a successful sale.",
+        "Card3Header": "Buy a home",
+        "Card3Body": "Find your place with an impersive experince and the most listing, including things you won't find anywhere else.",
+        "R-add": "Recently added",
+        "V-more": "view more>",
+        //search
+        "lsort": "Sort by :",
+        "sort": "Sort by",
+        "Slatest": "latest",
+        "Soldest": "oldest",
+        "Scheap": "cheapest",
+        "SExpensive": "most expensive",
+        "Sprice": "Price",
+        "SArea": "Area",
+        "ipmin": "Enter",
+        "ipmax": "Enter",
+        "iAmin": "Enter",
+        "iAmax": "Enter",
+        "NoMin1": "Not min",
+        "NoMin2": "Not min",
+        "NoMax1": "Not max",
+        "NoMax2": "Not max",
+        "searchbtn1": "search",
+        "searchbtn2": "search",
+        //add home
+        "addannl": "Add announcement",
+        "addannl2": "Add announcement",
+        "addannl3": "Add announcement",
+        "anntypel": "Announcement type",
+        "transactionTl": "transaction type",
+        "Btypel": "building type",
+        "statusl": "Status :",
+        "statusI": "Status",
+        "nbuilding": "New Building",
+        "uconstruct": "Under Construction",
+        "obuilding": "Old Building",
+        "locationl": "Location",
+        "Cadastrall": "Cadastral code :",
+        "Cadastral": "Cadastral code",
+        "F-addressl": "full address :",
+        "F-address": "full address",
+        "next1": "Next",
+        "next2": "Next",
+        "previous1": "Previous",
+        "previous2": "Previous",
+        "submit": "Submit",
+        "d_infol": "Detailed information",
+        "floorl": "Floor :",
+        "floor": "Floor",
+        "storeysl": "storeys :",
+        "storeys": "Number of storeys",
+        "roomsl": "rooms :",
+        "rooms": "Number of rooms",
+        "bedrooml": "Bedroom :",
+        "bedroom": "Bedroom",
+        "balconyl": "balcony:",
+        "loggial": "Loggia:",
+        "Verandal": "Veranda:",
+        "bathl": "Bathrooms:",
+        "sharedl": "Shared",
+        "Gasl": "Gas:",
+        "Telephonel": "Telephone:",
+        "Internetl": "Internet:",
+        "Televisionl": "Television:",
+        "Air-conditionerl": "Air conditioner:",
+        "Hot-waterl": "Hot water:",
+        "Heatingl": "Heating:",
+        "Parkingl": "Parking:",
+        "Storerooml": "Storeroom:",
+        "Elevatorl": "Elevator:",
+        "PElevatorl": "Passenger elevator",
+        "SElevatorl": "Service elevator",
+        //Responsive elevator
+        "Pelevatorl": "Elevator:",
+        "Pelevatorl": "Passenger elevator",
+        "Selevatorl": "Service elevator",
+        "Fireplacel": "Fireplace:",
+        "Furniturel": "Furniture:",
+        "Cheightl": "Ceiling height :",
+        "Cheight": "Ceiling height (Meter)",
+        "Conditionl": "Condition :",
+        "Condition": "Condition",
+        "n_renovate": "Newly renovated",
+        "u_renovate": "Under renovation",
+        "no_renovate": "Not renovated",
+        "o_renovate": "Old renovation",
+        "wframe": "White frame",
+        "bframe": "Black frame",
+        "gframe": "Green frame",
+        "Designl": "Design :",
+        "Design": "Design",
+        "Nonstandard": "Nonstandard",
+        "Tuxareli": "Tuxareli",
+        "Moskow": "Moskow",
+        "City": "City",
+        "Khrushchov": "Khrushchov",
+        "Czech": "Czech",
+        "Kavlashvili": "Kavlashvili",
+        "Lvov": "Lvov",
+        "Italian-Court": "Italian Court",
+        "Metromsheni": "Metromsheni",
+        "addinfol": "Additional information",
+        "pnuml": "phone number :",
+        "Areal": "Area :",
+        "Area": "Area",
+        "sq-m": "m²",
+        "Pricel": "Price :",
+        "Price": "Amount",
+        "t_price": "Total price",
+        "m_price": "Price per 1 m²",
+        "expossiblel": "Possibility to exchange :",
+        "GEL": "GEL",
+        "commentKal": "Comment (in Georgian) :", 
+        "commentEnl": "Comment (in English) :",
+        "photosl": "Photos (maximum 12) :",
+        "vidURLl": "URL for the video :",
+        //dashboard
+        "urname": "your name",
+        "addannl": "Add announcement",
+        "myal": "My announcements",
+        "bmarksl": "My bookmarks",
+        "ad-l": "Advertisement",
+        "edtacc": "Edit account",
+        "signoutl": "Sign out",
+        "contactl": "Contact",
+        "currentl": "Current",
+        "disabledl": "Disabled",
+        "blockedl": "Blocked",
+        "expiredl": "Expired",
+        "adcontactl": "for advertisement please",
+        "acontact": "Contact",
+        "signoutl2": "Sign out",
+        "signoutl3": "Sign out",
+        "sure-signoutl": "Are you sure want to sign out ?",
+        "cancell": "cancel",
+        "passwordl": "Password",
+        "opasswordl": "Old password :",
+        "opassword": "Old password",
+        "npasswordl": "New password :",
+        "npassword": "New password",
+        "cpasswordl": "Confirm password :",
+        "cpassword": "Confirm password",
+        "submitbtn": "Submit",
+        "change-photol": "Change photo",
+        "uploadl": "Upload",
+        "informationl": "Information",
+        "username-emaill": "Username (Email) :",
+        "username-email": "Username (Email)",
+        "namel": "Name :",
+        "name": "Name",
+        "lnamel": "Last name :",
+        "lname": "Last name",
+        "shownamel": "Show the surname on the ad page :",
+        "yes": "yes",
+        "no": "No",
+        "genderl": "Gender :",
+        "malel": "Male",
+        "femalel": "Female",
+        "numberl": "Phone number :",
+        "phone": "Enter phone number",
+        "editbtn": "Edit",
+    },
+    "Georgian":
+    {
+        "navBuy": "იყიდება",
+        "navMortgage": "გირავდება",
+        "navRent": "ქირავდება",
+        "navDrent": "ქირავდება დღიურად",
+        "navAdd": "დამატება",
+        "navLogin": "შესვლა",
+        "searchbox": "შეიყვანეთ მისამართი, ტელეფონი, საკ. კოდი...",
+        "msearchbox": "შეიყვანეთ მისამართი, ტელეფონი, საკ. კოდი...",
+        "advsearch": "გაფართოებული ძებნა",
+        "Madvsearch": "გაფართოებული ძებნა",
+        "transactionT": "გარეგების ტიპი",
+        "Tsale": "იყიდება",
+        "Tmortgage": "გირავდება",
+        "Trent": "ქირავდება",
+        "Tdrent": "ქირავდება დღიურად",
+        "Btype": "უძრავი ქონების ტიპი",
+        "Bapartment": "ბინები",
+        "Bhouse": "სახლები და აგარაკები",
+        "Bcommerical": "კომერციული ფარათები",
+        "BLand": "მიწის ნაკვეთები",
+        "Bhotel": "სასტუმროები",
+        "Precard1": "თუ ყიფულობთ, ყიდით ან აქირავებთ,",
+        "Precard2": " ჩვენ დაგეხმარებით რომ სწრაფად გააკეთოთ ეს.",
+        "Card1Header": "სახლის გაქირავება",
+        "Card1Body": "ჩვენ ვქმნით არნახულ ონლაინ გამოცდილებას - ჩვენ შეგვჯძლია მარტივად დაგეხმაროთ სასურველი აპარტამენტის პოვნაში.",
+        "Card2Header": "სახლის გაყიდვა",
+        "Card2Body": "ჩვენ გეხმარებით სახლის მარტივად და სწრაფად გაყიდვაში. მიუხედავად იმისა, თუ სად მდებარეობს ის.",
+        "Card3Header": "სახლის იყიდება",
+        "Card3Body": "იპოვე შენი ადგილი  გამოცდილი გუნდის დახმარებით, რომელიც გთავაზობს ყველაზე დიდ არჩევანს, მათ შორის ისეთ შემოთავაზებებს რასაც სხვაგან ვერ ნახავთ.",
+        "R-add": "ახლახანს დაემატა",
+        "V-more": "მეტის ნახვა>",
+        //search
+        "lsort": "დალაგება :",
+        "sort": "დალაგება",
+        "Slatest": "უახალისი",
+        "Soldest": "ძველი",
+        "Scheap": "ფასით (დაბალი)",
+        "SExpensive": "ფასით (მაღალი)",
+        "Sprice": "ფასი",
+        "SArea": "ფართი",
+        "ipmin": "ჩაწერე",
+        "ipmax": "ჩაწერე",
+        "iAmin": "ჩაწერე",
+        "iAmax": "ჩაწერე",
+        "NoMin1": "არა მინ",
+        "NoMin2": "არა მინ",
+        "NoMax1": "არა მაქს",
+        "NoMax2": "არა მაქს",
+        "searchbtn1": "ძებნა",
+        "searchbtn2": "ძებნა",
+        //add home
+        "addannl1": "განცხადების დამატება",
+        "addannl2": "განცხადების დამატება",
+        "addannl3": "განცხადების დამატება",
+        "anntypel": "განცხადების ტიპი",
+        "transactionTl": "გარეგების ტიპი",
+        "Btypel": "უძრავი ქონების ტიპი",
+        "statusl": "სტატუსი :",
+        "statusI": "სტატუსი",
+        "nbuilding": "ახალი აშენებული",
+        "uconstruct": "მშენებარე",
+        "obuilding": "ძველი აშენებული",
+        "locationl": "ადგილმდებარეობა",
+        "Cadastrall": "საკადასტრო კოდი :",
+        "Cadastral": "საკადასტრო კოდი",
+        "F-addressl": "სრული მისამართი :",
+        "F-address": "სრული მისამართი",
+        "next1": "შემდეგი",
+        "next2": "შემდეგი",
+        "previous1": "წინა",
+        "previous2": "წინა",
+        "submit": "წარდგენა",
+        "d_infol": "დეტალური ინფორმაცია",
+        "floorl": "სართული :",
+        "floor": "სართული",
+        "storeysl": "სართულები :",
+        "storeys": "სართულები სულ",
+        "roomsl": "ოთახები :",
+        "rooms": "ოთახების რაოდენობა",
+        "bedrooml": "საძინებელი :",
+        "bedroom": "საძინებელი",
+        "balconyl": "აივანი:",
+        "loggial": "ლოჯი:",
+        "Verandal": "ვერანდა:",
+        "bathl": "სველი წერტილი:",
+        "sharedl": "საერთო",
+        "Gasl": "ბუნებრივი აირი:",
+        "Telephonel": "ტელეფონი:",
+        "Internetl": "ინტერნეტი:",
+        "Televisionl": "ტელევიზორი:",
+        "Air-conditionerl": "კონდიციონერი:",
+        "Hot-waterl": "ცხელი წყალი:",
+        "Heatingl": "გათბობა:",
+        "Parkingl": "პარკინგი:",
+        "Storerooml": "სათავსო:",
+        "Elevatorl": "ლიფტი:",
+        "PElevatorl": "სამგზავრო ლიფტი",
+        "SElevatorl": "სატვირთო ლიფტი",
+        //Responsive elevator
+        "Pelevatorl": "ლიფტი:",
+        "Pelevatorl": "სამგზავრო ლიფტი",
+        "Selevatorl": "სატვირთო ლიფტი",
+        "Fireplacel": "ბუხარი:",
+        "Furniturel": "ავეჯი:",
+        "Cheightl": "ჭერის სიმაღლე :",
+        "Cheight": "ჭერის სიმაღლე (მეტრი)",
+        "Conditionl": "მდგომარეობა :",
+        "Condition": "მდგომარეობა",
+        "n_renovate": "ახალი გარემონტებული",
+        "u_renovate": "მიმდინარე რემონტი",
+        "no_renovate": "სარემონტო",
+        "o_renovate": "ძველი გარემონტებული",
+        "wframe": "თეთრი კარკასი",
+        "bframe": "შავი კარკასი",
+        "gframe": "მწვანე კარკასი",
+        "Designl": "პროექტი :",
+        "Design": "პროექტი",
+        "Nonstandard": "არასტანდარტული",
+        "Tuxareli": "თუხარელის",
+        "Moskow": "მოსკოვის",
+        "City": "ქალაქური",
+        "Khrushchov": "ხრუშოვის",
+        "Czech": "ჩეხური",
+        "Kavlashvili": "ყავლაშვილის",
+        "Lvov": "ლვოვის",
+        "Italian-Court": "თბილისური ეზო",
+        "Metromsheni": "მეტრომშენის",
+        "addinfol": "დამატებითი ინფორმაცია",
+        "pnuml": "ტელეფონის ნომერი :",
+        "Areal": "ფართი :",
+        "Area": "ფართი",
+        "sq-m": "მ²",
+        "Pricel": "ფასი :",
+        "Price": "თანხა",
+        "t_price": "საერთო ფასი",
+        "m_price": "1 მ² - ის ფასი",
+        "expossiblel": "შესაძლებელია გაცვლა :",
+        "GEL": "ლარი",
+        "commentKal": "კომენტარი (ქართულად) :", 
+        "commentEnl": "კომენტარი (ინგლისურად) :",
+        "photosl": "სურათები (მაქსიმუმ 12) :",
+        "vidURLl": "ვიდეოს ბმული :",
+        //dashboard
+        "urname": "შენი სახელი",
+        "addannl": "განცხადების დამატება",
+        "myal": "ჩემი განცხადებები",
+        "bmarksl": "ჩემი სანიშნეები",
+        "ad-l": "რეკლამა",
+        "edtacc": "ანგარიშის რედაქტირება",
+        "signoutl": "გასვლა",
+        "contactl": "კონტაქტი",
+        "currentl": "მიმდინარე",
+        "disabledl": "გათიშული",
+        "blockedl": "დაბლოკილი",
+        "expiredl": "ვადაგასული",
+        "adcontactl": "რეკლამისთვის გთხოვთ ",
+        "acontact": "დაგვიკავშირდეთ",
+        "signoutl2": "გასვლა",
+        "signoutl3": "გასვლა",
+        "sure-signoutl": "ნამდვილად გსურთ გასვლა ?",
+        "cancell": "გაუქმება",
+        "passwordl": "პაროლი",
+        "opasswordl": "Ძველი პაროლი :",
+        "opassword": "Ძველი პაროლი",
+        "npasswordl": "Ახალი პაროლი :",
+        "npassword": "Ახალი პაროლი",
+        "cpasswordl": "Პაროლის დადასტურება :",
+        "cpassword": "Პაროლის დადასტურება",
+        "submitbtn": "წარდგენა",
+        "change-photol": "Შეცვალე სურათი",
+        "uploadl": "ატვირთვა",
+        "informationl": "ინფორმაცია",
+        "username-emaill": "მომხმარებელი (ელფოსტა) :",
+        "username-email": "მომხმარებელი (ელფოსტა)",
+        "namel": "სახელი :",
+        "name": "სახელი",
+        "lnamel": "Გვარი :",
+        "lname": "Გვარი",
+        "shownamel": "აჩვენეთ გვარი რეკლამის გვერდზე:",
+        "yes": "კი",
+        "no": "არა",
+        "genderl": "სქესი :",
+        "malel": "მამრობითი",
+        "femalel": "მდედრობითი",
+        "numberl": "Ტელეფონის ნომერი :",
+        "phone": "შეიყვანეთ ტელეფონის ნომერი",
+        "editbtn": "რედაქტირება",
+    }
+};
+
+try{
+document.getElementById('LangKa').addEventListener("click", (e)=>{
+    document.getElementById('Langbtn').src = document.getElementById('Georgian').src;
+    ////////////////////////////////////////////////////////////////////////////////
+    for (const x in LangSwitch["Georgian"]) {try{
+        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort") && document.getElementById(x).placeholder != null) {
+            document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
+        }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+         || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
+         || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax") && document.getElementById(x).value != null) {
+            document.getElementById(x).value = LangSwitch["Georgian"][x];
+        }else{
+            document.getElementById(x).innerText = LangSwitch["Georgian"][x];
+        }
+    }catch{}}
+})
+
+document.getElementById('LangEn').addEventListener("click", (e)=>{
+    document.getElementById('Langbtn').src = document.getElementById('English').src;
+    ////////////////////////////////////////////////////////////////////////////////
+    for (const x in LangSwitch["English"]) {try{
+        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort") && document.getElementById(x).placeholder != null) {
+            document.getElementById(x).placeholder = LangSwitch["English"][x];
+        }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+         || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
+         || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax") && document.getElementById(x).value != null) {
+            document.getElementById(x).value = LangSwitch["English"][x];
+        }else{
+            document.getElementById(x).innerText = LangSwitch["English"][x];
+        }
+    }catch{}}
+})
+}catch{}
+
+try{
+for (let i = 1; i < 4 ; i++) {
+
+    document.getElementById('lanswitchka'+i).addEventListener("click", (e)=>{
+        document.getElementById('lanswitchka1').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchka2').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchka3').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchen1').className = "ml-auto lanswitch px-1";
+        document.getElementById('lanswitchen2').className = "ml-auto lanswitch px-1";
+        document.getElementById('lanswitchen3').className = "ml-auto lanswitch px-1";
+        ////////////////////////////////////////////////////////////////////////////////
+        for (const x in LangSwitch["Georgian"]) {try{
+            if ((x === "transactionT" || "Btype" || "statusI" || "Cadastral" || "F-address"
+             || "Cheight" || "Condition") && document.getElementById(x).placeholder != null) {
+                document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
+            }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+             || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel" || "nbuilding" || "uconstruct"
+             || "obuilding") && document.getElementById(x).value != null) {
+                document.getElementById(x).value = LangSwitch["Georgian"][x];
+            }else{
+                document.getElementById(x).innerText = LangSwitch["Georgian"][x];
+                }
+            }catch(mg){console.log(mg)}}
+            document.getElementById("next1").innerText = LangSwitch["Georgian"]["next1"];
+            document.getElementById("next2").value = LangSwitch["Georgian"]["next2"];
+            document.getElementById("previous1").value = LangSwitch["Georgian"]["previous1"];
+            document.getElementById("previous2").value = LangSwitch["Georgian"]["previous2"];
+            document.getElementById("submit").value = LangSwitch["Georgian"]["submit"];
+            document.getElementById("t_price").innerText = LangSwitch["Georgian"]["t_price"];
+            document.getElementById("m_price").innerText = LangSwitch["Georgian"]["m_price"];
+            document.getElementById("gasdiv").className = "form-group ml-sm-5 mt-5"
+            document.getElementById("airdiv").className = "form-group ml-sm-5 mt-5"
+            document.getElementById("heatdiv").className = "form-group ml-sm-5 mt-5"
+            document.getElementById("teldiv").className = "form-group ml-sm-5 mt-5"
+            document.getElementById("baldiv").className = "form-group ml-sm-5 mt-5"
+            document.getElementById("floorl").className = "col-sm-4"
+            document.getElementById("storeysl").className = "col-sm-4"
+            document.getElementById("roomsl").className = "col-sm-4"
+            document.getElementById("bedrooml").className = "col-sm-4"
+
+        for (let yn = 1; yn < 16; yn++) {try{
+            document.getElementById('yes'+yn).innerText = "კი";
+            document.getElementById('no'+yn).innerText = "არა";
+        }catch{}}
+    })
+}
+
+for (let i = 1; i < 4 ; i++) {
+
+    document.getElementById('lanswitchen'+i).addEventListener("click", (e)=>{
+        document.getElementById('lanswitchen1').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchen2').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchen3').className = "ml-auto lanswitch px-1 d-none";
+        document.getElementById('lanswitchka1').className = "ml-auto lanswitch px-1";
+        document.getElementById('lanswitchka2').className = "ml-auto lanswitch px-1";
+        document.getElementById('lanswitchka3').className = "ml-auto lanswitch px-1";
+        ////////////////////////////////////////////////////////////////////////////////
+        for (const x in LangSwitch["English"]) {try{
+            if ((x === "transactionT" || "Btype" || "statusI" || "Cadastral" || "F-address"
+             || "Cheight" || "Condition") && document.getElementById(x).placeholder != null) {
+                document.getElementById(x).placeholder = LangSwitch["English"][x];
+            }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+             || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel" || "nbuilding" || "uconstruct"
+             || "obuilding") && document.getElementById(x).value != null) {
+                document.getElementById(x).value = LangSwitch["English"][x];
+            }else{
+                document.getElementById(x).innerText = LangSwitch["English"][x];
+                }
+            }catch(mg){console.log(mg)}}
+            document.getElementById("next1").innerText = LangSwitch["English"]["next1"];
+            document.getElementById("next2").value = LangSwitch["English"]["next2"];
+            document.getElementById("previous1").value = LangSwitch["English"]["previous1"];
+            document.getElementById("previous2").value = LangSwitch["English"]["previous2"];
+            document.getElementById("submit").value = LangSwitch["English"]["submit"];
+            document.getElementById("t_price").innerText = LangSwitch["English"]["t_price"];
+            document.getElementById("m_price").innerText = LangSwitch["English"]["m_price"];
+            document.getElementById("gasdiv").className = "form-group ml-sm-5"
+            document.getElementById("airdiv").className = "form-group ml-sm-5"
+            document.getElementById("heatdiv").className = "form-group ml-sm-5"
+            document.getElementById("teldiv").className = "form-group ml-sm-5"
+            document.getElementById("baldiv").className = "form-group ml-sm-5"
+            document.getElementById("floorl").className = "text-sm-right col-sm-3"
+            document.getElementById("storeysl").className = "text-sm-right col-sm-3"
+            document.getElementById("roomsl").className = "text-sm-right col-sm-3"
+            document.getElementById("bedrooml").className = "text-sm-right col-sm-3"
+
+        for (let yn = 1; yn < 16; yn++) {try{
+            document.getElementById('yes'+yn).innerText = "yes";
+            document.getElementById('no'+yn).innerText = "No";
+        }catch{}}
+    })
+}
+}catch{}
+
+document.getElementById("change-lan-ka").addEventListener("click",(e)=>{
+    document.getElementById("change-lan-en").className = "nav-item border-bottom ";
+    document.getElementById("change-lan-ka").className = "nav-item border-bottom d-none ";
+    ////////////////////////////////////////////////////////////////////
+    for (const x in LangSwitch["Georgian"]) {try{
+        if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
+            document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
+        }else{
+        document.getElementById(x).innerText = LangSwitch["Georgian"][x];}
+        }
+        
+        catch(err){console.log(err)}}
+        document.getElementById("namdiv").className = "form-group mt-5";
+})
+
+document.getElementById("change-lan-en").addEventListener("click",(e)=>{
+    document.getElementById("change-lan-ka").className = "nav-item border-bottom ";
+    document.getElementById("change-lan-en").className = "nav-item border-bottom d-none ";
+    ////////////////////////////////////////////////////////////////////
+    for (const x in LangSwitch["English"]) {try{
+        if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
+            document.getElementById(x).placeholder = LangSwitch["English"][x];
+        }else{
+        document.getElementById(x).innerText = LangSwitch["English"][x];}
+        }
+        
+        catch(err){console.log(err)}}
+        document.getElementById("namdiv").className = "form-group";
+})

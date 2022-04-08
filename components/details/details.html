@@ -1,0 +1,77 @@
+
+   <!--/navbar-->
+    <!--carousel-->
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="carousel slide col-xl-8 my-4" data-ride="carousel" id="mycarousel1">  
+                <ol class="carousel-indicators" style="top: 320px;" id="initiator">
+                </ol>
+              <div class="carousel-inner" id="image_carousel"></div>
+
+               <a href="#mycarousel1" role="button" data-slide="prev" class="carousel-control-prev d-flex" style="height: 350px;">
+                 <span class="carousel-control-prev-icon"></span>
+               </a>
+               <a href="#mycarousel1" role="button" data-slide="next" class="carousel-control-next d-flex" style="height: 350px;">
+                 <span class="carousel-control-next-icon"></span>
+              </a>
+              <h1 class="d-none d-xl-inline" id="ProductTitle"><a href="#" ><i onclick="AddBookmark()" id="book" class="far fa-bookmark"></i></a></h1>
+             </div>
+             <div class="card col-12 col-xl-4 border-0 my-4">
+                 <div class="card-body border shadow rounded mx-auto col-12">
+                     <h5 class="card-title d-flex d-xl-none">Newly finished apartment for sale <a class="h4 ml-auto" href="#rbook" onclick="if(document.getElementById('rbook').className!='fas fa-bookmark')document.getElementById('rbook').className='fas fa-bookmark'; else document.getElementById('rbook').className='far fa-bookmark';"><i id="rbook" class="far fa-bookmark"></i></a></h5>
+                     <div class="d-block">
+                      <i class="d-inline fas fa-map-marker-alt p-1 text-danger" style="font-size: 25px;"></i>
+                      <p class="d-inline " id="prod_address"></p>
+                    </div>
+                     <div class="d-block mt-3"><i class="far fa-clock p-1"></i><p class="d-inline" id="prod_date"></p><p class="d-inline ml-5" id="prod_id"></p></div>
+                     <div class="d-block mt-3">
+                      <img src="assets/images/house size.png" class="mr-1" style="height: 35px;" alt=""><span class="font-weight-bold" id="prod_size"></span>
+                      <div class="input-group rounded-pill d-inline mx-3">
+                        <a href="#d1" class="bg-primary text-white px-1 rounded-circle d-none" onclick="document.getElementById('price1').innerText/=3.11; document.getElementById('price1').innerText=Math.round(document.getElementById('price1').innerText); document.getElementById('sign1').innerText='$'; document.getElementById('d1').className='bg-primary text-white px-1 rounded-circle d-none'; document.getElementById('l1').className='bg-primary text-white px-1 rounded-circle d-inline'" id="d1" style="font-size: 12.5px;" role="button">$</a>
+                        <a href="#l1" class="bg-primary text-white px-1 rounded-circle" onclick="document.getElementById('price1').innerText*=3.11; document.getElementById('price1').innerText=Math.round(document.getElementById('price1').innerText); document.getElementById('sign1').innerText='₾'; document.getElementById('l1').className='bg-primary text-white px-1 rounded-circle d-none'; document.getElementById('d1').className='bg-primary text-white px-1 rounded-circle d-inline'" id="l1" style="font-size: 12.5px;" role="button">₾</a>
+                      </div>
+                      <h5 id="price1" class="d-inline">1020</h5><span id="sign1" class="h5">$</span>
+                    </div>
+                    <div class="d-block mt-3"><i class="far fa-building p-1" style="font-size: 25px;"><span class="ml-1" id="building_type"></span></i></div>
+                    <div class="d-block mt-3"><i class="fas fa-history p-1" style="font-size: 25px;"></i><span class="h5 ml-1">7 year building</span></div>
+                    <div class="d-block mt-3"><img src="assets/images/stairs2.png" class="mx-1" style="height: 25px;" alt=""><span class="h5 ml-1" id="prod_floor"></span></div>
+                    <div class="d-block mt-3"><i class="fas fa-door-closed p-1" style="font-size: 25px;"></i><span class="h5 ml-1" id="prod_room"></span></div>
+                    <div class="d-block mt-3"><i class="fas fa-bed p-1" style="font-size: 25px;"></i><span class="h5 ml-1" id="prod_bedroom"></span></div>
+                 </div>
+             </div>
+          </div>
+        </div>
+      </section>
+      <!--/carousel-->
+      <!--details-->
+      <section>
+          <div class="container mb-3">
+              <div class="col-11">
+                  <div class="d-flex align-items-center my-3">
+                      <img class="" src="assets/images/fuser.png" style="height: 80px;" alt="" id="user_profile">
+                      <div class="d-flex align-items-center mx-2">
+                          <div>
+                              <h5 class="d-block" id="username">Salome</h5>
+                              <div class="d-flex flex-wrap align-items-center">
+                                  <span class="">owner</span>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- onclick="document.getElementById('num').innerText= '599 711 111'" -->
+                      <button role="button" class="btn btn-primary rounded-pill mx-2" id="showFullMobile" onclick="showFullMobile()">
+                          <i class="fas fa-phone-alt d-inline"></i>
+                          <h5 class="d-inline" id="num"></h5>
+                      </button>
+                  </div>
+                  <div>
+                      <h5 class="d-block">Description</h5>
+                      <p id="description"></p>
+                  </div>
+                  <div id="facilities">
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--details-->
+  

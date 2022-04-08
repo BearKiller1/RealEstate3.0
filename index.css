@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    padding:0;
+}
+p,i,button{
+    cursor: pointer;
+}
+
+#content{
+    min-height: 60vh;
+}
+
+#menuaddprod,
+#menulogin,
+#menudashboard 
+{
+    display: none;
+}
+
+.messageBox{
+    width: auto;
+    height: auto;
+    min-width: 20%;
+    min-height: 15vh;
+    position: absolute;
+    top:5vh;
+    left:40%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    z-index: 9;
+    display: none;
+}

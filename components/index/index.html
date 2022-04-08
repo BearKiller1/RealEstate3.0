@@ -1,0 +1,216 @@
+<section>
+    <div class="container-fluid d-flex flex-wrap justify-content-between" style="height: 300px;">
+        <!--Mobile-->
+        <div class="container-fluid d-flex flex-wrap align-self-center d-md-none">
+            <img src="assets/images/logo2.png" class="w-50 d-block my-3 mx-auto d-md-none" alt="">
+            <div class="input-group justify-content-center align-self-center rounded-pill border border-primary p-3 col-12 d-md-none" >
+                <input class="form-control col-12 border-0 rounded" id="msearchbox" type="text" placeholder="Enter an adress, neighborhood, city, or ZIP code...">
+                <button class="btn rounded-circle text-primary border-0 ml-1" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <a class="mx-auto mt-4" id="Madvsearch" role="button" data-toggle="collapse" onclick="document.getElementById('pill').className='input-group d-flex flex-wrap align-self-center rounded border border-primary p-3 col-12 my-2'" data-target="#adv" href="">advanced search</a>
+        </div>
+        <!--/Mobile-->
+        <img src="assets/images/logo2.png" class="alighn-self-start mt-4 col-lg-4 mx-auto mx-lg-0 col- w-50 d-none d-md-flex" alt="" style="width: 300px; height: auto; margin-left: -60px;">
+
+        <div class="input-group align-self-center mx-auto mx-lg-0 rounded p-3 col-lg-8 ">
+            <div class="input-group align-self-center rounded-pill border border-primary p-3 col-12 my-2 d-none d-md-flex">
+                <input class="form-control col-12 border-0 rounded" id="searchbox" type="text" placeholder="Enter an adress, neighborhood, city, or ZIP code" >
+                <button class="btn rounded-circle text-primary border-0 ml-1" type="submit" onclick="SearchDetails()" id="searchDetails"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="adv" class="collapse col-12">
+                <div id="pill" class="input-group d-flex flex-wrap align-self-center rounded-pill border border-primary p-3 col-12 my-2">
+                    <input class="form-control border-0 mx-auto text-center w-100 col-12 col-sm-3 rounded" id="transactionT" list="transaction" placeholder="transaction type">
+                    <datalist id="transaction"></datalist>
+                    <input class="form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3 rounded" id="district" list="districts" placeholder="Select district">
+                    <datalist id="districts">
+                    </datalist>
+
+                    <input class="d-none" id="NH" placeholder="All districts">
+                    <datalist id="Gldani"></datalist>
+                    <datalist id="Didube"></datalist>
+                    <datalist id="Vake"></datalist>
+                    <datalist id="Isani"></datalist>
+                    <datalist id="Krtsanisi"></datalist>
+                    <datalist id="Mtatsminda"></datalist>
+                    <datalist id="Nadzaladevi"></datalist>
+                    <datalist id="Saburtalo"></datalist>
+                    <datalist id="Samgori"></datalist>
+                    <datalist id="Chugureti"></datalist>
+                    <datalist id="Other"></datalist>
+                    <input class="form-control border-0 w-100 mx-auto text-center col-12 col-sm-3" id="Btype" list="btype" placeholder="building type">
+                    <datalist id="btype">
+                    </datalist>
+                    <script>
+                    document.getElementById('district').addEventListener("input",(e)=>{
+                        let x = document.getElementById('district').value;
+                        switch (x) {
+                        case "Gldani":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Didube":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Vake":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Isani":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Krtsanisi":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Mtatsminda":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Nadzaladevi":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Saburtalo":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Samgori":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Chugureti":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        case "Other":
+                            document.getElementById('NH').className = "form-control border-0 mx-1 w-100 mx-auto text-center col-12 col-sm-3"
+                            document.getElementById('NH').setAttribute('list', x);
+                            break;
+                        
+                        default:
+                            break;
+                        }
+                    })
+                    document.getElementById('district').addEventListener("mousedown",(e)=>{
+                        if (document.getElementById('district').value != "") document.getElementById('district').value="";
+                    })
+                    document.getElementById('NH').addEventListener("mousedown",(e)=>{
+                        if (document.getElementById('NH').value != "") document.getElementById('NH').value="";
+                    })
+                    </script>
+                </div>
+            </div>
+            <a class="mx-auto mt-4 d-none d-md-flex" id="advsearch" role="button" data-toggle="collapse" data-target="#adv" href="">advanced search</a>
+        </div>
+    </div>
+</section>
+<!--/search box-->
+<div class="d-lg-none" style="height: 200px;"></div>
+<!--Card-->
+<section class="p-5">
+<div class="container-fluid">
+    <h3 id="Precard1" class="text-center">Whether you’re buying, selling or renting,</h3>
+    <h3 id="Precard2" class="text-center mb-5"> we can help you move forward.</h3>
+    <div class="row">
+    <div class="col-lg-4 my-sm-5 my-3 px-3" id="rent">
+        <div class="col-sm-10 col-md-7 col-lg-12 mx-auto">
+        <div class="card shadow-lg">
+            <img
+            src="https://www.rentecdirect.com/blog/wp-content/uploads/2017/12/for-rent-sign.jpg"
+            alt=""
+            class="card-img-top"
+            />
+            <div class="card-body">
+            <div class="card-title">
+                <h4 id="Card1Header" class="text-center">Rent a home</h4>
+            </div>
+            <div class="card-subtitle my-4">
+                <p id="Card1Body" class="text-muted">
+                we're creating a seamless online experience - 
+                we can help you easily find a home or apartment for rent that you'll love
+                </p>
+            </div>
+            <div class="text-center">
+                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline">Find rentals</a>
+                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none">ّFind rentals</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-4 my-sm-5 my-3 px-3" id="sell">
+        <div class="col-sm-10 col-md-7 col-lg-12 mx-auto">
+        <div class="card shadow-lg">
+            <img
+            src="https://wp-tid.zillowstatic.com/3/shutterstock_50097079-2ec9cc-630x420.jpg"
+            alt=""
+            class="card-img-top"
+            />
+            <div class="card-body">
+            <div class="card-title">
+                <h4 id="Card2Header" class="text-center">Sell a home</h4>
+            </div>
+            <div class="card-subtitle my-4">
+                <p id="Card2Body" class="text-muted">
+                we're making it simpler to sell your home and move forward.
+                No matter where is your house located, we can help you navigate a successful sale.
+                </p>
+            </div>
+            <div class="text-center">
+                <a role="button" href="" class="btn btn-outline-primary">Sell my home</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-4 my-sm-5 my-3 px-3" id="buy">
+        <div class="col-sm-10 col-md-7 col-lg-12 mx-auto">
+        <div class="card shadow-lg">
+            <img
+            src="https://static3.depositphotos.com/1007959/236/i/600/depositphotos_2369285-stock-photo-sold-home-for-sale-sign.jpg"
+            alt=""
+            class="card-img-top"
+            />
+            <div class="card-body">
+            <div class="card-title">
+                <h4 id="Card3Header" class="text-center">Buy a home</h4>
+            </div>
+            <div class="card-subtitle my-4">
+                <p id="Card3Body" class="text-muted">
+                Find your place with an impersive experince and the most listing,
+                including things you won't find anywhere else.
+                </p>
+            </div>
+            <div class="text-center">
+                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline">Search homes</a>
+                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none">Search homes</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+  
+<section>
+    <div class="container-fluid">
+        <div class="d-flex mb-5">
+            <h2 id="R-add">Recently added</h2>
+            <a id="V-more" href="#" class="h5 text-dark ml-auto">view more></a>
+        </div>
+        <div class="row d-flex flex-nowrap overflow-auto" id="latestProd"></div>
+    </div>
+</section>

@@ -1,0 +1,297 @@
+
+    <!--nav & sidebar-->
+    <nav class="navbar navbar-expand-md ">
+        <button class="navbar-toggler mb-2" data-toggle="collapse" data-target="#my-nav">
+            <i class="fas fa-bars text-primary"></i>
+        </button>
+        <div class="navbar-collapse collapse" id="my-nav">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="fixtop" class="col-lg-3 col-md-4 fixed-top border overflow-auto" style="height: 100vh;">
+                        <a href="#" class="navbar-brand d-block text-center mx-auto py-3 mb-4 border-bottom" onclick="Router('index')">my-home</a>
+                        <div class="border-bottom pb-3">
+                            <img src="assets/images/user.png" class="rounded-circle mr-3" style="width: 35px;" alt="">
+                            <a id="username" href="" class="text-dark">your name</a>
+                        </div>
+                        <ul id="sidebar" class="nav-bar list-unstyled flex-column">
+                            <li class="nav-item border-bottom " onclick="Router('upload')">
+                                <a href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-plus fa-lg mr-3"></i>
+                                    <span id="addannl" class="align-self-center">Add announcement</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a id="nav1" href="#" class="nav-link text-dark my-2 " onclick="GetMyProd()">
+                                    <i class="fas fa-list-ul fa-lg mr-3"></i>
+                                    <span id="myal" class="align-self-center">My announcements</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a id="nav2" href="#" class="nav-link text-dark my-2 " onclick="GetMyBookmarks()">
+                                    <i class="fas fa-bookmark fa-lg mr-3"></i>
+                                    <span id="bmarksl" class="align-self-center">My bookmarks</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a id="nav3" href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-ad fa-lg mr-3"></i>
+                                    <span id="ad-l" class="align-self-center">Advertisement</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a id="nav4" href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-user fa-lg mr-3"></i>
+                                    <span id="edtacc" class="align-self-center">Edit account</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a href="#signout_modal" data-toggle="modal" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-sign-out-alt fa-lg mr-3"></i>
+                                    <span id="signoutl" class="align-self-center" >Sign out</span>
+                                </a>
+                            </li>
+                            <li class="nav-item border-bottom ">
+                                <a id="nav5" href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-phone-alt fa-lg mr-3"></i>
+                                    <span id="contactl" class="align-self-center">Contact</span>
+                                </a>
+                            </li>
+                            <li id="change-lan-ka" class="nav-item border-bottom ">
+                                <a href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-language fa-lg mr-3"></i>
+                                    <span class="align-self-center">ქართული</span>
+                                </a>
+                            </li>
+                            <li id="change-lan-en" class="nav-item border-bottom d-none">
+                                <a href="#" class="nav-link text-dark my-2 ">
+                                    <i class="fas fa-language fa-lg mr-3"></i>
+                                    <span class="align-self-center">English</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <script>
+                        for (let i = 1; i < 6; i++) {
+                            document.getElementById("nav"+i).addEventListener("click",(e)=>{
+                                try{document.querySelector('.selected').className='nav-link text-dark my-2 ';}catch{} 
+                                document.getElementById('nav'+i).className += 'selected';
+                                /////////////////////////////////////////////////////////
+                                document.getElementById('sec-mya').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
+                                document.getElementById('sec-ad').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
+                                document.getElementById('sec-edit').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
+                                switch (document.querySelector('#nav'+i+' span').innerText) {
+                                    case "My announcements":
+                                        document.getElementById('sec-mya').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                                    case "ჩემი განცხადებები":
+                                        document.getElementById('sec-mya').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                            
+                                    case "Advertisement":
+                                        document.getElementById('sec-ad').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                                    case "რეკლამა":
+                                        document.getElementById('sec-ad').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                            
+                                    case "Edit account":
+                                        document.getElementById('sec-edit').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                                    case "ანგარიშის რედაქტირება":
+                                        document.getElementById('sec-edit').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                                        break;
+                                    
+                                    default:
+                                        console.log(document.getElementById('nav'+i).innerText);
+                                        break;
+                                }
+                            })
+                        }
+                    </script> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--/nav & sidebar-->
+    <!--My announcements-->
+    <section id="sec-mya" class="col-lg-9 col-md-8 ml-auto mt-5 d-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="mya1" class="btn btn-outline-secondary m-1 border p-2" style="cursor: pointer;">
+                    <i class="fas fa-list-ul"></i>
+                    <span id="currentl">Current</span>
+                    <span class="ml-1" id="curentCount" >(0)</span>
+                </div>
+                <div id="mya2" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-arrow-down"></i>
+                    <span id="disabledl">Disabled</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+                <div id="mya3" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-lock"></i>
+                    <span id="blockedl">Blocked</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+                <div id="mya4" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-hourglass-end"></i>
+                    <span id="expiredl">Expired</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+            </div>
+        </div>
+        <div class="my_prod_container">
+            
+        </div>
+    </section>
+    <script>
+        for (let j = 1; j < 5; j++) {
+            document.getElementById("mya"+j).addEventListener("click",(e)=>{
+                for (let k = 1; k < 5; k++) {
+                    document.getElementById('mya'+k).className = 'btn btn-outline-secondary m-1 border p-2 ';
+                }
+                document.getElementById('mya'+j).className += 'bg-secondary text-white';
+            })
+        }
+    </script>
+    <!-- My Bookmarks -->
+    <section id="sec-mb" class="col-lg-9 col-md-8 ml-auto mt-5 d-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="mya1" class="btn btn-outline-secondary m-1 border p-2" style="cursor: pointer;">
+                    <i class="fas fa-list-ul"></i>
+                    <span id="currentl">Current</span>
+                    <span class="ml-1" id="curentCountBookmark" >(0)</span>
+                </div>
+                <div id="mya2" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-arrow-down"></i>
+                    <span id="disabledl">Disabled</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+                <div id="mya3" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-lock"></i>
+                    <span id="blockedl">Blocked</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+                <div id="mya4" class="btn btn-outline-secondary m-1 border p-2 " style="cursor: pointer;">
+                    <i class="fas fa-hourglass-end"></i>
+                    <span id="expiredl">Expired</span>
+                    <span class="ml-1">(0)</span>
+                </div>
+            </div>
+        </div>
+        <div class="my_bookmarks_container">
+            
+        </div>
+    </section>
+    <!--/My announcements-->
+    <!--Advertisement-->
+    <section id="sec-ad" class="col-lg-9 col-md-8 ml-auto mt-5 d-none">
+        <div class="d-flex">
+            <div class="mx-auto p-2 mt-5"><h3 class="d-inline" id="adcontactl">for advertisement please </h3><a class="h3" href=""> Contact</a></div>
+        </div>
+    </section>
+    <!--/Advertisement-->
+    <!--Signout modal-->
+    <div class="modal fade" id="signout_modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 id="signoutl2">Sign out</h4>
+            </div>
+            <div class="modal-body">
+              <p id="sure-signoutl" class="text-muted">Are you sure want to sign out ?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="cancell" class="btn btn-secondary" data-dismiss="modal">Cansel</button>
+              <button id="signoutl3" class="btn btn-danger" onclick="Signout()" data-dismiss="modal">Sign out</button>
+  
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--/Signout modal-->
+    <!--/edit account-->
+    <section id="sec-edit" class="col-lg-9 col-md-8 ml-auto mt-5 ">
+        <div class="container-fluid">
+            <div class="col-lg-8 mx-auto">
+                <h3 id="passwordl" class="mx-auto bg-primary text-white text-center col-12 rounded-pill">Password</h3>
+                <div class="form-group">
+                    <label id="opasswordl" class="text-sm-right" for="opassword">Old password :</label>
+                    <input type="password" id="opassword" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="Old password">
+                </div>
+                <div class="form-group">
+                    <label id="npasswordl" class="text-sm-right" for="npassword">New password :</label>
+                    <input type="password" id="npassword" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="New password">
+                </div>
+                <div class="form-group">
+                    <label id="cpasswordl" class="" for="cpassword">Confirm password :</label>
+                    <input type="password" id="cpassword" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="Confirm password">
+                </div>
+                <button onclick="ChangePWD()" id="submitbtn" type="submit" class="form-control d-flex justify-content-center btn btn-primary text-center col-10 col-sm-7 mx-auto">Submit</button>
+                <hr>
+                <div class="form-group ml-2 d-flex justify-content-center align-items-center">
+                    <img src="assets/images/user.png" class="rounded-circle col-3" id="profile">
+                    <div class="col-6">
+                        <button id="change-photol" class="col-12 my-1 btn btn-primary">Change photo</button>
+                        <button id="uploadl" class="col-12 my-1 btn btn-primary">Upload</button>
+                        <input type="file" id="profile_pic" name="files" width="100%; height:inherit; background:red">
+                    </div>
+                </div>
+                <hr>
+                <h3 id="informationl" class="mx-auto bg-primary text-white text-center col-12 rounded-pill">Information</h3>
+                <div class="form-group">
+                    <label id="username-emaill" class="text-sm-right" for="username-email">Username (email) :</label>
+                    <input type="email" id="username-email" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="Username (email)">
+                </div>
+                <div id="namdiv" class="form-group">
+                    <label id="namel" class="text-sm-right mr-1" for="name">Name : <span class="d-sm-none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></label>
+                    <input type="text" id="name" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="Name">
+                </div>
+                <div id="lnamdiv" class="form-group">
+                    <label id="lnamel" class="mr-1" for="lname">Last name :&nbsp;</label>
+                    <input type="text" id="lname" class="form-control mx-auto col-10 col-sm-7 my-1 d-inline rounded float-right" placeholder="Last name">
+                </div>
+                <div class="form-group">
+                    <label id="shownamel" class="text-sm-right" for="showname">Show the surname on the ad page :</label>
+                    <div class="d-flex d-sm-inline justify-content-center col-12">
+                      <div class="form-check form-check-inline">
+                        <input type="radio" name="showname" id="showname2" class="form-check-input">
+                        <label id="no" for="showname2" class="form-check-label">No</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input type="radio" name="showname" id="showname" class="form-check-input">
+                          <label id="yes" for="showname" class="form-check-label">yes</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="genderl" class="text-sm-right" for="">Gender :</label>
+                    <div class="d-flex d-sm-inline justify-content-center col-12">
+                      <div class="form-check form-check-inline">
+                        <input type="radio" name="gender" id="male" class="form-check-input">
+                        <label id="malel" for="male" class="form-check-label">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input type="radio" name="gender" id="female" class="form-check-input">
+                          <label id="femalel" for="female" class="form-check-label">Female</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="numberl" class="" for="phone">Phone number :</label>
+                    <div class="input-group mx-auto col-10 col-sm-7 my-1 float-right p-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text form-control">+995</span>
+                        </div>
+                        <input required minlength="9" type="tel" placeholder="Enter phone number" id="phone" name="phone" class="form-control">
+                    </div>
+                </div>
+                <button onclick="EditUserInfo()" id="editbtn" type="submit" class="form-control d-flex justify-content-center btn btn-primary text-center col-10 col-sm-7 mx-auto">Edit</button>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <!--edit account-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="LangSwitch.js"></script>
