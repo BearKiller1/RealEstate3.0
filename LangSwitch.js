@@ -188,6 +188,40 @@ var LangSwitch = {
         "numberl": "Phone number :",
         "phone": "Enter phone number",
         "editbtn": "Edit",
+        //contact
+        "sendmessage": "use information below or send a message",
+        "gio": "Giorgi Sepiani",
+        "saman": "Saman Mellati",
+        "address": "No.1 Rustaveli st.",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send",
+        //footer
+        "announcements": "Announcements",
+        "rent-tbilisi": "Rent a flat in tbilisi",
+        "rent-ortachala": "Rent a apartments in Ortachala",
+        "rent-varketili": "Rent a apartments in Varketili",
+        "rent-gldani": "Rent a apartments in Gldani",
+        "rent-isani": "Rent a apartments in Isani",
+        "rent-didube": "Rent a apartments in Didube",
+        "rent-dighomi": "Rent a apartments in Didi Dighomi",
+        "newly-built": "Newly built",
+        "uctbilisi": "Under construction apartments for sale in Tbilisi",
+        "ucsaburtalo": "Under construction apartments for sale on Saburtalo",
+        "ucdighomi": "Under construction apartments for sale in Big Dighomi",
+        "sale-gldani": "Apartments for sale in Gldani",
+        "sale-isani": "Apartments for sale in Isani",
+        "psale-tbilisi": "Tbilisi property for sale",
+        "sale-temqa": "apartment for sale on Temqa",
+        "under-construction": "Under construction",
+        "rent-batumi": "Apartments for rent in Batumi",
+        "rent-kobuleti": "Apartments for rent in Kobuleti",
+        "rent-kutaisi": "Apartments for rent in Kutaisi",
+        "hsale-saguramo": "Houses for sale in Saguramo",
+        "hsale-bakuriani": "Houses for sale in Bakuriani",
+        "lsale-georgia": "land in georgia for sale",
+        "hcsale-tbilisi": "Houses and Cottages for sale in Tbilisi",
+        "createdby": "Created by Ashkan811 &copy;",
     },
     "Georgian":
     {
@@ -378,6 +412,40 @@ var LangSwitch = {
         "numberl": "Ტელეფონის ნომერი :",
         "phone": "შეიყვანეთ ტელეფონის ნომერი",
         "editbtn": "რედაქტირება",
+        //contact
+        "sendmessage": "გამოიყენეთ ქვემოთ მოცემული ინფორმაცია ან გაგზავნეთ შეტყობინებ",
+        "gio": "გიორგი სეპიაშვილი",
+        "saman": "სამან მელათი",
+        "address": "No.1 რუსთაველის ქ.",
+        "email": "ელ.ფოსტა",
+        "message": "შეტყობინება",
+        "send": "გაგზავნა",
+        //footer
+        "announcements": "განცხადებები",
+        "rent-tbilisi": "ბინები ქირით თბილისში",
+        "rent-ortachala": "ქირავდება ბინები ორთაჭალაში",
+        "rent-varketili": "ბინები ქირით ვარკეთილში",
+        "rent-gldani": "ბინები ქირით გლდანში",
+        "rent-isani": "ქირავდება ბინები ისანში",
+        "rent-didube": "ქირავდება ბინა დიდუბეში",
+        "rent-dighomi": "ქირავდება ბინა დიდ დიღომში",
+        "newly-built": "ახალაშენებული",
+        "uctbilisi": "იყიდება მშენებარე ბინები თბილისში",
+        "ucsaburtalo": "იყიდება მშენებარე ბინები საბურთალოზე",
+        "ucdighomi": "იყიდება მშენებარე ბინები დიდ დიღომში",
+        "sale-gldani": "იყიდება ბინები გლდანში",
+        "sale-isani": "იყიდება ბინები ისანში",
+        "psale-tbilisi": "იყიდება ბინები თბილისში",
+        "sale-temqa": "იყიდება ბინა თემქაზე",
+        "under-construction": "მშენებარე",
+        "rent-batumi": "ქირავდება ბინები ბათუმში",
+        "rent-kobuleti": "ქირავდება ბინები ქობულეთში",
+        "rent-kutaisi": "ქირავდება ბინები ქუთაისში",
+        "hsale-saguramo": "იყიდება სახლები საგურამოში",
+        "hsale-bakuriani": "იყიდება აგარაკები ბაკურიანში",
+        "lsale-georgia": "იყიდება მიწის ნაკვეთები თბილისში",
+        "hcsale-tbilisi": "იყიდება სახლები და აგარაკები თბილისში",
+        "createdby": "შექმნილია Ashkan811-ის მიერ &copy;",
     }
 };
 
@@ -386,7 +454,7 @@ document.getElementById('LangKa').addEventListener("click", (e)=>{
     document.getElementById('Langbtn').src = document.getElementById('Georgian').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["Georgian"]) {try{
-        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort") && document.getElementById(x).placeholder != null) {
+        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort" || "name" || "email" || "message") && document.getElementById(x).placeholder != null) {
             document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
         }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
          || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
@@ -396,22 +464,26 @@ document.getElementById('LangKa').addEventListener("click", (e)=>{
             document.getElementById(x).innerText = LangSwitch["Georgian"][x];
         }
     }catch{}}
+    document.getElementById("send").value = LangSwitch["Georgian"]["send"];
+    document.getElementById("createdby").innerHTML = "შექმნილია Ashkan811-ის მიერ &copy;";
 })
 
 document.getElementById('LangEn').addEventListener("click", (e)=>{
     document.getElementById('Langbtn').src = document.getElementById('English').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["English"]) {try{
-        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort") && document.getElementById(x).placeholder != null) {
+        if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort" || "name" || "email" || "message") && document.getElementById(x).placeholder != null) {
             document.getElementById(x).placeholder = LangSwitch["English"][x];
         }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
          || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
-         || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax") && document.getElementById(x).value != null) {
+         || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax" || "send") && document.getElementById(x).value != null) {
             document.getElementById(x).value = LangSwitch["English"][x];
         }else{
             document.getElementById(x).innerText = LangSwitch["English"][x];
         }
     }catch{}}
+    document.getElementById("send").value = LangSwitch["English"]["send"];
+    document.getElementById("createdby").innerHTML = "Created by Ashkan811 &copy;";
 })
 }catch{}
 
@@ -509,6 +581,7 @@ for (let i = 1; i < 4 ; i++) {
 }
 }catch{}
 
+try{
 document.getElementById("change-lan-ka").addEventListener("click",(e)=>{
     document.getElementById("change-lan-en").className = "nav-item border-bottom ";
     document.getElementById("change-lan-ka").className = "nav-item border-bottom d-none ";
@@ -538,3 +611,4 @@ document.getElementById("change-lan-en").addEventListener("click",(e)=>{
         catch(err){console.log(err)}}
         document.getElementById("namdiv").className = "form-group";
 })
+}catch{}
