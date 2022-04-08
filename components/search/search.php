@@ -26,7 +26,7 @@
             $this->FilterBuilder();
 
             $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
-            
+
             $this->sql = "  SELECT  products.id AS product_id,
                                     products.*,
                                     users.username,
@@ -49,6 +49,7 @@
         }
 
         public function FilterBuilder(){
+            
             $this->min = $this->request['min_price'];
             $this->max = $this->request['max_price'];
 
@@ -79,6 +80,18 @@
                 OR  description LIKE '%".$title."%' OR description LIKE '% ".$title." ' OR description LIKE '".$title."%'    
                 ";
             }
+
+            if($this->transaction  != 0 && $this->transaction != ''){
+                $this->transactionFilter = " AND transaction_id = ".$this->transaction;
+            }
+            if($this->building_type  != 0 && $this->building_type != ''){
+                $this->buildingFilter = " AND building_id = ".$this->building_type;
+            }
+            if($this->)
+            $this->building_status
+            $this->district
+            $this->child_district
+
 
         }
 
