@@ -1,10 +1,12 @@
 $(document).ready( () => {
     var fullPhone;
     var hidePhone;
+    var phoneChecker = false;
     GetProductDetails(window.localStorage.getItem("ProductID"));
 })
 
 GetProductDetails = (ProductID) => {
+    phoneChecker = false;
     Ajax({
         url:'details',
         object:{
@@ -26,7 +28,9 @@ GetProductDetails = (ProductID) => {
             if(response.images.length > 0){
                 BuildImages(response.images)
             }
-            
+            if(response.phone != ""){
+                phoneChecker = true;
+            }
             fullPhone = response.phone;
             if(response.phone.length > 3){
                 hidePhone = response.phone.slice(0, -3) + "***";
@@ -36,6 +40,17 @@ GetProductDetails = (ProductID) => {
             if(response.title != null){
                 $("#ProductTitle").append("  "+response.title);
             }
+
+            if(response.profile_pic == ""){
+                if(response.gender == 1)
+                    $("#user_profile").attr("src","assets/images/user.png")
+                else
+                    $("#user_profile").attr("src","assets/images/fuser.png");
+            }
+            else{
+                $("#user_profile").attr("src",response.profile_pic);
+            }
+            $("#username").html(response.username);
             // $("#ProductTitle").html('Title:' + response.title  );
             $("#prod_address").html(response.address);
             $("#prod_date").html(response.datetime  );
@@ -53,12 +68,14 @@ GetProductDetails = (ProductID) => {
 }
 
 showFullMobile = () => {
-    if($("#num").html().indexOf("***") > 0){
-        $("#num").html(fullPhone);
-    }
-    else{
-        $("#num").html(hidePhone);
-    }
+    if(phoneChecker){
+        if($("#num").html().indexOf("***") > 0){
+            $("#num").html(fullPhone);
+        }
+        else{
+            $("#num").html(hidePhone);
+        }
+    };
 }
 
 BuildImages = (images) => {

@@ -53,7 +53,9 @@
                                     designs.name AS design_name,
                                     products.*,
                                     users.username,
-                                    users.phone
+                                    users.phone,
+                                    users.gender,
+                                    users.profile_pic
                             FROM    products 
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN designs ON products.designs = designs.id AND designs.actived = 1
