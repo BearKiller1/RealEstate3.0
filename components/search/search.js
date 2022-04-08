@@ -8,7 +8,7 @@ $(document).ready(() => {
     }
 })
 
-GetProduct = (search = [] ) => {
+GetProduct = (search = '' ) => {
     var sort;
 
     if($("#sort").val() == "oldest")
@@ -22,7 +22,8 @@ GetProduct = (search = [] ) => {
     else
         sort = "ORDER BY id";
     var data = [];
-    if(search != []){
+    if(search != ''){
+        alert(12);
         data = search;
     }
     else{

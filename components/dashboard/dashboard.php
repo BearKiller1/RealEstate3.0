@@ -35,12 +35,8 @@
         }
 
         public function EditPhoto(){
-            global $conn;
-
             $pfp        = $_REQUEST['image'];
-            $user_id    = $_SESSION['user_id'];
-            
-            $conn->query("UPDATE users SET profile_pic = '$pfp[0]' WHERE id = '$user_id'");
+            $this->response = Parent::RunQuery("UPDATE users SET profile_pic = '$pfp[0]' WHERE id = ".$this->user);
         }
 
         public function GetMyProduct(){

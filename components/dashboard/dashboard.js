@@ -54,7 +54,7 @@ $(document).ready(function() {
         }
         // AJAX request
         $.ajax({
-            url: 'includes/image_upload.php?profile=true', 
+            url: 'includes/upload.php?profile=true', 
             type: 'post',
             data: form_data,
             dataType: 'json',
