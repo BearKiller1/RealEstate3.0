@@ -2,7 +2,7 @@
 <?php
     
     include_once "../../../includes/Lucid.class.php";
-
+    session_start();
     class Register extends Lucid{
         public $response;
         public $request;
@@ -15,6 +15,26 @@
             $this->request  = $_REQUEST["data"];
             Parent::__construct();
         }
+
+        public function Register(){
+
+            $this->request['password'] = md5($this->request['password']);
+             
+            $this->response = Parent::GetData("SELECT * FROM users WHERE email = ?", $this->request['email']);
+
+            if(!empty($this->response)){
+                $result['data'] = "Email already exists";
+                $result['status'] = 3;
+            }else{
+                $this->response['id'] = Parent::InsertData("users", $this->request, true);
+                $this->response['data'] = "Register Successful";
+                $this->response['status'] = 1;
+                // Save User to session
+                
+                $_SESSION['user_id']  = $this->response['id'];
+            }
+        }
+
 
         /**
          * This function returnt the response of this php file

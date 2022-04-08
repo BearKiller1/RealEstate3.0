@@ -108,7 +108,7 @@
                     })
                     document.getElementById('NH').addEventListener("mousedown",(e)=>{
                         if (document.getElementById('NH').value != "") document.getElementById('NH').value="";
-                    })
+                    });
                     </script>
                 </div>
             </div>
@@ -143,8 +143,8 @@
                 </p>
             </div>
             <div class="text-center">
-                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline">Find rentals</a>
-                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none">ّFind rentals</a>
+                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline"onclick="searchHome(3)">Find rentals</a>
+                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none"onclick="searchHome(3)">ّFind rentals</a>
             </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                 </p>
             </div>
             <div class="text-center">
-                <a role="button" href="" class="btn btn-outline-primary">Sell my home</a>
+                <a role="button" href="#" class="btn btn-outline-primary" onclick="Router('upload')">Sell my home</a>
             </div>
             </div>
         </div>
@@ -194,8 +194,8 @@
                 </p>
             </div>
             <div class="text-center">
-                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline">Search homes</a>
-                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none">Search homes</a>
+                <a role="button" href="#searchbox" class="btn btn-outline-primary d-none d-sm-inline" onclick="searchHome(1)">Search homes</a>
+                <a role="button" href="#msearchbox" class="btn btn-outline-primary d-sm-none" onclick="searchHome(1)">Search homes</a>
             </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
     <div class="container-fluid">
         <div class="d-flex mb-5">
             <h2 id="R-add">Recently added</h2>
-            <a id="V-more" href="#" class="h5 text-dark ml-auto">view more></a>
+            <a id="V-more" href="#" class="h5 text-dark ml-auto" onclick="Router('search')">view more></a>
         </div>
         <div class="row d-flex flex-nowrap overflow-auto" id="latestProd"></div>
     </div>

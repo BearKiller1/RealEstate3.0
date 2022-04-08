@@ -65,13 +65,13 @@ function CreatePHPClass($php,$pagename){
     }
     else{
         $requires = '
-    include_once "../../includes/Lucid.class.php
-    require_once  "../Common.class.php";";';
+    include_once "../../includes/Lucid.class.php";
+    require_once  "../Common.class.php";';
     }
 $class_string = '
 <?php
     ' .$requires. '
-
+    session_start();
     class ' .$class_name. ' extends Lucid{
         public $response;
         public $request;

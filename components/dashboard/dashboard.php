@@ -12,7 +12,7 @@
          * This constructor Sets up response request and connection
          */
         public function __construct(){
-            $this->user = $_SESSION['user_id'];
+            $this->user     = $_SESSION['user_id'];
             $this->common   = new Common();
 
             $this->response = array();
@@ -79,6 +79,7 @@
             $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
             
             $this->bookmarks = Parent::GetData("SELECT * FROM user_bookmarks WHERE user_id = ".$this->user, []);
+            
             for($i=0; $i < COUNT($this->bookmarks); $i++){
                 if($i+1 == COUNT($this->bookmarks)){
                     $this->ids .= $this->bookmarks[$i]['product_id'];
@@ -96,7 +97,7 @@
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
                             LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE    products.actived = 1 AND products.user_id = '".$this->user."' AND products.id IN (".$this->ids.")
+                            WHERE    products.actived = 1 AND products.id IN (".$this->ids.")
                             GROUP BY products.id
                             ORDER BY products.id DESC ";
                     

@@ -35,16 +35,19 @@
             <div class="collapse navbar-collapse" id="mynav">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
-                        <a href="#" id="navBuy" class="nav-link text-dark">Buy</a>
+                        <a href="#" id="navBuy" class="nav-link text-dark" onclick="searchHome(1)">Buy</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="#" id="navMortgage" class="nav-link text-dark">Mortgage</a>
+                        <a href="#" id="navMortgage" class="nav-link text-dark"onclick="searchHome(2)">Mortgage</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="#" id="navRent" class="nav-link text-dark">Rent</a>
+                        <a href="#" id="navRent" class="nav-link text-dark"onclick="searchHome(3)">Rent</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="#" id="navDrent" class="nav-link text-dark">Daily Rent</a>
+                        <a href="#" id="navDrent" class="nav-link text-dark"onclick="searchHome(4)">Daily Rent</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#"  class="nav-link text-dark" onclick="Router('contact')">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +70,6 @@
                     <a href="#"><i class="fas fa-sign-in-alt"><span class="mx-2">Log in</span></i></a>
                 </button>
 
-                
                 <button class="menu_buttons btn btn-outline-primary rounded-pill text-center mx-2" id="menudashboard" onclick="Router('dashboard')">
                     <a href="#"><i class="fas fa-sign-in-alt"><span class="mx-2">Dashboard</span></i></a>
                 </button>

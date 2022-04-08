@@ -135,7 +135,7 @@ Signout = () => {
         },
         success: function (response) {
             localStorage.removeItem('user_id');
-            Router('auth');
+            Router('login','auth');
         }
     })
 }
