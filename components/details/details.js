@@ -50,7 +50,13 @@ GetProductDetails = (ProductID) => {
             else{
                 $("#user_profile").attr("src",response.profile_pic);
             }
-            $("#username").html(response.username);
+
+            if(response.show_perm == 1){
+                $("#username").html(response.username + " " + response.surname);
+            }
+            else{
+                $("#username").html(response.username);
+            }
             // $("#ProductTitle").html('Title:' + response.title  );
             $("#prod_address").html(response.address);
             $("#prod_date").html(response.datetime  );

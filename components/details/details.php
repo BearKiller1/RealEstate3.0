@@ -55,7 +55,9 @@
                                     users.username,
                                     users.phone,
                                     users.gender,
-                                    users.profile_pic
+                                    users.profile_pic,
+                                    users.show_perm,
+                                    users.surname
                             FROM    products 
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN designs ON products.designs = designs.id AND designs.actived = 1
