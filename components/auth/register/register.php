@@ -1,6 +1,6 @@
 
 <?php
-    
+    error_reporting(0);
     include_once "../../../includes/Lucid.class.php";
     session_start();
     class Register extends Lucid{

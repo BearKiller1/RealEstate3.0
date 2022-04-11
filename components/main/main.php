@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     include "../../router.php";
     $data = array();
     $method     = $_REQUEST["method"];

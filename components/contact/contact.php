@@ -1,8 +1,8 @@
 
 <?php
-    
-    include_once "../../includes/Lucid.class.php
-    require_once  "../Common.class.php";";
+    error_reporting(0);
+    include_once "../../includes/Lucid.class.php";
+    require_once  "../Common.class.php";
 
     class Contact extends Lucid{
         public $response;

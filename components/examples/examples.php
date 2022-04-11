@@ -1,7 +1,7 @@
 
 <?php
     include_once "../../includes/Lucid.class.php";
-
+    error_reporting(0);
     class Examples extends Lucid{
         public $response;
         public $request;

@@ -2,7 +2,7 @@
 <?php
     session_start();
     include_once "../../../includes/Lucid.class.php";
-
+    error_reporting(0);
     class Login extends Lucid{
         public $response;
         public $request;

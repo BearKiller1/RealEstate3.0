@@ -1,6 +1,6 @@
 
 <?php
-    
+    error_reporting(0);
     include_once "../includes/Lucid.class.php";
 
     class Common extends Lucid{
