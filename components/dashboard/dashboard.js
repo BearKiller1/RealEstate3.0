@@ -170,23 +170,6 @@ EditUserInfo = () => {
             Router("dashboard");
         }
     })
-
-
-    // $.ajax({
-    //     url: "components/dashboard/dashboard.php",
-    //     data: {
-    //         method: "EditUserInfo",
-    //         email: email,
-    //         username: username,
-    //         phone: phone,
-    //         show_perm: show_perm,
-    //         gender: gender,
-    //         last_name:last_name,
-    //     },
-    //     success: function (response) {
-    //         Router("dashboard");
-    //     }
-    // });
 }
 
 ChangePWD = () => {
@@ -225,7 +208,7 @@ PutUserInfo = (response) => {
     $("#username").html(response.username);
     $("#phone").val(response.phone);
 
-    if(response.profile_pic == ""){
+    if(response.profile_pic == "" || response.profile_pic == null || response.profile_pic == undefined){
         if(response.gender == 1)
             $("#profile").attr("src","assets/images/user.png")
         else
@@ -238,6 +221,7 @@ PutUserInfo = (response) => {
     $("#username-email").val(response.email);
     $("#name").val(response.username);
     $("#lname").val(response.surname);
+
     user_pwd = response.password;
 
     if(response.show_perm == 1){

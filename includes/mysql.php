@@ -27,10 +27,10 @@
         public function __construct(){
             $this->data = array();  
             
-            $this->servername = "born9ahaqkfplmewfwrr-mysql.services.clever-cloud.com";
-            $this->username = "ulhrgdh9op0boakj";
-            $this->password = "t10oWdnFTLgmUhkSTRFP";
-            $this->dbname = "born9ahaqkfplmewfwrr";
+            $this->servername = "localhost";
+            $this->username = "root";
+            $this->password = "";
+            $this->dbname = "RealEstate";
             
             $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
