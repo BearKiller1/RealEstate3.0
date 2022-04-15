@@ -89,7 +89,9 @@ GetUserInfo = () => {
             response = JSON.parse(response);
             response = response[0];
 
-            PutUserInfo(response);
+            if(response != undefined && response != null && response != ""){
+                PutUserInfo(response);
+            }
         }
     });
 }
