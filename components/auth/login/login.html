@@ -6,7 +6,7 @@
                 <h1 class="ml-5 d-none d-sm-inline">Log in</h1>
             </div>
             <div class="card-body">
-                <form class="login_form">
+                <form class="login_form" action="#">
                     <div class="form-group">
                         <label class="" for="Email">Email :</label>
                         <input required type="email" placeholder="Enter email" id="Email" name="Email" class="form-control col-10 mx-auto w-" value="test@gmail.com">
@@ -21,7 +21,7 @@
                             <label for="remember" class="form-check-label">Remember me</label>
                         </div>
                     </div>
-                    <input type="button" value="Log in" class="mx-auto form-control btn btn-primary" id="login" onclick="Login()">
+                    <input type="submit" value="Log in" class="mx-auto form-control btn btn-primary" id="login" onclick="Login()">
                 </form>
             </div>
             <div class="card-subtitle"><p class="ml-5">Don't have an account? <a href="#" onclick="Router('register', 'auth')">Signup now</a></p></div>

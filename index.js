@@ -61,3 +61,14 @@ Details = (ProductID) => {
     window.localStorage.setItem("ProductID", ProductID);
     Router('details')
 }
+
+Loader = (Toggler) => {
+    if(Toggler){
+        $("#loader").css("display", "block");
+        $("#blackhole").css("display", "block");
+    }
+    else{
+        $("#loader").css("display", "none");
+        $("#blackhole").css("display", "none");
+    }
+}

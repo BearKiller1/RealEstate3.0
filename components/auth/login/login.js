@@ -1,3 +1,7 @@
+$( ".login_form" ).on( "submit", function(e) {
+    login();
+})
+
 Login = () => {
     Ajax({
         url     : "login",

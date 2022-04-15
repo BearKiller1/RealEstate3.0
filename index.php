@@ -183,4 +183,8 @@
         </footer>
     </div>
 </body>
+
+<div class="loader" id="loader"></div>
+<div class="blackhole" id="blackhole"></div>
+
 </html>

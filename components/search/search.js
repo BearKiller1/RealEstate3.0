@@ -9,6 +9,7 @@ $(document).ready(() => {
 })
 
 GetProduct = (search = '' ) => {
+    Loader(true);
     var sort;
 
     if($("#sort").val() == "oldest")
@@ -58,6 +59,8 @@ GetProduct = (search = '' ) => {
                 $("#prod_container").html("<h1>No results found</h1>");
             }
             localStorage['search'] = '';
+            
+            Loader(false);
         }
     })
 }

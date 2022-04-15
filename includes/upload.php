@@ -17,7 +17,6 @@ else{
 }
 // To store uploaded files path
 $files_arr = array();
-
 // Loop all files
 for($i = 0;$i < $countfiles;$i++){
 
@@ -41,7 +40,16 @@ for($i = 0;$i < $countfiles;$i++){
          if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$path)){
             $files_arr[] = $real_path.$filename;
          }
+         else{
+            $files_arr['message'] = 'Some error occurred while uploading file';
+         }
       }
+      else{
+         $files_arr['message'] = "Invalid file type";
+      }
+   }
+   else{
+      $files_arr['message'] = "Please select a file";
    }
 }
 
