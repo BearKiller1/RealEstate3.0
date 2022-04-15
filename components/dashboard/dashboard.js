@@ -209,13 +209,18 @@ PutUserInfo = (response) => {
     $("#phone").val(response.phone);
 
     if(response.profile_pic == "" || response.profile_pic == null || response.profile_pic == undefined){
-        if(response.gender == 1)
+        if(response.gender == 1){
             $("#profile").attr("src","assets/images/user.png")
-        else
+            $("#user_image_menu").attr("src",'assets/images/user.png');
+        }
+        else{
             $("#profile").attr("src","assets/images/fuser.png");
+            $("#user_image_menu").attr("src",'assets/images/fuser.png');
+        }
     }
     else{
         $("#profile").attr("src",response.profile_pic);
+        $("#user_image_menu").attr("src",response.profile_pic);
     }
 
     $("#username-email").val(response.email);
