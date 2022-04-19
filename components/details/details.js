@@ -19,6 +19,7 @@ GetProductDetails = (ProductID) => {
         success:(response) => {
             response = JSON.parse(response);
             
+            console.log(response)
             $("#facilities").html(response.facilities);
             if(response.bookmark == 1){
                 $("#book").attr("class","fas fa-bookmark");
@@ -68,7 +69,9 @@ GetProductDetails = (ProductID) => {
             $("#prod_room").html(response.number_of_rooms + " Rooms");
             $("#prod_bedroom").html(response.bedroom + " Bedrooms"  );
             $("#description").html(response.description_en          );
-
+            if(response.build_year == null || response.build_year == undefined ){ response.build_year = 0 }
+            $("#building_year").html(response.build_year + " year building");
+            console.log(response)
         }
     })
 }

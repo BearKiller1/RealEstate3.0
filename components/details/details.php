@@ -47,6 +47,7 @@
             $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
             
             $this->sql = "  SELECT  products.id AS product_id,
+                                    IFNULL(YEAR(NOW()) - IFNULL(products.building_year,YEAR(NOW())), 0) AS build_year,
                                     building_type.name AS building_type_name,
                                     building_status.name AS building_status_name,
                                     condition.name AS condition_name,

@@ -112,6 +112,15 @@
             }
         }
 
+        public function City(){
+            $sql = "SELECT * FROM city WHERE actived = 1";
+            $this->response = Parent::GetData($sql, []);
+            
+            for ($i=0; $i < COUNT($this->response); $i++) { 
+                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            }
+        }
+
         public function BuildingStatus(){
             $sql = "SELECT * FROM building_status WHERE actived = 1";
             $this->response = Parent::GetData($sql, []);

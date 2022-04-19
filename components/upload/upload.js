@@ -3,6 +3,7 @@ $(document).ready(() => {
     TransactionType();
     BuildingType();
     BuildingStatus();
+    City();
 })
 
 UploadFiles = () => {
@@ -126,7 +127,9 @@ UploadProduct = () => {
                 building_status    : $("option[value='"+$("#statusI").val()+"']").attr('data_id')       ,
                 district_id        : $("option[value='"+$("#district").val()+"']").attr('data_id')      ,
                 sub_district_id    : $("option[value='"+$("#NH").val()+"']").attr('data_id')            ,
-                designs             : $("option[value='"+$("#Design").val()+"']").attr('data_id')        ,
+                designs            : $("option[value='"+$("#Design").val()+"']").attr('data_id')        ,
+                city_id            : $("option[value='"+$("#city").val()+"']").attr('data_id')          ,
+                building_year      : $("#year").val(),
                 cadastral          : $("#Cadastral").val(),
                 address            : $("#F-address").val(),
                 floor              : $("#floor").val(),
@@ -190,6 +193,10 @@ BuildingStatus = () => {
 
 District = () => {
     Call("District", "districts");
+}
+
+City = () => {
+    Call("City", "cities");
 }
 
 ChildDistrict = () => {
