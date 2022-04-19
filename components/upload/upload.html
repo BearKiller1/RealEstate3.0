@@ -27,7 +27,172 @@
                         <datalist id="status">
                         </datalist>
                     </div>
+                    <div class="form-group">
+                        <label id="yearl" class="text-sm-right col-sm-4" for="year">Year :</label>
+                        <input type="text" pattern="[1950-2022]{4}" id="year" class="form-control mx-auto d-inline col-10 col-sm-8 rounded float-right" placeholder="Year of construction" title="Too old building">
+                    </div>
                     <h2 id="locationl" class="mx-auto mt-5 mb-3">Location</h2>
+                    <div class="form-group">
+                        <label id="cityl" class="text-sm-right col-sm-4" for="city">City :</label>
+                        <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="city" list="cities" placeholder="Select city">
+                        <datalist id="cities">
+                            <option id="Tbilisi" value="Tbilisi"></option>
+                            <option id="Kutaisi" value="Kutaisi"></option>
+                            <option id="Rustavi" value="Rustavi"></option>
+                            <option id="Batumi" value="Batumi"></option>
+                            <option id="Abasha" value="Abasha"></option>
+                            <option id="Abastumani" value="Abastumani"></option>
+                            <option id="Adigeni" value="Adigeni"></option>
+                            <option id="Agara" value="Agara"></option>
+                            <option id="Akhalkalaki" value="Akhalkalaki"></option>
+                            <option id="Akhaltsikhe" value="Akhaltsikhe"></option>
+                            <option id="Akhmeta" value="Akhmeta"></option>
+                            <option id="Ambrolauri" value="Ambrolauri"></option>
+                            <option id="Anaklia" value="Anaklia"></option>
+                            <option id="Aspindza" value="Aspindza"></option>
+                            <option id="Baghdati" value="Baghdati"></option>
+                            <option id="Bakuriani" value="Bakuriani"></option>
+                            <option id="Bolnisi" value="Bolnisi"></option>
+                            <option id="Borjomi" value="Borjomi"></option>
+                            <option id="Chakvi" value="Chakvi"></option>
+                            <option id="Chiatura" value="Chiatura"></option>
+                            <option id="Chkhorotsku" value="Chkhorotsku"></option>
+                            <option id="Chokhatauri" value="Chokhatauri"></option>
+                            <option id="Dedoplistskaro" value="Dedoplistskaro"></option>
+                            <option id="Dmanisi" value="Dmanisi"></option>
+                            <option id="Dusheti" value="Dusheti"></option>
+                            <option id="Gagra" value="Gagra"></option>
+                            <option id="Gali" value="Gali"></option>
+                            <option id="Gardabani" value="Gardabani"></option>
+                            <option id="Gori" value="Gori"></option>
+                            <option id="Gudauri" value="Gudauri"></option>
+                            <option id="Gudauta" value="Gudauta"></option>
+                            <option id="Gulripsh" value="Gulripsh"></option>
+                            <option id="Gurjaani" value="Gurjaani"></option>
+                            <option id="Java" value="Java"></option>
+                            <option id="Jvari" value="Jvari"></option>
+                            <option id="Kareli" value="Kareli"></option>
+                            <option id="Kaspi" value="Kaspi"></option>
+                            <option id="Kazreti" value="Kazreti"></option>
+                            <option id="Keda" value="Keda"></option>
+                            <option id="Kharagauli" value="Kharagauli"></option>
+                            <option id="Khashuri" value="Khashuri"></option>
+                            <option id="Khelvachauri" value="Khelvachauri"></option>
+                            <option id="Khobi" value="Khobi"></option>
+                            <option id="Khoni" value="Khoni"></option>
+                            <option id="Khulo" value="Khulo"></option>
+                            <option id="Kobuleti" value="Kobuleti"></option>
+                            <option id="Kvaisa" value="Kvaisa"></option>
+                            <option id="Kvareli" value="Kvareli"></option>
+                            <option id="Lagodekhi" value="Lagodekhi"></option>
+                            <option id="Lanchkhuti" value="Lanchkhuti"></option>
+                            <option id="Leningor" value="Leningor"></option>
+                            <option id="Lentekhi" value="Lentekhi"></option>
+                            <option id="Manglisi" value="Manglisi"></option>
+                            <option id="Marneuli" value="Marneuli"></option>
+                            <option id="Martvili" value="Martvili"></option>
+                            <option id="Mestia" value="Mestia"></option>
+                            <option id="Mtskheta" value="Mtskheta"></option>
+                            <option id="New Athos" value="New Athos"></option>
+                            <option id="Ninotsminda" value="Ninotsminda"></option>
+                            <option id="Ochamchira" value="Ochamchira"></option>
+                            <option id="Oni" value="Oni"></option>
+                            <option id="Ozurgeti" value="Ozurgeti"></option>
+                            <option id="Pitsunda" value="Pitsunda"></option>
+                            <option id="Poti" value="Poti"></option>
+                            <option id="Sachkhere" value="Sachkhere"></option>
+                            <option id="Sadakhlo" value="Sadakhlo"></option>
+                            <option id="Sagarejo" value="Sagarejo"></option>
+                            <option id="Samtredia" value="Samtredia"></option>
+                            <option id="Senaki" value="Senaki"></option>
+                            <option id="Shaumyani" value="Shaumyani"></option>
+                            <option id="Shuakhevi" value="Shuakhevi"></option>
+                            <option id="Sighnaghi" value="Sighnaghi"></option>
+                            <option id="Sioni" value="Sioni"></option>
+                            <option id="Sokhumi" value="Sokhumi"></option>
+                            <option id="Stepantsminda" value="Stepantsminda"></option>
+                            <option id="Surami" value="Surami"></option>
+                            <option id="Telavi" value="Telavi"></option>
+                            <option id="Terjola" value="Terjola"></option>
+                            <option id="Tetritskaro" value="Tetritskaro"></option>
+                            <option id="Tianeti" value="Tianeti"></option>
+                            <option id="Tkibuli" value="Tkibuli"></option>
+                            <option id="Tsageri" value="Tsageri"></option>
+                            <option id="Tsalenjikha" value="Tsalenjikha"></option>
+                            <option id="Tsalka" value="Tsalka"></option>
+                            <option id="Tskaltubo" value="Tskaltubo"></option>
+                            <option id="Tskhinvali" value="Tskhinvali"></option>
+                            <option id="Tsnori" value="Tsnori"></option>
+                            <option id="Vale" value="Vale"></option>
+                            <option id="Vani" value="Vani"></option>
+                            <option id="Zestaponi" value="Zestaponi"></option>
+                            <option id="Zugdidi" value="Zugdidi"></option>
+                            <option id="Abasha-Municipality" value="Abasha Municipality"></option>
+                            <option id="Adigeni-Municipality" value="Adigeni Municipality"></option>
+                            <option id="Akhalkalaki-Municipality" value="Akhalkalaki Municipality"></option>
+                            <option id="Akhaltsikhe-Municipality" value="Akhaltsikhe Municipality"></option>
+                            <option id="Akhmeta-Municipality" value="Akhmeta Municipality"></option>
+                            <option id="Ambrolauri-Municipality" value="Ambrolauri Municipality"></option>
+                            <option id="Aspindza-Municipality" value="Aspindza Municipality"></option>
+                            <option id="Autonomous-Republic-of-Abkhazia" value="Autonomous Republic of Abkhazia"></option>
+                            <option id="Baghdati-Municipality" value="Baghdati Municipality"></option>
+                            <option id="Bolnisi-Municipality" value="Bolnisi Municipality"></option>
+                            <option id="Borjomi-Municipality" value="Borjomi Municipality"></option>
+                            <option id="Chkhorotsqu-Municipality" value="Chkhorotsqu Municipality"></option>
+                            <option id="Chokhatauri-Municipality" value="Chokhatauri Municipality"></option>
+                            <option id="Dedoplistsqaro-Municipality" value="Dedoplistsqaro Municipality"></option>
+                            <option id="Dmanisi-Municipality" value="Dmanisi Municipality"></option>
+                            <option id="Dusheti-Municipality" value="Dusheti Municipality"></option>
+                            <option id="Dzau-District" value="Dzau District"></option>
+                            <option id="Gardabani-Municipality" value="Gardabani Municipality"></option>
+                            <option id="Gori-Municipality" value="Gori Municipality"></option>
+                            <option id="Gurjaani-Municipality" value="Gurjaani Municipality"></option>
+                            <option id="Kareli-Municipality" value="Kareli Municipality"></option>
+                            <option id="Kaspi-Municipality" value="Kaspi Municipality"></option>
+                            <option id="Kazbegi-Municipality" value="Kazbegi Municipality"></option>
+                            <option id="Keda-Municipality" value="Keda Municipality"></option>
+                            <option id="Khashuri-Municipality" value="Khashuri Municipality"></option>
+                            <option id="Khelvachauri-Municipality" value="Khelvachauri Municipality"></option>
+                            <option id="Khobi-Municipality" value="Khobi Municipality"></option>
+                            <option id="Khoni-Municipality" value="Khoni Municipality"></option>
+                            <option id="Khulo-Municipality" value="Khulo Municipality"></option>
+                            <option id="Kobuleti-Municipality" value="Kobuleti Municipality"></option>
+                            <option id="Kvareli -Municipality" value="Kvareli  Municipality"></option>
+                            <option id="Lanchkhuti-Municipality" value="Lanchkhuti Municipality"></option>
+                            <option id="Leningor-District" value="Leningor District"></option>
+                            <option id="Lentekhi-Municipality" value="Lentekhi Municipality"></option>
+                            <option id="Marneuli-Municipality" value="Marneuli Municipality"></option>
+                            <option id="Martvili-Municipality" value="Martvili Municipality"></option>
+                            <option id="Mestia-Municipality" value="Mestia Municipality"></option>
+                            <option id="Mtskheta-Municipality" value="Mtskheta Municipality"></option>
+                            <option id="Ninotsminda-Municipality" value="Ninotsminda Municipality"></option>
+                            <option id="Oni-Georgia" value="Oni, Georgia"></option>
+                            <option id="Ozurgeti-Municipality" value="Ozurgeti Municipality"></option>
+                            <option id="Raion-Kharagauli" value="Raion Kharagauli"></option>
+                            <option id="Raion-Lagodekhi" value="Raion Lagodekhi"></option>
+                            <option id="Raion-Sachkhere" value="Raion Sachkhere"></option>
+                            <option id="Sagarejo-Municipality" value="Sagarejo Municipality"></option>
+                            <option id="Samtredia-Municipality" value="Samtredia Municipality"></option>
+                            <option id="Senaki-Municipality" value="Senaki Municipality"></option>
+                            <option id="Shuakhevi-Municipality" value="Shuakhevi Municipality"></option>
+                            <option id="Signagi-Municipality" value="Signagi Municipality"></option>
+                            <option id="Telavi-Municipality" value="Telavi Municipality"></option>
+                            <option id="Terjola" value="Terjola"></option>
+                            <option id="Tetritskaro-Municipality" value="Tetritskaro Municipality"></option>
+                            <option id="Tianeti-Municipality" value="Tianeti Municipality"></option>
+                            <option id="Tqibuli-Municipality" value="Tqibuli Municipality"></option>
+                            <option id="Tsageri-Municipality" value="Tsageri Municipality"></option>
+                            <option id="Tsalenjikha-Municipality" value="Tsalenjikha Municipality"></option>
+                            <option id="Tsalka-Municipality" value="Tsalka Municipality"></option>
+                            <option id="Tskaltubo-Municipality" value="Tskaltubo Municipality"></option>
+                            <option id="Tskhinval" value="Tskhinval"></option>
+                            <option id="Tskhinvali-District" value="Tskhinvali District"></option>
+                            <option id="Vani-Municipality" value="Vani Municipality"></option>
+                            <option id="Zestaponi-Municipality" value="Zestaponi Municipality"></option>
+                            <option id="Znaur-District" value="Znaur District"></option>
+                            <option id="Zugdidi-Municipality" value="Zugdidi Municipality"></option>
+                        </datalist>
+                    </div>
                     <div class="form-group">
                         <label class="text-sm-right col-sm-4" for="district">district :</label>
                         <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="district" list="districts" placeholder="Select district" autocomplete="off" onchange="ChildDistrict()">
