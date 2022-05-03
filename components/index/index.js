@@ -35,14 +35,6 @@ SearchDetails = () => {
     Router('search');
 }
 
-
-searchHome = (type) => {
-    var obj = {
-        transaction : type ,
-    }
-    window.localStorage.setItem("search", JSON.stringify(obj));
-    Router('search');
-}
 TransactionType = () => {
     Call("TransactionType", "transaction");
 }

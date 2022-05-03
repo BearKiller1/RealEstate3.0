@@ -88,25 +88,25 @@
                         <h5 id="announcements" class="ml-3">Announcements</h5>
                         <ul class="list-unstyled ml-3">
                         <li>
-                            <a id="rent-tbilisi" class="text-white" href="">Rent a flat in tbilisi</a>
+                            <a id="rent-tbilisi" class="text-white" href="#" onclick="searchHome(3, 1)">Rent a flat in tbilisi</a>
                         </li>
                         <li>
-                            <a id="rent-ortachala" class="text-white" href="">Rent a apartments in Ortachala </a>
+                            <a id="rent-ortachala" class="text-white" href="#" onclick="searchHome(3, 1, '', 46)">Rent a apartments in Ortachala </a>
                         </li>
                         <li>
-                            <a id="rent-varketili" class="text-white" href="">Rent a apartments in Varketili</a>
+                            <a id="rent-varketili" class="text-white" href="#" onclick="searchHome(3, 1, '', 94)">Rent a apartments in Varketili</a>
                         </li>
                         <li>
-                            <a id="rent-gldani" class="text-white" href="">Rent a apartments in Gldani</a>
+                            <a id="rent-gldani" class="text-white" href="#" onclick="searchHome(3, 1, 1)">Rent a apartments in Gldani</a>
                         </li>
                         <li>
-                            <a id="rent-isani" class="text-white" href="">Rent a apartments in Isani</a>
+                            <a id="rent-isani" class="text-white" href="#" onclick="searchHome(3, 1, 4)">Rent a apartments in Isani</a>
                         </li>
                         <li>
-                            <a id="rent-didube" class="text-white" href="">Rent a apartments in Didube</a>
+                            <a id="rent-didube" class="text-white" href="#" onclick="searchHome(3, 1, 2)">Rent a apartments in Didube</a>
                         </li>
                         <li>
-                            <a id="rent-dighomi" class="text-white" href="">Rent a apartments in Didi Dighomi</a>
+                            <a id="rent-dighomi" class="text-white" href="#" onclick="searchHome(3, 1, '', 85)">Rent a apartments in Didi Dighomi</a>
                         </li>
                         </ul>
                     </div>
@@ -115,25 +115,25 @@
                         <h5 id="newly-built">Newly built</h5>
                         <ul class="list-unstyled">
                         <li>
-                            <a id="uctbilisi" class="text-white" href="">Under construction apartments for sale in Tbilisi</a>
+                            <a id="uctbilisi" class="text-white" href="#" onclick="searchHome('', 1, '', '',2)">Under construction apartments for sale in Tbilisi</a>
                         </li>
                         <li>
-                            <a id="ucsaburtalo" class="text-white" href="">Under construction apartments for sale on Saburtalo</a>
+                            <a id="ucsaburtalo" class="text-white" href="#" onclick="searchHome('', 1, '', 84, 2)">Under construction apartments for sale on Saburtalo</a>
                         </li>
                         <li>
-                            <a id="ucdighomi" class="text-white" href="">Under construction apartments for sale in Big Dighomi</a>
+                            <a id="ucdighomi" class="text-white" href="#" onclick="searchHome(1, 1, '', 85, 2)">Under construction apartments for sale in Big Dighomi</a>
                         </li>
                         <li>
-                            <a id="sale-gldani" class="text-white" href="">Apartments for sale in Gldani</a>
+                            <a id="sale-gldani" class="text-white" href="#" onclick="searchHome(1, 1, 1, '', 1, 1)">Apartments for sale in Gldani</a>
                         </li>
                         <li>
-                            <a id="sale-isani" class="text-white" href="">Apartments for sale in Isani</a>
+                            <a id="sale-isani" class="text-white" href="#" onclick="searchHome(1, '', 4, '', '', 1)">Apartments for sale in Isani</a>
                         </li>
                         <li>
-                            <a id="psale-tbilisi" class="text-white" href="">Tbilisi property for sale</a>
+                            <a id="psale-tbilisi" class="text-white" href="#" onclick="searchHome(1, 1)">Tbilisi property for sale</a>
                         </li>
                         <li>
-                            <a id="sale-temqa" class="text-white" href="">apartment for sale on Temqa</a>
+                            <a id="sale-temqa" class="text-white" href="#" onclick="searchHome(1, '', '', 67, 1)">apartment for sale on Temqa</a>
                         </li>
                         </ul>
                     </div>
@@ -142,39 +142,39 @@
                         <h5 id="under-construction">Under construction</h5>
                         <ul class="list-unstyled">
                         <li>
-                            <a id="rent-batumi" class="text-white" href="">Apartments for rent in Batumi</a>
+                            <a id="rent-batumi" class="text-white" href="#">Apartments for rent in Batumi</a>
                         </li>
                         <li>
-                            <a id="rent-kobuleti" class="text-white" href="">Apartments for rent in Kobuleti</a>
+                            <a id="rent-kobuleti" class="text-white" href="#">Apartments for rent in Kobuleti</a>
                         </li>
                         <li>
-                            <a id="rent-kutaisi" class="text-white" href="">Apartments for rent in Kutaisi</a>
+                            <a id="rent-kutaisi" class="text-white" href="#">Apartments for rent in Kutaisi</a>
                         </li>
                         <li>
-                            <a id="hsale-saguramo" class="text-white" href="">Houses for sale in Saguramo</a>
+                            <a id="hsale-saguramo" class="text-white" href="#">Houses for sale in Saguramo</a>
                         </li>
                         <li>
-                            <a id="hsale-bakuriani" class="text-white" href="">Houses for sale in Bakuriani</a>
+                            <a id="hsale-bakuriani" class="text-white" href="#">Houses for sale in Bakuriani</a>
                         </li>
                         <li>
-                            <a id="lsale-georgia" class="text-white" href="">land in georgia for sale</a>
+                            <a id="lsale-georgia" class="text-white" href="#">land in georgia for sale</a>
                         </li>
                         <li>
-                            <a id="hcsale-tbilisi" class="text-white" href="">Houses and Cottages for sale in Tbilisi</a>
+                            <a id="hcsale-tbilisi" class="text-white" href="#">Houses and Cottages for sale in Tbilisi</a>
                         </li>
                         </ul>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center">
                         <h1 class="display-3">
-                        <a href="" class="text-white">
+                        <a href="#" class="text-white">
                             <img style="width: 200px;" src="assets/images/logo1.png" alt="">
                         </a>
                         </h1>
                         <h2 class="text-white mb-5">...</h2>
-                        <a class="text-white" href=""><i class="fab fa-instagram fa-lg"></i></a>
-                        <a class="text-white" href=""><i class="fab fa-facebook fa-lg mx-1"></i></a>
-                        <a class="text-white" href=""><i class="fab fa-telegram fa-lg"></i></a>
+                        <a class="text-white" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a class="text-white" href="#"><i class="fab fa-facebook fa-lg mx-1"></i></a>
+                        <a class="text-white" href="#"><i class="fab fa-telegram fa-lg"></i></a>
                         <hr>
                         <div class="d-flex justify-content-center mt-5"><p id="createdby" class="text-light position-absolute" style="bottom: 0px;">Created by Ashkan811 &copy;</p></div>
                     </div>

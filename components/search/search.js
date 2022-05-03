@@ -23,6 +23,7 @@ GetProduct = (search = '' ) => {
     else
         sort = "ORDER BY id";
     var data = [];
+    
     if(search != ''){
         data = search;
     }

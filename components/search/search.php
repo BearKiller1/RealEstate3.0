@@ -44,6 +44,8 @@
                             ".$this->building_statusFilter."
                             ".$this->districtFilter ."
                             ".$this->child_districtFilter."
+                            ".$this->cityFilter."
+                            ".$this->conditionFilter."
                             GROUP BY products.id
                             ".$this->request['sorting'];
 
@@ -89,11 +91,13 @@
                 ";
             }
 
-            $this->transaction = $this->request['transaction'];
-            $this->building_type = $this->request['building_type'];
-            $this->building_status = $this->request['building_status'];
-            $this->district = $this->request['district'];
-            $this->child_district = $this->request['child_district'];
+            $this->transaction      = $this->request['transaction'];
+            $this->building_type    = $this->request['building_type'];
+            $this->building_status  = $this->request['building_status'];
+            $this->district         = $this->request['district'];
+            $this->child_district   = $this->request['child_district'];
+            $this->city             = $this->request['city'];
+            $this->condition        = $this->request['condition'];
 
             if($this->transaction  != 0 && $this->transaction != ''){
                 $this->transactionFilter = " AND transaction_type = ".$this->transaction;
@@ -108,7 +112,13 @@
                 $this->districtFilter = " AND district_id = ".$this->district;
             }
             if($this->child_district != 0 && $this->child_district != ''){
-                $this->child_districtFilter = " AND type_id = ".$this->child_district;
+                $this->child_districtFilter = " AND sub_district_id = ".$this->child_district;
+            }
+            if($this->city != 0 && $this->city != ''){
+                $this->cityFilter = " AND city_id = ".$this->city;
+            }
+            if($this->condition != 0 && $this->condition != ''){
+                $this->conditionFilter = " AND condition_id = ".$this->condition;
             }
         }
 

@@ -72,3 +72,16 @@ Loader = (Toggler) => {
         $("#blackhole").css("display", "none");
     }
 }
+
+searchHome = (type = '', city = '', district = '', child_district = '', condition = '', building_type = '') => {
+    var obj = {
+        transaction     : type ,
+        city            : city,
+        district        : district ,
+        child_district  : child_district,
+        condition       : condition,
+        building_type   : building_type,
+    }
+    window.localStorage.setItem("search", JSON.stringify(obj));
+    Router('search');
+}
