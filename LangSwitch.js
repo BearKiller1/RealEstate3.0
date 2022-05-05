@@ -351,9 +351,11 @@ var LangSwitch = {
         "Other": "Other",
         "Other2": "Other",
         "Dashboard": "Dashboard",
+        "incommings": "Incomming",
     },
     "Georgian":
     {
+        "incommings": "მომართვები",
         "navBuy": "იყიდება",
         "navMortgage": "გირავდება",
         "navRent": "ქირავდება",

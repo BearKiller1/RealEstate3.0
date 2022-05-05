@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    if(window.localStorage.getItem('lang') == 1){
+        $("#change-lan-ka").addClass("d-none");
+    }
+    else if(window.localStorage.getItem('lang') == 2){
+        $("#change-lan-en").addClass("d-none");
+    }
     GetUserInfo();
     var user_pwd;
     for (let i = 1; i < 7; i++) {

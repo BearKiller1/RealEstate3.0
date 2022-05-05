@@ -50,7 +50,7 @@
                                     <span id="signoutl" class="align-self-center" >Sign out</span>
                                 </a>
                             </li>
-                            <li class="nav-item border-bottom " onclick="Router("contact")">
+                            <li class="nav-item border-bottom " onclick="Router('contact')">
                                 <a id="nav5" href="#" class="nav-link text-dark my-2 ">
                                     <i class="fas fa-phone-alt fa-lg mr-3"></i>
                                     <span id="contactl" class="align-self-center">Contact</span>
@@ -62,13 +62,13 @@
                                     <span id="incommings" class="align-self-center">incommings</span>
                                 </a>
                             </li>
-                            <li id="change-lan-ka" class="nav-item border-bottom ">
+                            <li id="change-lan-ka" class="nav-item border-bottom " onclick="GeoName(); $('#change-lan-ka').addClass('d-none'); $('#change-lan-en').removeClass('d-none')">
                                 <a href="#" class="nav-link text-dark my-2 ">
                                     <i class="fas fa-language fa-lg mr-3"></i>
                                     <span class="align-self-center">ქართული</span>
                                 </a>
                             </li>
-                            <li id="change-lan-en" class="nav-item border-bottom d-none">
+                            <li id="change-lan-en" class="nav-item border-bottom " onclick="EngName(); $('#change-lan-en').addClass('d-none'); $('#change-lan-ka').removeClass('d-none')">
                                 <a href="#" class="nav-link text-dark my-2 ">
                                     <i class="fas fa-language fa-lg mr-3"></i>
                                     <span class="align-self-center">English</span>
