@@ -94,26 +94,26 @@
             $this->off      = 'border border- rounded-pill text- px-2 py-1 mx-1 d-inline-block my-2';
             $this->inline   = 'border border-secondary rounded-pill text-muted px-2 py-1 mx-1 d-inline-block my-2';
             
-            $res['bedroom'] > 0 ? $res['bedroomC'] = $this->on : $res['bedroomC'] = $this->off;
-            $res['ceiling_height'] > 0 ? $res['ceiling_heightC'] = $this->on : $res['ceiling_heightC'] = $this->off;
-            $res['balcony'] > 0 ? $res['balconyC'] = $this->on : $res['balconyC'] = $this->off;
-            $res['veranda'] > 0 ? $res['verandaC'] = $this->on : $res['verandaC'] = $this->off;
-            $res['loggia']  > 0 ? $res['loggiaC']  = $this->on : $res['loggiaC']  = $this->off;
-            $res['veranda'] > 0 ? $res['verandaC'] = $this->on : $res['verandaC'] = $this->off;
-            $res['bathroom'] > 0 ? $res['bathroomC'] = $this->on : $res['bathroomC'] = $this->off;
-            $res['heating'] > 0 ? $res['heatingC'] = $this->on : $res['heatingC'] = $this->off;
-            $res['parking'] > 0 ? $res['parkingC'] = $this->on : $res['parkingC'] = $this->off;
-            $res['storeroom'] > 0 ? $res['storeroomC'] = $this->on : $res['storeroomC'] = $this->off;
-            $res['hot_water'] > 0 ? $res['hot_waterC'] = $this->on : $res['hot_waterC'] = $this->off;
-            $res['gas'] > 0 ? $res['gasC'] = $this->on : $res['gasC'] = $this->off;
-            $res['internet'] > 0 ? $res['internetC'] = $this->on : $res['internetC'] = $this->off;
-            $res['fireplace'] > 0 ? $res['fireplaceC'] = $this->on : $res['fireplaceC'] = $this->off;
-            $res['furniture'] > 0 ? $res['furnitureC'] = $this->on : $res['furnitureC'] = $this->off;
-            $res['passenger_elevator'] > 0 ? $res['passenger_elevatorC'] = $this->on : $res['passenger_elevatorC'] = $this->off;
-            $res['service_elevator'] > 0 ? $res['service_elevatorC'] = $this->on : $res['service_elevatorC'] = $this->off;
-            $res['telephone'] > 0 ? $res['telephoneC'] = $this->on : $res['telephoneC'] = $this->off;
-            $res['television'] > 0 ? $res['televisionC'] = $this->on : $res['televisionC'] = $this->off;
-            $res['air_conditioner'] > 0 ? $res['air_conditionerC'] = $this->on : $res['air_conditionerC'] = $this->off;
+            $res['bedroom'] > 0             ? $res['bedroomC']              = $this->on : $res['bedroomC']          = $this->off;
+            $res['ceiling_height'] > 0      ? $res['ceiling_heightC']       = $this->on : $res['ceiling_heightC']   = $this->off;
+            $res['balcony'] > 0             ? $res['balconyC']              = $this->on : $res['balconyC']          = $this->off;
+            $res['veranda'] > 0             ? $res['verandaC']              = $this->on : $res['verandaC']          = $this->off;
+            $res['loggia']  > 0             ? $res['loggiaC']               = $this->on : $res['loggiaC']           = $this->off;
+            $res['veranda'] > 0             ? $res['verandaC']              = $this->on : $res['verandaC']          = $this->off;
+            $res['bathroom'] > 0            ? $res['bathroomC']             = $this->on : $res['bathroomC']         = $this->off;
+            $res['heating'] > 0             ? $res['heatingC']              = $this->on : $res['heatingC']          = $this->off;
+            $res['parking'] > 0             ? $res['parkingC']              = $this->on : $res['parkingC']          = $this->off;
+            $res['storeroom'] > 0           ? $res['storeroomC']            = $this->on : $res['storeroomC']        = $this->off;
+            $res['hot_water'] > 0           ? $res['hot_waterC']            = $this->on : $res['hot_waterC']        = $this->off;
+            $res['gas'] > 0                 ? $res['gasC']                  = $this->on : $res['gasC']              = $this->off;
+            $res['internet'] > 0            ? $res['internetC']             = $this->on : $res['internetC']         = $this->off;
+            $res['fireplace'] > 0           ? $res['fireplaceC']            = $this->on : $res['fireplaceC']        = $this->off;
+            $res['furniture'] > 0           ? $res['furnitureC']            = $this->on : $res['furnitureC']        = $this->off;
+            $res['passenger_elevator'] > 0  ? $res['passenger_elevatorC']   = $this->on : $res['passenger_elevatorC'] = $this->off;
+            $res['service_elevator'] > 0    ? $res['service_elevatorC']     = $this->on : $res['service_elevatorC'] = $this->off;
+            $res['telephone'] > 0           ? $res['telephoneC']            = $this->on : $res['telephoneC']        = $this->off;
+            $res['television'] > 0          ? $res['televisionC']           = $this->on : $res['televisionC']       = $this->off;
+            $res['air_conditioner'] > 0     ? $res['air_conditionerC']      = $this->on : $res['air_conditionerC']  = $this->off;
             
             if($res['designs'] == 0){
                 $res['designsC'] = $this->inline;
@@ -133,9 +133,9 @@
 
             $this->html = '
                     <h5 class="d-block">facilities</h5>
-                    <span class=" '.$res['conditionC'].'      "> '.$res['condition_name'].' </span>
-                    <span class=" '.$res['designsC'].'           ">'.$res['design_name'].'</span>
-                    <span class=" '.$res['ceiling_heightC']. '   ">Ceiling height '.$res['ceiling_height']. ' M</span>
+                    <span class=" '.$res['conditionC'].'        "> '.$res['condition_name'].' </span>
+                    <span class=" '.$res['designsC'].'          ">'.$res['design_name'].'</span>
+                    <span class=" '.$res['ceiling_heightC']. '  ">Ceiling height '.$res['ceiling_height']. ' M</span>
                     <span class=" '.$res['bedroomC']. '         ">Bedroom '.$res['bedroom'].'</span>
                     <span class=" '.$this->on . '               ">Adapted to PSN</span>
                     <span class=" '.$res['balconyC'].'          ">Balcony</span>

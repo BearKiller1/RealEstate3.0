@@ -1,7 +1,7 @@
 $(document).ready(function() {
     GetUserInfo();
     var user_pwd;
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
         document.getElementById("nav"+i).addEventListener("click",(e)=>{
             try{document.querySelector('.selected').className='nav-link text-dark my-2 ';}catch{} 
             document.getElementById('nav'+i).className += 'selected';
@@ -10,6 +10,8 @@ $(document).ready(function() {
             document.getElementById('sec-ad').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
             document.getElementById('sec-edit').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
             document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
+            document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
+            document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 d-none";
             switch (document.querySelector('#nav'+i+' span').innerText) {
                 case "My announcements":
                     document.getElementById('sec-mya').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
@@ -17,7 +19,7 @@ $(document).ready(function() {
                 case "ჩემი განცხადებები":
                     document.getElementById('sec-mya').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
-        
+
                 case "Advertisement":
                     document.getElementById('sec-ad').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
@@ -31,11 +33,15 @@ $(document).ready(function() {
                 case "ანგარიშის რედაქტირება":
                     document.getElementById('sec-edit').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
+
                 case "My bookmarks":
                     document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
                 case "ჩემი სანიშნეები":
                     document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                    break;
+                case "incommings":
+                    document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
                 default:
                     console.log(document.getElementById('nav'+i).innerText);
@@ -108,6 +114,21 @@ GetMyProd = () => {
             response = JSON.parse(response);
             $(".my_prod_container").html(response.page);
             $("#curentCount").html(response.count);
+        }
+    });
+}
+
+GetIncommingProduct = () => {
+    Ajax({
+        url: "dashboard",
+        object: {
+            method:"GetIncommingProduct",
+            data: {},
+        },
+        type:"POST",
+        success: (response) => {
+            response = JSON.parse(response);
+            $(".incomming_prod").html(response.page);
         }
     });
 }
@@ -191,7 +212,7 @@ ChangePWD = () => {
                 object: {
                     method: "EditPassword",
                     data: {
-                        password: md5(new_pwd)
+                        password: md5(new_pwd),
                     }
                 },
                 type:"POST",
@@ -242,4 +263,36 @@ PutUserInfo = (response) => {
     }else{
         $("#female").prop("checked",true);
     }
+}
+
+
+AcceptProduct = (prod_id) => {
+    Ajax({
+        url: "dashboard",
+        object:{
+            method:"AcceptProduct",
+            data :{
+                id: prod_id
+            }
+        },
+        success: (response) => {
+            GetIncommingProduct();
+        }
+    })
+}
+
+
+RejectProduct = (prod_id) => {
+    Ajax({
+        url: "dashboard",
+        object:{
+            method:"AcceptProduct",
+            data :{
+                id: prod_id
+            }
+        },
+        success: (response) => {
+            GetIncommingProduct();
+        }
+    })
 }

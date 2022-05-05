@@ -14,7 +14,7 @@
             Parent::__construct();
         }
 
-        public function CreateProductHTML($res = [], $count = 0){
+        public function CreateProductHTML($res = [], $count = 0, $incomming = 3){
             $images = '';
             $data   = '';
             $indicator = '';
@@ -26,6 +26,42 @@
                 $counter = $count;
             }
             for ($i=0; $i < $counter; $i++) { 
+                
+                if($res[$i]['uploaded'] == 0 && $incomming == 2){
+                    $uploaded = '<div style="
+                    width: 100%;
+                    height: 4vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    margin-top: 2vh;
+                    
+                    "> <span class="label label-danger">Not Uploaded</span> </div>';
+                }
+                else if($res[$i]['uploaded'] == 1 && $incomming == 2){
+                    $uploaded = '
+                    <div style="
+                        width: 100%;
+                        height: 4vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid black;
+                        margin-top: 2vh;
+                    "> <span class="label label-danger">Uploaded</span> </div>';
+                }
+
+                if($incomming == 1){
+                    $buttons = '<div class="col-md-12" style="display:flex; margin-top:25px">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success btn-block" onclick="AcceptProduct('.$res[$i]['product_id'].')">Accept</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-danger btn-block" onclick="RejectProduct('.$res[$i]['product_id'].')">Reject</button>
+                                    </div>
+                                </div>';
+                }
                 $active = "active";
                 for ($j=0; $j < COUNT($res[$i]['images']); $j++) { 
     
@@ -85,6 +121,8 @@
                                 <div>
                                     
                                 </div>
+                                '.$buttons.'
+                                '.$uploaded.'
                             </div>
                         </div>
                     </div>';

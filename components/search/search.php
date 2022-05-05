@@ -35,7 +35,7 @@
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
                             LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE products.actived = 1 
+                            WHERE products.actived = 1 AND products.uploaded = 1
                             ".$this->priceFilter." 
                             ".$this->areaFilter." 
                             ".$this->titleFilter." 
@@ -55,7 +55,7 @@
                 $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
             }
             $method = '';
-            $this->response['page'] = $this->common->CreateProductHTML($this->response);
+            $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response), 3);
         }
 
         public function FilterBuilder(){
@@ -84,10 +84,10 @@
 
             if($title != ''){
                 $this->titleFilter = " 
-                    AND title LIKE '%".$title."%' OR title LIKE '% ".$title." ' OR title LIKE '".$title."%'
+                    AND (title LIKE '%".$title."%' OR title LIKE '% ".$title." ' OR title LIKE '".$title."%'
                 OR  description_en LIKE '%".$title."%' OR description_en LIKE '% ".$title." ' OR description_en LIKE '".$title."%'
                 OR  address LIKE '%".$title."%' OR address LIKE '% ".$title." ' OR address LIKE '".$title."%'
-                OR  description LIKE '%".$title."%' OR description LIKE '% ".$title." ' OR description LIKE '".$title."%'    
+                OR  description LIKE '%".$title."%' OR description LIKE '% ".$title." ' OR description LIKE '".$title."%' )   
                 ";
             }
 

@@ -31,7 +31,7 @@
                     LEFT JOIN files     ON products.id = files.product_id
                     LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
                     LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                    WHERE    products.actived = 1
+                    WHERE    products.actived = 1 AND uploaded = 1
                     GROUP BY products.id
                     ORDER BY products.id DESC 
                     LIMIT 4";
@@ -42,7 +42,7 @@
                 $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
             }
             $method = '';
-            $this->response['page'] = $this->common->CreateProductHTML($this->response);
+            $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 3);
         }
 
 

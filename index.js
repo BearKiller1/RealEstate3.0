@@ -1,4 +1,4 @@
-var MainPage    = "index";
+var MainPage    = "dashboard";
 var MainGroup   = "";
 
 window.onload = () => {
