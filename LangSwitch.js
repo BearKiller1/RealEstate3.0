@@ -350,6 +350,7 @@ var LangSwitch = {
         "NH": "All districts",
         "Other": "Other",
         "Other2": "Other",
+        "Dashboard": "Dashboard",
     },
     "Georgian":
     {
@@ -702,11 +703,11 @@ var LangSwitch = {
         "NH": "ყველა რაიონი",
         "Other": "სხვა",
         "Other2": "სხვა",
+        "Dashboard": "პროფილი",
     }
 };
-
-try{
-document.getElementById('LangKa').addEventListener("click", (e)=>{
+GeoName = () => {
+    window.localStorage.setItem("lang", 1);
     document.getElementById('Langbtn').src = document.getElementById('Georgian').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["Georgian"]) {try{
@@ -720,29 +721,67 @@ document.getElementById('LangKa').addEventListener("click", (e)=>{
             document.getElementById(x).innerText = LangSwitch["Georgian"][x];
         }
     }catch{}}
-    document.getElementById("send").value = LangSwitch["Georgian"]["send"];
+    
     document.getElementById("createdby").innerHTML = "შექმნილია Ashkan811-ის მიერ &copy;";
-    console.log(LangSwitch["Georgian"][200]);
-})
+}
 
-document.getElementById('LangEn').addEventListener("click", (e)=>{
+EngName = () => {
+    window.localStorage.setItem("lang", 2);
     document.getElementById('Langbtn').src = document.getElementById('English').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["English"]) {try{
         if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort" || "name" || "email" || "message") && document.getElementById(x).placeholder != null) {
             document.getElementById(x).placeholder = LangSwitch["English"][x];
         }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
-         || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
-         || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax" || "send") && document.getElementById(x).value != null) {
+            || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
+            || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax" || "send") && document.getElementById(x).value != null) {
             document.getElementById(x).value = LangSwitch["English"][x];
         }else{
             document.getElementById(x).innerText = LangSwitch["English"][x];
         }
     }catch{}}
-    document.getElementById("send").value = LangSwitch["English"]["send"];
     document.getElementById("createdby").innerHTML = "Created by Ashkan811 &copy;";
-})
-}catch{}
+}
+
+// try{
+// document.getElementById('LangKa').addEventListener("click", (e)=>{
+//     document.getElementById('Langbtn').src = document.getElementById('Georgian').src;
+//     ////////////////////////////////////////////////////////////////////////////////
+//     for (const x in LangSwitch["Georgian"]) {try{
+//         if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort" || "name" || "email" || "message") && document.getElementById(x).placeholder != null) {
+//             document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
+//         }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+//          || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
+//          || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax") && document.getElementById(x).value != null) {
+//             document.getElementById(x).value = LangSwitch["Georgian"][x];
+//         }else{
+//             document.getElementById(x).innerText = LangSwitch["Georgian"][x];
+//         }
+//     }catch{}}
+//     document.getElementById("send").value = LangSwitch["Georgian"]["send"];
+//     document.getElementById("createdby").innerHTML = "შექმნილია Ashkan811-ის მიერ &copy;";
+//     console.log(LangSwitch["Georgian"][200]);
+// })
+
+
+// document.getElementById('LangEn').addEventListener("click", (e)=>{
+//     document.getElementById('Langbtn').src = document.getElementById('English').src;
+//     ////////////////////////////////////////////////////////////////////////////////
+//     for (const x in LangSwitch["English"]) {try{
+//         if ((x === "searchbox" || "msearchbox" || "transactionT" || "Btype" || "sort" || "name" || "email" || "message") && document.getElementById(x).placeholder != null) {
+//             document.getElementById(x).placeholder = LangSwitch["English"][x];
+//         }else if ((x === "Tsale" || "Tmortgage" || "Trent" || "Tdrent" || "Bapartment"
+//          || "Bhouse" || "Bcommerical" || "Bhouse" || "Bcommerical" || "BLand" || "Bhotel"
+//          || "Slatest" || "Soldest" || "Scheap" || "SExpensive" || "ipmin" || "ipmax" || "iAmin" || "iAmax" || "send") && document.getElementById(x).value != null) {
+//             document.getElementById(x).value = LangSwitch["English"][x];
+//         }else{
+//             document.getElementById(x).innerText = LangSwitch["English"][x];
+//         }
+//     }catch{}}
+//     document.getElementById("send").value = LangSwitch["English"]["send"];
+//     document.getElementById("createdby").innerHTML = "Created by Ashkan811 &copy;";
+// })
+// }catch{}
 
 try{
 for (let i = 1; i < 4 ; i++) {

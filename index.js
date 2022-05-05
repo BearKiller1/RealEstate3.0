@@ -1,11 +1,17 @@
-var MainPage    = "dashboard";
+var MainPage    = "index";
 var MainGroup   = "";
 
 window.onload = () => {
-    Router(MainPage, MainGroup);   
+    if(window.localStorage.getItem("last_page") != undefined && window.localStorage.getItem("last_page") != ""){
+        Router(window.localStorage.getItem("last_page"));
+    }
+    else{
+        Router(MainPage, MainGroup);   
+    }
 }
 
 Router = (Page, Group = '') => {
+
     Ajax({
         spURL: 'includes/Router.class.php',
         object: {
@@ -22,6 +28,16 @@ Router = (Page, Group = '') => {
             Permission(response.permission);
             document.title = Page;
             $("#content").html(response.page);
+
+            window.localStorage.setItem("last_page", Page);
+
+            if(window.localStorage.getItem("lang") == 1){
+                $("#LangKa").click();
+            }
+            else if(window.localStorage.getItem("lang") == 2){
+                $("#LangEn").click();
+            }
+
         }
     })
 }

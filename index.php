@@ -48,7 +48,7 @@
                         <a href="#" id="navDrent" class="nav-link text-dark"onclick="searchHome(4)">Daily Rent</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="#"  class="nav-link text-dark" onclick="Router('contact')">Contact</a>
+                        <a href="#" id="contactl" class="nav-link text-dark" onclick="Router('contact')">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -58,9 +58,9 @@
                         <img id="Langbtn" style="width: 38px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Square_Flag_of_the_United_Kingdom.svg/1200px-Square_Flag_of_the_United_Kingdom.svg.png" alt="" class="rounded-circle img-thumbnail">
                     </a>
                     <div class="dropdown-menu">
-                        <a id="LangEn" href="#" role="button" class="dropdown-item"><img style="width: 38px;" id="English" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Square_Flag_of_the_United_Kingdom.svg/1200px-Square_Flag_of_the_United_Kingdom.svg.png" alt="" class="rounded-circle img-thumbnail mr-3"><span>English</span></a>
+                        <a id="LangEn" onclick="EngName()" href="#" role="button" class="dropdown-item"><img style="width: 38px;" id="English" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Square_Flag_of_the_United_Kingdom.svg/1200px-Square_Flag_of_the_United_Kingdom.svg.png" alt="" class="rounded-circle img-thumbnail mr-3"><span>English</span></a>
                         <div class="dropdown-divider"></div>
-                        <a id="LangKa" href="#" role="button" class="dropdown-item"><img style="width: 38px;" id="Georgian" src="https://cdn.countryflags.com/thumbs/georgia/flag-button-square-250.png" class="rounded-circle img-thumbnail mr-3"><span>Georgian</span></a>
+                        <a id="LangKa" onclick="GeoName()" href="#" role="button" class="dropdown-item"><img style="width: 38px;" id="Georgian" src="https://cdn.countryflags.com/thumbs/georgia/flag-button-square-250.png" class="rounded-circle img-thumbnail mr-3"><span>Georgian</span></a>
                     </div>
                 </div>
                 <button class="menu_buttons btn btn-outline-primary rounded-pill text-center mx-1" id="menuaddprod" onclick="Router('upload')">
@@ -72,7 +72,7 @@
                 </button>
 
                 <button class="menu_buttons btn btn-outline-primary rounded-pill text-center mx-2" id="menudashboard" onclick="Router('dashboard')">
-                    <a href="#"><i class="fas fa-sign-in-alt"><span class="mx-2">Dashboard</span></i></a>
+                    <a href="#"><i class="fas fa-user-circle"><span id="Dashboard" class="mx-2">Dashboard</span></i></a>
                 </button>
             </div>
         </nav>
