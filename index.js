@@ -14,6 +14,9 @@ window.onload = () => {
         MainPage = window.localStorage.getItem("last_page");
         Router(MainPage, MainGroup);
     }
+    else{
+        Router(MainPage);
+    }
 }
 
 Router = (Page, Group = '') => {
@@ -36,8 +39,12 @@ Router = (Page, Group = '') => {
             $("#content").html(response.page);
 
             window.localStorage.setItem("last_page", Page);
+            
             if(Group != ''){
                 window.localStorage.setItem("last_group", Group);
+            }
+            else{
+                window.localStorage.removeItem("last_group");
             }
 
             if(window.localStorage.getItem("lang") == 1){
