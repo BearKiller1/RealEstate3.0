@@ -2,7 +2,7 @@ $(document).ready(function() {
     if(window.localStorage.getItem('lang') == 1){
         $("#change-lan-ka").addClass("d-none");
     }
-    else if(window.localStorage.getItem('lang') == 2){
+    else{
         $("#change-lan-en").addClass("d-none");
     }
     GetUserInfo();
