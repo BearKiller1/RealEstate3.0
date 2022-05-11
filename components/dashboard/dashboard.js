@@ -7,7 +7,7 @@ $(document).ready(function() {
     }
     GetUserInfo();
     var user_pwd;
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < 8; i++) {
         document.getElementById("nav"+i).addEventListener("click",(e)=>{
             try{document.querySelector('.selected').className='nav-link text-dark my-2 ';}catch{} 
             document.getElementById('nav'+i).className += 'selected';
@@ -46,7 +46,8 @@ $(document).ready(function() {
                 case "ჩემი სანიშნეები":
                     document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
-                case "incommings":
+                case "Incomming":
+                    console.log(i);
                     document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
                 default:
@@ -292,7 +293,7 @@ RejectProduct = (prod_id) => {
     Ajax({
         url: "dashboard",
         object:{
-            method:"AcceptProduct",
+            method:"RejectProduct",
             data :{
                 id: prod_id
             }

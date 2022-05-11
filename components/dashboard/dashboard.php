@@ -96,6 +96,7 @@
             $this->response['count'] = COUNT($this->response);
             if($this->response['count'] == 0){
                 $this->response['error'] = 'No products found';
+                $this->response['page'] = '<div class="col-md-12"><h2>No products found</h2></div>';
             }
             else{
                 $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 1);
