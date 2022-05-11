@@ -1,12 +1,18 @@
 var MainPage    = "index";
 var MainGroup   = "";
-
+/**
+ * @TODO ar mushaobs es normalurad grupebze da ushvele
+ */
 window.onload = () => {
     if(window.localStorage.getItem("last_page") != undefined && window.localStorage.getItem("last_page") != ""){
-        Router(window.localStorage.getItem("last_page"));
-    }
-    else{
-        Router(MainPage, MainGroup);   
+        if(window.localStorage.getItem("last_group") != undefined && window.localStorage.getItem("last_group") != ""){
+            MainGroup = window.localStorage.getItem("last_group");
+        }
+        else{
+            MainGroup = "";
+        }
+        MainPage = window.localStorage.getItem("last_page");
+        Router(MainPage, MainGroup);
     }
 }
 
@@ -30,6 +36,9 @@ Router = (Page, Group = '') => {
             $("#content").html(response.page);
 
             window.localStorage.setItem("last_page", Page);
+            if(Group != ''){
+                window.localStorage.setItem("last_group", Group);
+            }
 
             if(window.localStorage.getItem("lang") == 1){
                 $("#LangKa").click();
