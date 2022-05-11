@@ -303,3 +303,33 @@ RejectProduct = (prod_id) => {
         }
     })
 }
+
+DeleteProduct = (prod_id) => {
+    Ajax({
+        url: "dashboard",
+        object:{
+            method:"DeleteProduct",
+            data :{
+                id: prod_id
+            }
+        },
+        success: (response) => {
+            GetMyProd();
+        }
+    })
+}
+
+EditProduct = (prod_id) => {
+    Ajax({
+        url: "dashboard",
+        object:{
+            method:"EditProduct",
+            data :{
+                id: prod_id
+            }
+        },
+        success: (response) => {
+            Router("edit_product","product");
+        }
+    })
+}

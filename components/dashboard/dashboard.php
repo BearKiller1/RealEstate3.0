@@ -161,6 +161,11 @@
             session_destroy();
         }
 
+        public function DeleteProduct(){
+            $this->sql = "UPDATE products SET actived = 0 WHERE id = '".$this->request['id']."'";
+            $this->response = Parent::RunQuery($this->sql);
+        }
+
         public function EditUserInfo(){
             Parent::RunQuery("  UPDATE users 
                                 SET username    = '".$this->request['username'] ."', 

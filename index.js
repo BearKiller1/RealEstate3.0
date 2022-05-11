@@ -1,8 +1,6 @@
 var MainPage    = "index";
 var MainGroup   = "";
-/**
- * @TODO ar mushaobs es normalurad grupebze da ushvele
- */
+
 window.onload = () => {
     if(window.localStorage.getItem("last_page") != undefined && window.localStorage.getItem("last_page") != ""){
         if(window.localStorage.getItem("last_group") != undefined && window.localStorage.getItem("last_group") != ""){
