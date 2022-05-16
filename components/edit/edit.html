@@ -1,0 +1,819 @@
+
+<section class="d-flex align-items-center my-3" id="AddAnn1">
+    <div class="container bg-muted col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-lg">
+            <div class="card-header d-flex flex-wrap align-items-center">
+                <h3 id="addannl1" class="mr-auto addannl px-1">Add announcement</h3>
+                <a id="lanswitch1" class="ml-auto lanswitch px-1" role="button" href="#" onclick="GeoName(); $(this).hide(); $('#englang1').show()">ქართული</a>
+                <a id="englang1" class="ml-auto lanswitch px-1" style="display:none" role="button" href="#" onclick="EngName(); $(this).hide(); $('#lanswitch1').show()">English</a>
+            </div>
+            <div class="card-body">
+                <form class="" action="#">
+                    <h4 id="anntypel" class="mx-auto mb-3">Announcement type</h4>
+                    <div class="form-group">
+                        <label id="transactionTl" class="text-sm-right col-sm-4" for="transactionT">transaction Type :</label>
+                        <input class="form-control mx-auto col-10 col-sm-8 my-1 d-inline rounded float-right" list="transaction" id="transactionT" placeholder="transaction type" autocomplete="off">
+                        <datalist id="transaction">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label id="Btypel" class="text-sm-right col-sm-4" for="Btype">Building type :</label>
+                        <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" list="btype" id="Btype" placeholder="building type" autocomplete="off">
+                        <datalist id="btype">
+                        </datalist>
+                        </div>
+                        <div class="form-group">
+                        <label id="statusl" class="text-sm-right col-sm-4" for="statusI">Status :</label>
+                        <input id="statusI" class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" list="status" placeholder="Status" autocomplete="off">
+                        <datalist id="status">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label id="yearl" class="text-sm-right col-sm-4" for="year">Year :</label>
+                        <input type="text" pattern="[1950-2022]{4}" id="year" class="form-control mx-auto d-inline col-10 col-sm-8 rounded float-right" placeholder="Year of construction" title="Too old building">
+                    </div>
+                    <h2 id="locationl" class="mx-auto mt-5 mb-3">Location</h2>
+                    <div class="form-group">
+                        <label id="cityl" class="text-sm-right col-sm-4" for="city">City :</label>
+                        <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="city" list="cities" placeholder="Select city">
+                        <datalist id="cities">
+                            <!-- <option id="Tbilisi" value="Tbilisi"></option>
+                            <option id="Kutaisi" value="Kutaisi"></option>
+                            <option id="Rustavi" value="Rustavi"></option>
+                            <option id="Batumi" value="Batumi"></option>
+                            <option id="Abasha" value="Abasha"></option>
+                            <option id="Abastumani" value="Abastumani"></option>
+                            <option id="Adigeni" value="Adigeni"></option>
+                            <option id="Agara" value="Agara"></option>
+                            <option id="Akhalkalaki" value="Akhalkalaki"></option>
+                            <option id="Akhaltsikhe" value="Akhaltsikhe"></option>
+                            <option id="Akhmeta" value="Akhmeta"></option>
+                            <option id="Ambrolauri" value="Ambrolauri"></option>
+                            <option id="Anaklia" value="Anaklia"></option>
+                            <option id="Aspindza" value="Aspindza"></option>
+                            <option id="Baghdati" value="Baghdati"></option>
+                            <option id="Bakuriani" value="Bakuriani"></option>
+                            <option id="Bolnisi" value="Bolnisi"></option>
+                            <option id="Borjomi" value="Borjomi"></option>
+                            <option id="Chakvi" value="Chakvi"></option>
+                            <option id="Chiatura" value="Chiatura"></option>
+                            <option id="Chkhorotsku" value="Chkhorotsku"></option>
+                            <option id="Chokhatauri" value="Chokhatauri"></option>
+                            <option id="Dedoplistskaro" value="Dedoplistskaro"></option>
+                            <option id="Dmanisi" value="Dmanisi"></option>
+                            <option id="Dusheti" value="Dusheti"></option>
+                            <option id="Gagra" value="Gagra"></option>
+                            <option id="Gali" value="Gali"></option>
+                            <option id="Gardabani" value="Gardabani"></option>
+                            <option id="Gori" value="Gori"></option>
+                            <option id="Gudauri" value="Gudauri"></option>
+                            <option id="Gudauta" value="Gudauta"></option>
+                            <option id="Gulripsh" value="Gulripsh"></option>
+                            <option id="Gurjaani" value="Gurjaani"></option>
+                            <option id="Java" value="Java"></option>
+                            <option id="Jvari" value="Jvari"></option>
+                            <option id="Kareli" value="Kareli"></option>
+                            <option id="Kaspi" value="Kaspi"></option>
+                            <option id="Kazreti" value="Kazreti"></option>
+                            <option id="Keda" value="Keda"></option>
+                            <option id="Kharagauli" value="Kharagauli"></option>
+                            <option id="Khashuri" value="Khashuri"></option>
+                            <option id="Khelvachauri" value="Khelvachauri"></option>
+                            <option id="Khobi" value="Khobi"></option>
+                            <option id="Khoni" value="Khoni"></option>
+                            <option id="Khulo" value="Khulo"></option>
+                            <option id="Kobuleti" value="Kobuleti"></option>
+                            <option id="Kvaisa" value="Kvaisa"></option>
+                            <option id="Kvareli" value="Kvareli"></option>
+                            <option id="Lagodekhi" value="Lagodekhi"></option>
+                            <option id="Lanchkhuti" value="Lanchkhuti"></option>
+                            <option id="Leningor" value="Leningor"></option>
+                            <option id="Lentekhi" value="Lentekhi"></option>
+                            <option id="Manglisi" value="Manglisi"></option>
+                            <option id="Marneuli" value="Marneuli"></option>
+                            <option id="Martvili" value="Martvili"></option>
+                            <option id="Mestia" value="Mestia"></option>
+                            <option id="Mtskheta" value="Mtskheta"></option>
+                            <option id="New Athos" value="New Athos"></option>
+                            <option id="Ninotsminda" value="Ninotsminda"></option>
+                            <option id="Ochamchira" value="Ochamchira"></option>
+                            <option id="Oni" value="Oni"></option>
+                            <option id="Ozurgeti" value="Ozurgeti"></option>
+                            <option id="Pitsunda" value="Pitsunda"></option>
+                            <option id="Poti" value="Poti"></option>
+                            <option id="Sachkhere" value="Sachkhere"></option>
+                            <option id="Sadakhlo" value="Sadakhlo"></option>
+                            <option id="Sagarejo" value="Sagarejo"></option>
+                            <option id="Samtredia" value="Samtredia"></option>
+                            <option id="Senaki" value="Senaki"></option>
+                            <option id="Shaumyani" value="Shaumyani"></option>
+                            <option id="Shuakhevi" value="Shuakhevi"></option>
+                            <option id="Sighnaghi" value="Sighnaghi"></option>
+                            <option id="Sioni" value="Sioni"></option>
+                            <option id="Sokhumi" value="Sokhumi"></option>
+                            <option id="Stepantsminda" value="Stepantsminda"></option>
+                            <option id="Surami" value="Surami"></option>
+                            <option id="Telavi" value="Telavi"></option>
+                            <option id="Terjola" value="Terjola"></option>
+                            <option id="Tetritskaro" value="Tetritskaro"></option>
+                            <option id="Tianeti" value="Tianeti"></option>
+                            <option id="Tkibuli" value="Tkibuli"></option>
+                            <option id="Tsageri" value="Tsageri"></option>
+                            <option id="Tsalenjikha" value="Tsalenjikha"></option>
+                            <option id="Tsalka" value="Tsalka"></option>
+                            <option id="Tskaltubo" value="Tskaltubo"></option>
+                            <option id="Tskhinvali" value="Tskhinvali"></option>
+                            <option id="Tsnori" value="Tsnori"></option>
+                            <option id="Vale" value="Vale"></option>
+                            <option id="Vani" value="Vani"></option>
+                            <option id="Zestaponi" value="Zestaponi"></option>
+                            <option id="Zugdidi" value="Zugdidi"></option>
+                            <option id="Abasha-Municipality" value="Abasha Municipality"></option>
+                            <option id="Adigeni-Municipality" value="Adigeni Municipality"></option>
+                            <option id="Akhalkalaki-Municipality" value="Akhalkalaki Municipality"></option>
+                            <option id="Akhaltsikhe-Municipality" value="Akhaltsikhe Municipality"></option>
+                            <option id="Akhmeta-Municipality" value="Akhmeta Municipality"></option>
+                            <option id="Ambrolauri-Municipality" value="Ambrolauri Municipality"></option>
+                            <option id="Aspindza-Municipality" value="Aspindza Municipality"></option>
+                            <option id="Autonomous-Republic-of-Abkhazia" value="Autonomous Republic of Abkhazia"></option>
+                            <option id="Baghdati-Municipality" value="Baghdati Municipality"></option>
+                            <option id="Bolnisi-Municipality" value="Bolnisi Municipality"></option>
+                            <option id="Borjomi-Municipality" value="Borjomi Municipality"></option>
+                            <option id="Chkhorotsqu-Municipality" value="Chkhorotsqu Municipality"></option>
+                            <option id="Chokhatauri-Municipality" value="Chokhatauri Municipality"></option>
+                            <option id="Dedoplistsqaro-Municipality" value="Dedoplistsqaro Municipality"></option>
+                            <option id="Dmanisi-Municipality" value="Dmanisi Municipality"></option>
+                            <option id="Dusheti-Municipality" value="Dusheti Municipality"></option>
+                            <option id="Dzau-District" value="Dzau District"></option>
+                            <option id="Gardabani-Municipality" value="Gardabani Municipality"></option>
+                            <option id="Gori-Municipality" value="Gori Municipality"></option>
+                            <option id="Gurjaani-Municipality" value="Gurjaani Municipality"></option>
+                            <option id="Kareli-Municipality" value="Kareli Municipality"></option>
+                            <option id="Kaspi-Municipality" value="Kaspi Municipality"></option>
+                            <option id="Kazbegi-Municipality" value="Kazbegi Municipality"></option>
+                            <option id="Keda-Municipality" value="Keda Municipality"></option>
+                            <option id="Khashuri-Municipality" value="Khashuri Municipality"></option>
+                            <option id="Khelvachauri-Municipality" value="Khelvachauri Municipality"></option>
+                            <option id="Khobi-Municipality" value="Khobi Municipality"></option>
+                            <option id="Khoni-Municipality" value="Khoni Municipality"></option>
+                            <option id="Khulo-Municipality" value="Khulo Municipality"></option>
+                            <option id="Kobuleti-Municipality" value="Kobuleti Municipality"></option>
+                            <option id="Kvareli -Municipality" value="Kvareli  Municipality"></option>
+                            <option id="Lanchkhuti-Municipality" value="Lanchkhuti Municipality"></option>
+                            <option id="Leningor-District" value="Leningor District"></option>
+                            <option id="Lentekhi-Municipality" value="Lentekhi Municipality"></option>
+                            <option id="Marneuli-Municipality" value="Marneuli Municipality"></option>
+                            <option id="Martvili-Municipality" value="Martvili Municipality"></option>
+                            <option id="Mestia-Municipality" value="Mestia Municipality"></option>
+                            <option id="Mtskheta-Municipality" value="Mtskheta Municipality"></option>
+                            <option id="Ninotsminda-Municipality" value="Ninotsminda Municipality"></option>
+                            <option id="Oni-Georgia" value="Oni, Georgia"></option>
+                            <option id="Ozurgeti-Municipality" value="Ozurgeti Municipality"></option>
+                            <option id="Raion-Kharagauli" value="Raion Kharagauli"></option>
+                            <option id="Raion-Lagodekhi" value="Raion Lagodekhi"></option>
+                            <option id="Raion-Sachkhere" value="Raion Sachkhere"></option>
+                            <option id="Sagarejo-Municipality" value="Sagarejo Municipality"></option>
+                            <option id="Samtredia-Municipality" value="Samtredia Municipality"></option>
+                            <option id="Senaki-Municipality" value="Senaki Municipality"></option>
+                            <option id="Shuakhevi-Municipality" value="Shuakhevi Municipality"></option>
+                            <option id="Signagi-Municipality" value="Signagi Municipality"></option>
+                            <option id="Telavi-Municipality" value="Telavi Municipality"></option>
+                            <option id="Terjola" value="Terjola"></option>
+                            <option id="Tetritskaro-Municipality" value="Tetritskaro Municipality"></option>
+                            <option id="Tianeti-Municipality" value="Tianeti Municipality"></option>
+                            <option id="Tqibuli-Municipality" value="Tqibuli Municipality"></option>
+                            <option id="Tsageri-Municipality" value="Tsageri Municipality"></option>
+                            <option id="Tsalenjikha-Municipality" value="Tsalenjikha Municipality"></option>
+                            <option id="Tsalka-Municipality" value="Tsalka Municipality"></option>
+                            <option id="Tskaltubo-Municipality" value="Tskaltubo Municipality"></option>
+                            <option id="Tskhinval" value="Tskhinval"></option>
+                            <option id="Tskhinvali-District" value="Tskhinvali District"></option>
+                            <option id="Vani-Municipality" value="Vani Municipality"></option>
+                            <option id="Zestaponi-Municipality" value="Zestaponi Municipality"></option>
+                            <option id="Znaur-District" value="Znaur District"></option>
+                            <option id="Zugdidi-Municipality" value="Zugdidi Municipality"></option> -->
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-sm-right col-sm-4" for="district">district :</label>
+                        <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="district" list="districts" placeholder="Select district" autocomplete="off" onchange="ChildDistrict()">
+                        <datalist id="districts">
+                        </datalist>
+                    </div><div class="form-group d-flex w-100">
+                    <input class="form-control ml-auto col-10 col-sm-8 rounded mt-1" id="NH" placeholder="All districts" autocomplete="off">
+                        <datalist id="Gldani">
+                        </datalist>
+                        <datalist id="Didube">
+                        </datalist>
+                        <datalist id="Vake">
+                        </datalist>
+                        <datalist id="Isani">
+                        </datalist>
+                        <datalist id="Krtsanisi">
+                        </datalist>
+                        <datalist id="Mtatsminda">
+                        </datalist>
+                        <datalist id="Nadzaladevi">
+                        </datalist>
+                        <datalist id="Saburtalo">
+                        </datalist>
+                        <datalist id="Samgori">
+                        </datalist>
+                        <datalist id="Chugureti">
+                        </datalist>
+                        <datalist id="Other">
+                        </datalist>
+                        <script>
+                            document.getElementById('district').addEventListener("input",(e)=>{
+                            let x = document.getElementById('district').value;
+                            switch (x) {
+                                case "Gldani":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Didube":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Vake":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Isani":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Krtsanisi":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Mtatsminda":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Nadzaladevi":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Saburtalo":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Samgori":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Chugureti":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                case "Other":
+                                
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            
+                                default:
+                                break;
+                            }
+                            })
+                            document.getElementById('district').addEventListener("mousedown",(e)=>{
+                            if (document.getElementById('district').value != "") document.getElementById('district').value="";
+                            })
+                            document.getElementById('NH').addEventListener("mousedown",(e)=>{
+                            if (document.getElementById('NH').value != "") document.getElementById('NH').value="";
+                            });
+                        </script>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label id="Cadastrall" class="text-sm-right col-sm-4" for="Cadastral">Cadastral code :</label>
+                        <input type="number" id="Cadastral" class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" placeholder="Cadastral code">
+                    </div>
+                    <div class="form-group">
+                        <label id="F-addressl" class="text-sm-right col-sm-4" for="F-address">full address :</label>
+                        <textarea placeholder="Enter full address" id="F-address" name="address" id="address" class="form-control mx-auto col-10 col-sm-8 my-1 d-inline rounded float-right" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <img class="col-10 col-sm-8 mx-auto my-3 rounded float-right" src="assets/images/Maps.png" alt="">
+                    </div>
+                    <button type="button" class="mx-auto form-control btn btn-primary" onclick="document.getElementById('AddAnn1').className='d-none'; document.getElementById('AddAnn2').className = 'd-flex align-items-center my-3'; ">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-none" id="AddAnn2">
+    <div class="container bg-muted col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-lg">
+            <div class="card-header d-flex flex-wrap align-items-center">
+            <h3 id="addannl2" class="mr-auto addannl px-1">Add announcement</h3>
+            <a id="lanswitch2" class="ml-auto lanswitch px-1" role="button" href="#" onclick="GeoName(); $(this).hide(); $('#englang2').show()">ქართული</a>
+            <a id="englang2" class="ml-auto lanswitch px-1" style="display:none" role="button" href="#" onclick="EngName(); $(this).hide(); $('#lanswitch2').show()">English</a>
+            </div>
+            <div class="card-body">
+                <form class="" action="#">
+                    <h4 id="d_infol" class="mx-auto mb-3">Detailed information</h4>
+                    <div class="form-group">
+                        <label id="floorl" class="text-sm-right col-sm-3" for="floor">Floor :</label>
+                        <input type="number" id="floor" class="form-control col-9 rounded float-right mb-1" placeholder="Floor">
+                    </div>
+                    <div class="form-group">
+                        <label id="storeysl" class="text-sm-right col-sm-3" for="storeys">storeys :</label>
+                        <input type="number" id="storeys" class="form-control col-9 rounded float-right mb-1" placeholder="Number of storeys">
+                    </div>
+                    <div class="form-group">
+                        <label id="roomsl" class="text-sm-right col-sm-3" for="rooms">rooms :</label>
+                        <input type="number" id="rooms" class="form-control col-9 rounded float-right mb-1" placeholder="Number of rooms">
+                    </div>
+                    <div class="form-group">
+                        <label id="bedrooml" class="text-sm-right col-sm-3" for="bedroom">Bedroom :</label>
+                        <input type="number" id="bedroom" class="form-control col-9 rounded float-right mb-1" placeholder="Bedroom">
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="balconyl" class="text-sm-right mr-2 float-left col-sm-4" for="balcony">balcony:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="balcony" id="balcony2" class="form-check-input" checked>
+                            <label id="no1" for="balcony2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="balcony" id="balcony" class="form-check-input">
+                            <label id="yes1" for="balcony" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="loggial" class="text-sm-right mr-2 float-left col-sm-4" for="loggia">Loggia:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="loggia" id="Loggia2" class="form-check-input " checked>
+                            <label id="no2" for="Loggia2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="loggia" id="loggia" class="form-check-input">
+                            <label id="yes2" for="loggia" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Verandal" class="text-sm-right mr-2 float-left col-sm-4" for="Veranda">Veranda:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Veranda" id="veranda2" class="form-check-input" checked>
+                            <label id="no3" for="Veranda2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Veranda" id="veranda" class="form-check-input">
+                            <label id="yes3" for="Veranda" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="bathl" class="text-sm-right mr-2 float-left col-sm-4" for="Bathrooms1">Bathrooms:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Bathrooms" id="Bathrooms1" class="form-check-input" checked>
+                            <label for="Bathrooms1" class="form-check-label">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Bathrooms" id="Bathrooms2" class="form-check-input">
+                            <label for="Bathrooms2" class="form-check-label">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Bathrooms" id="Bathrooms3" class="form-check-input">
+                            <label for="Bathrooms3" class="form-check-label">3+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Bathrooms" id="Bathrooms4" class="form-check-input">
+                            <label id="sharedl" for="Bathrooms4" class="form-check-label">Shared</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Gasl" class="text-sm-right mr-2 float-left col-sm-4" for="Gas">Gas:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Gas" id="Gas2" class="form-check-input" checked>
+                            <label  id="no4" for="Gas2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Gas" id="Gas" class="form-check-input">
+                            <label  id="yes4" for="Gas" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Telephonel" class="text-sm-right mr-2 float-left col-sm-4" for="Telephone">Telephone:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Telephone" id="Telephone2" class="form-check-input" checked>
+                            <label id="no5" for="Telephone2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Telephone" id="Telephone" class="form-check-input">
+                            <label  id="yes5" for="Telephone" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Internetl" class="text-sm-right mr-2 float-left col-sm-4" for="Internet">Internet:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Internet" id="Internet2" class="form-check-input" checked>
+                            <label  id="no6" for="Internet2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Internet" id="Internet" class="form-check-input">
+                            <label  id="yes6" for="Internet" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Televisionl" class="text-sm-right mr-2 float-left col-sm-4" for="Television">Television:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Television" id="Television2" class="form-check-input" checked>
+                            <label id="no7" for="Television2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Television" id="Television" class="form-check-input">
+                            <label  id="yes7" for="Television" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Air-conditionerl" class="text-sm-right mr-2 float-left col-sm-4" for="Air-conditioner">Air conditioner:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Air-conditioner" id="Air-conditioner2" class="form-check-input" checked>
+                            <label id="no8" for="Air-conditioner2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Air-conditioner" id="Air-conditioner" class="form-check-input">
+                            <label id="yes8" for="Air-conditioner" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5 mt-5">
+                        <label id="Hot-waterl" class="text-sm-right mr-2 float-left col-sm-4" for="Hot-water">Hot water:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Hot-water" id="Hot-water2" class="form-check-input" checked>
+                            <label id="no9" for="Hot-water2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Hot-water" id="Hot-water" class="form-check-input">
+                            <label  id="yes9" for="Hot-water" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Heatingl" class="text-sm-right mr-2 float-left col-sm-4" for="Heating">Heating:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Heating" id="Heating2" class="form-check-input" checked>
+                            <label id="no10" for="Heating2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Heating" id="Heating" class="form-check-input">
+                            <label id="yes10" for="Heating" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Parkingl" class="text-sm-right mr-2 float-left col-sm-4" for="Parking">Parking:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Parking" id="Parking2" class="form-check-input" checked>
+                            <label id="no11" for="Parking2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Parking" id="Parking" class="form-check-input">
+                            <label id="yes11" for="Parking" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Storerooml" class="text-sm-right mr-2 float-left col-sm-4" for="Storeroom">Storeroom:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Storeroom" id="Storeroom2" class="form-check-input" checked>
+                            <label id="no12" for="Storeroom2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Storeroom" id="Storeroom" class="form-check-input">
+                            <label id="yes12" for="Storeroom" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div id="elevator1" class="form-group ml-sm-5">
+                        <label id="Elevatorl" class="text-sm-right mr-2 float-left col-sm-4" for="PElevator">Elevator:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="Storeroom" id="PElevator" class="form-check-input">
+                            <label id="PElevatorl" for="PElevator" class="form-check-label">Passenger elevator</label>
+                        </div>
+                        <div class="form-check form-check-inline ml-sm-3">
+                            <input type="checkbox" name="Storeroom" id="SElevator" class="form-check-input">
+                            <label id="SElevatorl" for="SElevator" class="form-check-label">Service elevator</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Fireplacel" class="text-sm-right mr-2 float-left col-sm-4" for="Fireplace">Fireplace:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Fireplace" id="Fireplace2" class="form-check-input" checked>
+                            <label id="no13" for="Fireplace2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Fireplace" id="Fireplace" class="form-check-input">
+                            <label id="yes13" for="Fireplace" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-sm-5">
+                        <label id="Furniturel" class="text-sm-right mr-2 float-left col-sm-4" for="Furniture">Furniture:</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Furniture" id="Furniture2" class="form-check-input" checked>
+                            <label id="no14" for="Furniture2" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Furniture" id="Furniture" class="form-check-input">
+                            <label id="yes14" for="Furniture" class="form-check-label">yes</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="Cheightl" class="text-sm-right col-sm-4" for="Cheight">Ceiling height :</label>
+                        <input autocomplete="off" class="form-control mx-auto d-inline col-8 rounded float-right mb-1" list="Cheights" id="Cheight" placeholder="Ceiling height (Meter)" onmousedown="document.getElementById('Cheight').value='';">
+                        <datalist id="Cheights">
+                        <option value="2.00"></option>
+                        <option value="2.05"></option>
+                        <option value="2.10"></option>
+                        <option value="2.15"></option>
+                        <option value="2.20"></option>
+                        <option value="2.25"></option>
+                        <option value="2.30"></option>
+                        <option value="2.35"></option>
+                        <option value="2.40"></option>
+                        <option value="2.45"></option>
+                        <option value="2.50"></option>
+                        <option value="2.55"></option>
+                        <option value="2.60"></option>
+                        <option value="2.65"></option>
+                        <option value="2.70"></option>
+                        <option value="2.75"></option>
+                        <option value="2.80"></option>
+                        <option value="2.85"></option>
+                        <option value="2.90"></option>
+                        <option value="2.95"></option>
+                        <option value="3.00"></option>
+                        <option value="3.05"></option>
+                        <option value="3.10"></option>
+                        <option value="3.15"></option>
+                        <option value="3.20"></option>
+                        <option value="3.25"></option>
+                        <option value="3.30"></option>
+                        <option value="3.35"></option>
+                        <option value="3.40"></option>
+                        <option value="3.45"></option>
+                        <option value="3.50"></option>
+                        <option value="3.55"></option>
+                        <option value="3.60"></option>
+                        <option value="3.65"></option>
+                        <option value="3.70"></option>
+                        <option value="3.75"></option>
+                        <option value="3.80"></option>
+                        <option value="3.85"></option>
+                        <option value="3.90"></option>
+                        <option value="3.95"></option>
+                        <option value="4.00"></option>
+                        <option value="4.05"></option>
+                        <option value="4.10"></option>
+                        <option value="4.15"></option>
+                        <option value="4.20"></option>
+                        <option value="4.25"></option>
+                        <option value="4.30"></option>
+                        <option value="4.35"></option>
+                        <option value="4.40"></option>
+                        <option value="4.45"></option>
+                        <option value="4.50"></option>
+                        <option value="4.55"></option>
+                        <option value="4.60"></option>
+                        <option value="4.65"></option>
+                        <option value="4.70"></option>
+                        <option value="4.75"></option>
+                        <option value="4.80"></option>
+                        <option value="4.85"></option>
+                        <option value="4.90"></option>
+                        <option value="4.95"></option>
+                        <option value="5.00"></option>
+                        <option value="5.05"></option>
+                        <option value="5.10"></option>
+                        <option value="5.15"></option>
+                        <option value="5.20"></option>
+                        <option value="5.25"></option>
+                        <option value="5.30"></option>
+                        <option value="5.35"></option>
+                        <option value="5.40"></option>
+                        <option value="5.45"></option>
+                        <option value="5.50"></option>
+                        <option value="5.55"></option>
+                        <option value="5.60"></option>
+                        <option value="5.65"></option>
+                        <option value="5.70"></option>
+                        <option value="5.75"></option>
+                        <option value="5.80"></option>
+                        <option value="5.85"></option>
+                        <option value="5.90"></option>
+                        <option value="5.95"></option>
+                        <option value="6.00"></option>
+                        <option value="6.05"></option>
+                        <option value="6.10"></option>
+                        <option value="6.15"></option>
+                        <option value="6.20"></option>
+                        <option value="6.25"></option>
+                        <option value="6.30"></option>
+                        <option value="6.35"></option>
+                        <option value="6.40"></option>
+                        <option value="6.45"></option>
+                        <option value="6.50"></option>
+                        <option value="6.55"></option>
+                        <option value="6.60"></option>
+                        <option value="6.65"></option>
+                        <option value="6.70"></option>
+                        <option value="6.75"></option>
+                        <option value="6.80"></option>
+                        <option value="6.85"></option>
+                        <option value="6.90"></option>
+                        <option value="6.95"></option>
+                        <option value="7.00"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                    <label id="Conditionl" class="text-sm-right col-sm-4" for="Condition">Condition :</label>
+                    <input autocomplete="off" class="form-control mx-auto d-inline col-8 rounded float-right mb-1" list="Conditions" id="Condition" placeholder="Condition" onmousedown="document.getElementById('Condition').value='';">
+                    <datalist id="Conditions">
+                        <option data_id="1" id="n_renovate" value="Newly renovated"></option>
+                        <option data_id="2" id="u_renovate" value="Under renovation"></option>
+                        <option data_id="3" id="no_renovate" value="Not renovated"></option>
+                        <option data_id="4" id="o_renovate" value="Old renovation"></option>
+                        <option data_id="5" id="wframe" value="White frame"></option>
+                        <option data_id="6" id="bframe" value="Black frame"></option>
+                        <option data_id="7" id="gframe" value="Green frame"></option>
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label id="Designl" class="text-sm-right col-sm-4" for="Design">Design :</label>
+                    <input autocomplete="off" class="form-control mx-auto d-inline col-8 rounded float-right mb-2" list="Designs" id="Design" placeholder="Design" onmousedown="document.getElementById('Design').value='';">
+                    <datalist id="Designs">
+                    <option data_id="1" id="Nonstandard" value="Nonstandard"></option>
+                    <option data_id="2" id="Tuxareli" value="Tuxareli"></option>
+                    <option data_id="3" id="Moskow" value="Moskow"></option>
+                    <option data_id="4" id="City" value="City"></option>
+                    <option data_id="5" id="Khrushchov" value="Khrushchov"></option>
+                    <option data_id="6" id="Czech" value="Czech"></option>
+                    <option data_id="7" id="Kavlashvili" value="Kavlashvili"></option>
+                    <option data_id="8" id="Lvov" value="Lvov"></option>
+                    <option data_id="9" id="Italian-Court" value="Italian Court"></option>
+                    <option data_id="10" id="Metromsheni" value="Metromsheni"></option>
+                    </datalist>
+                </div>
+                <div class="form-group mt-5 mt-sm-0">
+                <div class="d-flex justify-content-between">
+                    <input type="button" value="Previous" class="form-control btn btn-primary col-6 mr-1" onclick="document.getElementById('AddAnn2').className='d-none'; document.getElementById('AddAnn1').className = 'd-flex align-items-center my-3'; ">
+                    <input  id="next2" type="button" value="Next" class="form-control btn btn-primary col-6 ml-1" onclick="document.getElementById('AddAnn2').className='d-none'; document.getElementById('AddAnn3').className = 'd-flex align-items-center my-3'; ">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------------------------------------------------------------------------------->
+<section class="d-none" id="AddAnn3">
+    <div class="container bg-muted col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-lg">
+            <div class="card-header d-flex flex-wrap align-items-center">
+            <h3 id="addannl3" class="mr-auto addannl px-1">Add announcement</h3>
+            <a id="lanswitch3" class="ml-auto lanswitch px-1" role="button" href="#" onclick="GeoName(); $(this).hide(); $('#englang3').show()">ქართული</a>
+            <a id="englang3" class="ml-auto lanswitch px-1" style="display:none" role="button" href="#" onclick="EngName(); $(this).hide(); $('#lanswitch3').show()">English</a>
+            </div>
+            <div class="card-body">
+                <!-- <form class=""> -->
+                    <h4 id="addinfol" class="mx-auto mb-3">Additional information</h4>
+                    <div class="form-group">
+                        <label id="pnuml" class="text-sm-right col-sm-4" for="Pnum">phone number :</label>
+                        <div class="col-sm-8 float-sm-right mb-1 d-flex justify-content-between">
+                        <input class="form-control form-control-sm my-auto col-3 rounded" list="Pnums" id="Pnum" value="599" onmousedown="document.getElementById('Pnum').value='';">
+                        <datalist id="Pnums">
+                        <option value="599"></option>
+                        <option value="598"></option>
+                        <option value="597"></option>
+                        <option value="596"></option>
+                        <option value="595"></option>
+                        <option value="593"></option>
+                        <option value="592"></option>
+                        <option value="591"></option>
+                        <option value="590"></option>
+                        <option value="588"></option>
+                        <option value="579"></option>
+                        <option value="577"></option>
+                        <option value="575"></option>
+                        <option value="574"></option>
+                        <option value="571"></option>
+                        <option value="570"></option>
+                        <option value="568"></option>
+                        <option value="558"></option>
+                        <option value="557"></option>
+                        <option value="555"></option>
+                        <option value="552"></option>
+                        <option value="551"></option>
+                        <option value="550"></option>
+                        <option value="544"></option>
+                        <option value="514"></option>
+                        <option value="511"></option>
+                        <option value="500"></option>
+                        </datalist>
+                        <input type="number" id="Pnumber" class="form-control col-8 rounded">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="Areal" class="text-sm-right col-sm-4" for="Area">Area :</label>
+                        <div class="input-group col-sm-8 float-sm-right">
+                        <input type="number" id="Area" class="form-control mb-1" placeholder="Area">
+                        <div class="input-group-append">
+                            <span id="sq-m" class="input-group-text form-control">m²</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="Pricel" class="text-sm-right col-sm-4 d-block" for="Price">Price :</label>
+                        <select class="form-control d-inline col-4 rounded ml-sm-4" id="price_id">
+                        <option id="t_price" value="Total price">Total price</option>
+                        <option id="m_price" value="Price per 1 m²">Price per 1 m²</option>
+                        </select>
+                        <input type="number" id="Price" class="form-control d-inline col-4 rounded" placeholder="Amount">
+                        <select class="form-control mx-auto d-inline col-3 rounded" id="price_value">
+                        <option id="GEL" value="GEL">GEL</option>
+                        <option value="USD">USD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label id="expossiblel" class="text-sm-right col-sm-6" for="">Possibility to exchange :</label>
+                        <div class="d-flex d-sm-inline justify-content-center col-12">
+                        <div class="form-check form-check-inline float-right float-sm-none">
+                            <input type="radio" name="balcony" id="exchangeY" class="form-check-input">
+                            <label id="yes15" for="exchangeY" class="form-check-label">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline float-right float-sm-none">
+                            <input type="radio" name="balcony" id="exchangeN" class="form-check-input">
+                            <label id="no15" for="exchangeN" class="form-check-label">No</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <label id="commentKal" class="text-sm-right col-sm-6 d-block" for="commentKa">Comment (in Georgian) :</label>
+                    <textarea id="desctiption_ka" name="commentKa" class="form-control mx-auto col-11 my-1 rounded" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <label id="commentEnl" class="text-sm-right col-sm-6 d-block" for="commentEn">Comment (in English) :</label>
+                    <textarea id="desctiption" name="commentEn" class="form-control mx-auto col-11 my-1 rounded" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <label id="photosl" class="text-sm-right col-sm-6 d-block" for="">Photos (maximum 12) :</label>
+                    <div class="border btn-outline-primary rounded col-4 d-flex justify-content-center align-items-center" style="height: 100px; float: left;" >
+                        <input type="file" id="files" name="files[]" multiple width="100%; height:inherit; background:red" onchange="UploadFiles()">
+                        <i class="fas fa-camera mr-1" style="font-size: 30px;"></i>
+                        <i class="fas fa-plus-circle" style="font-size: 20px;"></i>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="border my-2 col-12 rounded float-left" style="height: 100px;" id="preview">
+
+                    </div>
+                    </div>
+                    <div class="form-group" style="margin-top:250px">
+                    <label id="vidURLl" class="text-sm-right col-sm-4" for="vidURL">URL for the video :</label>
+                    <input type="url" id="vidURL" class="form-control col-sm-8 rounded float-sm-right mb-1">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                    <input type="button" value="Previous" class="form-control btn btn-primary col-6 mr-1" onclick="document.getElementById('AddAnn3').className='d-none'; document.getElementById('AddAnn2').className = 'd-flex align-items-center my-3'; ">
+                    <input type="submit" value="Submit" class="form-control btn btn-primary col-6 ml-1" id="save" onclick="UploadProduct()">
+                    </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</section>

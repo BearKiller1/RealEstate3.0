@@ -320,16 +320,6 @@ DeleteProduct = (prod_id) => {
 }
 
 EditProduct = (prod_id) => {
-    Ajax({
-        url: "dashboard",
-        object:{
-            method:"EditProduct",
-            data :{
-                id: prod_id
-            }
-        },
-        success: (response) => {
-            Router("edit_product","product");
-        }
-    })
+    window.localStorage.setItem('edit_prod_id',prod_id);
+    Router('edit')
 }

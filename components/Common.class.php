@@ -63,10 +63,10 @@
                         </div>
                         <div class="col-md-12" style="display:flex; margin-top:25px">
                             <div class="col-md-6">
-                                <button class="btn btn-success btn-block" onclick="AcceptProduct('.$res[$i]['product_id'].')">Edit</button>
+                                <button class="btn btn-success btn-block" onclick="EditProduct('.$res[$i]['product_id'].')">Edit</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-danger btn-block" onclick="RejectProduct('.$res[$i]['product_id'].')">Delete</button>
+                                <button class="btn btn-danger btn-block" onclick="DeleteProduct('.$res[$i]['product_id'].')">Delete</button>
                             </div>
                         </div>
                         ';
