@@ -25,7 +25,6 @@ GetProductInfo = () => {
         },
         success: (response) => {
             response = JSON.parse(response);
-            console.log(response);
             FillProductData(response.data);
         }
     })
@@ -41,6 +40,29 @@ FillProductData = (data) => {
     $("#NH").val(data.child_district);
     $("#Cadastral").val(data.cadastral);
     $("#F-address").val(data.address);
+    $("#floor").val(data.floor);
+    $("#storeys").val(data.number_of_storeys);
+    $("#rooms").val(data.number_of_rooms);
+    $("#bedroom").val(data.bedroom);
+
+    if(data.valcomn)
+
+    data.balcony = 1 ? $("#balcony").prop('checked', true) : console.log(12);
+    data.loggia = 1 ? $("#loggia").prop('checked', true) : console.log(12);
+    data.veranda = 1 ? $("#veranda").prop('checked', true) : console.log(12);
+    data.Gas = 1 ? $("#Gas").prop('checked', true) : console.log(12);
+    data.Telephone = 1 ? $("#Telephone").prop('checked', true) : console.log(12);
+    data.Internet = 1 ? $("#Internet").prop('checked', true) : console.log(12);
+    data.Television = 1 ? $("#Television").prop('checked', true) : console.log(12);
+    data.Hot-water = 1 ? $("#Hot-water").prop('checked', true) : console.log(12);
+    data.Heating = 1 ? $("#Heating").prop('checked', true) : console.log(12);
+    data.Parking = 1 ? $("#Parking").prop('checked', true) : console.log(12);
+    data.Storeroom = 1 ? $("#Storeroom").prop('checked', true) : console.log(12);
+    data.SElevator = 1 ? $("#SElevator").prop('checked', true) : console.log(12);
+    data.PElevator = 1 ? $("#PElevator").prop('checked', true) : console.log(12);
+    data.Fireplace = 1 ? $("#Fireplace").prop('checked', true) : console.log(12);
+    data.Furniture = 1 ? $("#Furniture").prop('checked', true) : console.log(12);
+    data.Air_conditioner = 1 ? $("#Air-conditioner").prop('checked', true) : console.log(12);
 }
 
 UploadFiles = () => {
