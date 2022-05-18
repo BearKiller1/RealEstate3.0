@@ -19,6 +19,12 @@
     <script src="LangSwitch.js"></script>
     <!-- MD5 -->
     <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+    
+    <!-- Google Maps API -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC5Jrp9PtHe0WapppUzxbIpMDWMAcV3qE4&sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="https://rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.js"></script>
+    
     <title>Document</title>
 </head>
 <body>

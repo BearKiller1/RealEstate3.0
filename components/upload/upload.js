@@ -160,6 +160,8 @@ UploadProduct = () => {
                 ceiling_height     : $("#Cheight").val(),
                 condition_id       : $("option[value='"+$("#Condition").val()+"']").attr('data_id'),
                 exchange           : $("#exchangeY").is (":checked")  ? 1 : 0,
+                x                  : $("#x").val(),
+                y                  : $("#y").val(),
             },
             image:{
                 path:image_obj

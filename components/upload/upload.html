@@ -303,9 +303,22 @@
                         <label id="F-addressl" class="text-sm-right col-sm-4" for="F-address">full address :</label>
                         <textarea placeholder="Enter full address" id="F-address" name="address" id="address" class="form-control mx-auto col-10 col-sm-8 my-1 d-inline rounded float-right" rows="2"></textarea>
                     </div>
-                    <div class="form-group">
-                        <img class="col-10 col-sm-8 mx-auto my-3 rounded float-right" src="assets/images/Maps.png" alt="">
+                    <div class="form-group" style="margin-top:20px">
+                        <input type="text" id="x" hidden value="41.7169386609183">
+                        <input type="text" id="y" hidden value="44.78814315795898">
+                        <div id="us2" style="width: 500px; height: 400px; margin-top:20px;"></div> 
                     </div>
+                    <script>
+                        $('#us2').locationpicker({
+                            location: {latitude: 41.7169386609183, longitude: 44.78814315795898},   
+                            radius: 0,
+                            enableAutocomplete: true,
+                            onchanged: function(currentLocation, radius, isMarkerDropped) {
+                                $("#x").val(currentLocation.latitude);
+                                $("#y").val(currentLocation.longitude);
+                            }
+                        });
+                    </script>
                     <button type="button" class="mx-auto form-control btn btn-primary" onclick="document.getElementById('AddAnn1').className='d-none'; document.getElementById('AddAnn2').className = 'd-flex align-items-center my-3'; ">Next</button>
                 </form>
             </div>
