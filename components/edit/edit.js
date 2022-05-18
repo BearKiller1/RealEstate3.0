@@ -26,6 +26,7 @@ GetProductInfo = () => {
         success: (response) => {
             response = JSON.parse(response);
             FillProductData(response.data);
+            GetProductFiles(response.images);
         }
     })
 }
@@ -45,7 +46,15 @@ FillProductData = (data) => {
     $("#rooms").val(data.number_of_rooms);
     $("#bedroom").val(data.bedroom);
 
-    if(data.valcomn)
+    if(data.bathroom == 1){
+        $("#Bathrooms1").prop('checked', true)
+    }
+    else if(data.bathroom == 2){
+        $("#Bathrooms2").prop('checked', true)
+    }
+    else if(data.bathroom == 3){
+        $("#Bathrooms3").prop('checked', true)
+    }
 
     data.balcony = 1 ? $("#balcony").prop('checked', true) : console.log(12);
     data.loggia = 1 ? $("#loggia").prop('checked', true) : console.log(12);
@@ -54,7 +63,7 @@ FillProductData = (data) => {
     data.Telephone = 1 ? $("#Telephone").prop('checked', true) : console.log(12);
     data.Internet = 1 ? $("#Internet").prop('checked', true) : console.log(12);
     data.Television = 1 ? $("#Television").prop('checked', true) : console.log(12);
-    data.Hot-water = 1 ? $("#Hot-water").prop('checked', true) : console.log(12);
+    data.HotWater = 1 ? $("#Hot-water").prop('checked', true) : console.log(12);
     data.Heating = 1 ? $("#Heating").prop('checked', true) : console.log(12);
     data.Parking = 1 ? $("#Parking").prop('checked', true) : console.log(12);
     data.Storeroom = 1 ? $("#Storeroom").prop('checked', true) : console.log(12);
@@ -63,6 +72,76 @@ FillProductData = (data) => {
     data.Fireplace = 1 ? $("#Fireplace").prop('checked', true) : console.log(12);
     data.Furniture = 1 ? $("#Furniture").prop('checked', true) : console.log(12);
     data.Air_conditioner = 1 ? $("#Air-conditioner").prop('checked', true) : console.log(12);
+
+    $("#Cheight").val(data.ceiling_height);
+    $("#Condition").val(data.condition_name);
+    $("#Design").val(data.designs_name);
+    $("#Pnumber").val(data.mobile_phone);
+    $("#Area").val(data.size);
+    $("#Price").val(data.price);
+    $("#desctiption_ka").val(data.description)
+    $("#desctiption").val(data.description_en)
+
+    if(data.price_id == 1){
+        $("#t_price").prop("selected", true)
+    }
+    else{
+        $("#m_price").prop("selected", true)
+    }
+
+    if(data.price_value == 1){
+        $("#GEL").prop("selected", true)
+    }
+    else{
+        $("#usd").prop("selected", true)
+    }
+
+    if(data.exchange == 1){
+        $("#exchangeY").prop("checked", true)
+    }
+    else{
+        $("#exchangeN").prop("checked", true)
+    }
+}
+
+GetProductFiles = (images) =>{
+    for(var index = 0; index < images.length; index++) {
+        var src = images[index]['path'];
+
+        var box =   document.createElement("div");
+        var img =   document.createElement("img");
+
+        var close = document.createElement("div");
+
+        close.appendChild(document.createTextNode("X"));
+        close.className = "close";
+        box.className = "image_container";
+        img.src = src;
+        img.className = "image";
+        box.appendChild(close);
+        box.appendChild(img);
+        $('#preview').append(box);
+    }
+    $(".close").click(function(){
+        var image = this.parentNode.children[1].getAttribute('src');
+    
+        Ajax({
+            url:'upload',
+            object:{
+                method:'DeleteFile',
+                data : {
+                    src: image
+                },
+            },
+            type:"POST",
+            success:(response) => {
+                response = JSON.parse(response)
+                console.log(response);
+            }
+        })
+    
+        this.parentNode.remove();
+    });
 }
 
 UploadFiles = () => {
@@ -106,10 +185,9 @@ UploadFiles = () => {
                         box.appendChild(img);
                         $('#preview').append(box);
                     }
-    
                     $(".close").click(function(){
                         var image = this.parentNode.children[1].getAttribute('src');
-    
+                    
                         Ajax({
                             url:'upload',
                             object:{
@@ -124,7 +202,7 @@ UploadFiles = () => {
                                 console.log(response);
                             }
                         })
-    
+                    
                         this.parentNode.remove();
                     });
                 }
@@ -173,10 +251,11 @@ UploadProduct = () => {
         image_obj.push('assets/images/nophoto.webp')
 
     Ajax({
-        url:"upload",
+        url:"edit",
         object:{
-            method:"UploadProduct",
+            method:"EditProduct",
             data:{
+                id: prod_id,
                 title              : $("#TEST").val(),
                 price              : $("#Price").val(),
                 price_id           : price_id,
@@ -198,6 +277,7 @@ UploadProduct = () => {
                 size               : $("#Area").val(),
                 description        : $("#desctiption_ka").val(),
                 description_en     : $("#desctiption").val(),
+                mobile_phone       : $("#Pnumber").val(),
                 bathroom           : Bathrooms,
                 shared             : shared,
                 balcony            : $("#balcony").is   (":checked")  ? 1 : 0,

@@ -44,6 +44,36 @@
             $this->response['images'] = Parent::GetData($this->img_sql, [$this->prod_id]);
         }
 
+        public function EditProduct(){
+            $this->user = $_SESSION['user_id'];
+            $this->request['user_id'] = $this->user;
+            $this->request['datetime'] = date('Y-m-d H:i:s');
+            $this->prod_id = $this->request['id'];
+            
+            $this->images = $_REQUEST["image"];
+
+            if($this->user > 0){
+                Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
+                Parent::InsertData('products',$this->request, true);
+                if($this->prod_id > 0){
+                    Parent::RunQuery("DELETE FROM files WHERE product_id = '".$this->prod_id."'");
+                    for ($i=0; $i < COUNT($this->images['path']); $i++) {
+                        $this->files['product_id'] = $this->prod_id;
+                        $this->files['path'] = $this->images['path'][$i];
+                        $this->response['files'] = Parent::InsertData('files',$this->files, false);
+                    }
+                    $this->response['success'] = 1;
+                }
+                else{
+                    $this->response['success'] =2;
+                }
+            }
+            else{
+                $this->response['success'] = $this->user ;
+            }
+            
+        }
+
         /**
          * This function returnt the response of this php file
          */
