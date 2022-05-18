@@ -53,9 +53,9 @@
             $this->images = $_REQUEST["image"];
 
             if($this->user > 0){
-                Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
-                Parent::InsertData('products',$this->request, true);
                 if($this->prod_id > 0){
+                    Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
+                    Parent::InsertData('products',$this->request, true);
                     Parent::RunQuery("DELETE FROM files WHERE product_id = '".$this->prod_id."'");
                     for ($i=0; $i < COUNT($this->images['path']); $i++) {
                         $this->files['product_id'] = $this->prod_id;
