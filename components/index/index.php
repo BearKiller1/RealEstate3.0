@@ -20,7 +20,7 @@
         }
 
         public function GetLastProducts(){
-            global $method;
+
             $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
             
             $this->sql = "SELECT  products.id AS product_id,
@@ -41,8 +41,8 @@
             for ($i=0; $i < COUNT($this->response); $i++) {
                 $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
             }
-            $method = '';
-            $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 3);
+
+            $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) , 3);
         }
 
 

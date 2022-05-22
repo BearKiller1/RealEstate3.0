@@ -27,9 +27,20 @@ GetProductInfo = () => {
             response = JSON.parse(response);
             FillProductData(response.data);
             GetProductFiles(response.images);
+            console.log(response.data.product_id + " " + response.data.y);
+            $('#us2').locationpicker({
+                location: {latitude: response.data.x, longitude: response.data.y},   
+                radius: 0,
+                enableAutocomplete: true,
+                onchanged: function(currentLocation, radius, isMarkerDropped) {
+                    $("#x").val(currentLocation.latitude);
+                    $("#y").val(currentLocation.longitude);
+                }
+            });
         }
     })
 }
+
 
 FillProductData = (data) => {
     $("#transactionT").val(data.transaction_type_name);
@@ -136,7 +147,6 @@ GetProductFiles = (images) =>{
             type:"POST",
             success:(response) => {
                 response = JSON.parse(response)
-                console.log(response);
             }
         })
     
@@ -199,7 +209,6 @@ UploadFiles = () => {
                             type:"POST",
                             success:(response) => {
                                 response = JSON.parse(response)
-                                console.log(response);
                             }
                         })
                     
@@ -299,6 +308,8 @@ UploadProduct = () => {
                 ceiling_height     : $("#Cheight").val(),
                 condition_id       : $("option[value='"+$("#Condition").val()+"']").attr('data_id'),
                 exchange           : $("#exchangeY").is (":checked")  ? 1 : 0,
+                x                  : $("#x").val(),
+                y                  : $("#y").val(),
             },
             image:{
                 path:image_obj

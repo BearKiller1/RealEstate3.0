@@ -19,7 +19,8 @@
 
         public function GetProductInfo(){
             $this->prod_id = $this->request['id'];
-            $this->sql = "  SELECT *,
+            $this->sql = "  SELECT      *,
+                                        products.id AS 'product_id',
                                         transaction_type.`name` AS transaction_type_name,
                                         building_type.`name` AS building_type_name,
                                         building_status.`name` AS building_status_name,
@@ -37,9 +38,9 @@
                             LEFT JOIN districts AS child_districts ON products.sub_district_id = child_districts.id
                             LEFT JOIN `condition` ON products.condition_id = `condition`.id
                             LEFT JOIN designs ON products.designs = designs.id
-                            WHERE products.id = 114";
+                            WHERE products.id = ?";
 
-            $this->response['data'] = Parent::GetData($this->sql, [])[0];
+            $this->response['data'] = Parent::GetData($this->sql, [$this->prod_id])[0];
             $this->img_sql = "SELECT * FROM files WHERE product_id = ?";
             $this->response['images'] = Parent::GetData($this->img_sql, [$this->prod_id]);
         }
@@ -54,6 +55,9 @@
 
             if($this->user > 0){
                 if($this->prod_id > 0){
+                    $this->sql = "SELECT uploaded FROM products WHERE id = ?";
+                    $this->request['uploaded'] = Parent::GetData($this->sql, [$this->prod_id])[0]['uploaded'];
+                    
                     Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
                     Parent::InsertData('products',$this->request, true);
                     Parent::RunQuery("DELETE FROM files WHERE product_id = '".$this->prod_id."'");

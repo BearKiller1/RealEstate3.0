@@ -50,6 +50,10 @@ $(document).ready(function() {
                     console.log(i);
                     document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
+                case "მომართვები":
+                    console.log(i);
+                    document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                    break;
                 default:
                     console.log(document.getElementById('nav'+i).innerText);
                     break;
