@@ -83,7 +83,7 @@
                             LEFT JOIN files     ON products.id = files.product_id
                             LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
                             LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE    products.actived = 1 AND products.user_id = '".$this->user."' AND uploaded = 0
+                            WHERE    products.actived = 1 AND uploaded = 0
                             GROUP BY products.id
                             ORDER BY products.id DESC ";
                     

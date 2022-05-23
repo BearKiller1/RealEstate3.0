@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    if(window.localStorage.getItem('user_id') != 48){
+        $("#incomming_product").hide();
+    }
+
+    
     if(window.localStorage.getItem('lang') == 1){
         $("#change-lan-ka").addClass("d-none");
     }
@@ -7,7 +12,7 @@ $(document).ready(function() {
     }
     GetUserInfo();
     var user_pwd;
-    for (let i = 1; i < 8; i++) {
+    for (let i = 1; i < 7; i++) {
         document.getElementById("nav"+i).addEventListener("click",(e)=>{
             try{document.querySelector('.selected').className='nav-link text-dark my-2 ';}catch{} 
             document.getElementById('nav'+i).className += 'selected';
@@ -45,6 +50,10 @@ $(document).ready(function() {
                     break;
                 case "ჩემი სანიშნეები":
                     document.getElementById('sec-mb').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
+                    break;
+                case "Incommings":
+                    console.log(i);
+                    document.getElementById('sec-incom').className = "col-lg-9 col-md-8 ml-auto mt-5 ";
                     break;
                 case "Incomming":
                     console.log(i);
