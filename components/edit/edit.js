@@ -46,13 +46,43 @@ GetProductInfo = () => {
 
 
 FillProductData = (data) => {
-    $("#transactionT").val(data.transaction_type_name);
-    $("#Btype").val(data.building_type_name);
-    $("#statusI").val(data.building_status_name);
     $("#year").val(data.building_year);
-    $("#city").val(data.city_name);
-    $("#district").val(data.district_name);
-    $("#NH").val(data.child_district);
+
+    if(window.localStorage.getItem('lang') == 2){
+        $("#city").val(data.city_name);
+        $("#district").val(data.district_name);
+        $("#NH").val(data.child_district);
+        $("#transactionT").val(data.transaction_type_name);
+        $("#Btype").val(data.building_type_name);
+        $("#statusI").val(data.building_status_name);
+        $("#Condition").val(data.condition_name);
+
+        $("#Design").val(data.designs_name);
+    }
+    else{
+        $("#city").val(data.city_geo_name);
+        $("#district").val(data.district_geo_name);
+
+        $("#NH").val(data.child_district_geo_name);
+
+        $("#transactionT").val(data.transaction_type_geo_name);
+        $("#Btype").val(data.building_type_geo_name);
+        $("#statusI").val(data.building_status_geo_name);
+        $("#Condition").val(data.condition_geo_name);
+        $("#Design").val(data.designs_geo_name);
+    }
+
+    $("#NH_id").val(data.child_district_id);
+    $("#district_id").val(data.district_id);
+    $("#city_id").val(data.city_id);
+    $("#transactionTl_id").val(data.transaction_type_id);
+    $("#Btypel_id").val(data.building_type_id);
+    $("#statusI_id").val(data.building_status_id);
+    $("#Conditions_id").val(data.condition_id);
+    $("#Designs_id").val(data.designs_id);
+
+
+
     $("#Cadastral").val(data.cadastral);
     $("#F-address").val(data.address);
     $("#floor").val(data.floor);
@@ -91,8 +121,6 @@ FillProductData = (data) => {
     data.air_conditioner    == 1 ? $("#Air-conditioner").prop('checked', true)  : console.log(12);
 
     $("#Cheight").val(data.ceiling_height);
-    $("#Condition").val(data.condition_name);
-    $("#Design").val(data.designs_name);
     $("#Pnumber").val(data.mobile_phone);
     $("#Area").val(data.size);
     $("#Price").val(data.price);
@@ -265,6 +293,23 @@ UploadProduct = () => {
     else
         image_obj.push('assets/images/nophoto.webp')
 
+    $("#NH_id").val(data.child_district_id);
+    $("#district_id").val(data.district_id);
+    $("#city_id").val(data.city_id);
+    $("#transactionTl_id").val(data.transaction_type_id);
+    $("#Btypel_id").val(data.building_type_id);
+    $("#statusI_id").val(data.building_status_id);
+    $("#Conditions_id").val(data.condition_id);
+    $("#Designs_id").val(data.designs_id);
+
+    var btype       = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
+    var transaction = $("option[value='"+$("#transactionT").val()+"']").attr('data_id');
+    
+    if(transaction == undefined || transaction == null){
+        transaction = $("#transactionTl_id").val();
+    }
+
+
     Ajax({
         url:"edit",
         object:{
@@ -275,11 +320,11 @@ UploadProduct = () => {
                 price              : $("#Price").val(),
                 price_id           : price_id,
                 price_value        : price_val,
-                transaction_type   : $("option[value='"+$("#transactionT").val()+"']").attr('data_id')  ,
+                transaction_type   : transaction,
                 building_type      : $("option[value='"+$("#Btype").val()+"']").attr('data_id')         ,
                 building_status    : $("option[value='"+$("#statusI").val()+"']").attr('data_id')       ,
                 district_id        : $("option[value='"+$("#district").val()+"']").attr('data_id')      ,
-                sub_district_id    : $("option[value='"+$("#NH").val()+"']").attr('data_id')            ,
+                sub_district_id    : $("option[value='"+$("#Btype").val()+"']").attr('data_id')            ,
                 designs            : $("option[value='"+$("#Design").val()+"']").attr('data_id')        ,
                 city_id            : $("option[value='"+$("#city").val()+"']").attr('data_id')          ,
                 building_year      : $("#year").val(),

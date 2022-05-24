@@ -49,10 +49,13 @@
             $this->sql = "  SELECT  products.id AS product_id,
                                     IFNULL(YEAR(NOW()) - IFNULL(products.building_year,YEAR(NOW())), 0) AS build_year,
                                     building_type.name AS building_type_name,
+                                    building_type.geo_name AS building_type_geo_name,
                                     building_status.name AS building_status_name,
                                     condition.name AS condition_name,
+                                    condition.geo_name AS condition_geo_name,
                                     transaction_type.name AS transaction_type_name,
                                     designs.name AS design_name,
+                                    designs.geo_name AS design_geo_name,
                                     products.*,
                                     users.username,
                                     users.phone,
@@ -131,7 +134,8 @@
                 $res['conditionC'] = $this->on;
             }
 
-            $this->html = '
+            if($_SESSION['lang_id'] == 2){
+                $this->html = '
                     <h5 class="d-block">facilities</h5>
                     <span class=" '.$res['conditionC'].'        "> '.$res['condition_name'].' </span>
                     <span class=" '.$res['designsC'].'          ">'.$res['design_name'].'</span>
@@ -155,7 +159,34 @@
                     <span class=" '.$res['telephoneC']. '        ">Telephone</span>
                     <span class=" '.$res['televisionC']. '       ">Television</span>
                     <span class=" '.$res['air_conditionerC']. '  ">Air conditioner</span>
-            ';
+                ';
+            }
+            else{
+                $this->html = '
+                    <h5 class="d-block">კეთილმოწყობა</h5>
+                    <span class=" '.$res['conditionC'].'        "> '.$res['condition_geo_name'].' </span>
+                    <span class=" '.$res['designsC'].'          ">'.$res['design_geo_name'].'</span>
+                    <span class=" '.$res['ceiling_heightC']. '  ">ჭერის სიმაღლე '.$res['ceiling_height']. ' M</span>
+                    <span class=" '.$res['bedroomC']. '         ">საზინებელი '.$res['bedroom'].'</span>
+                    <span class=" '.$this->on . '               ">Adapted to PSN</span>
+                    <span class=" '.$res['balconyC'].'          ">აივანი</span>
+                    <span class=" '.$res['verandaC']. '         ">ვერანდა</span>
+                    <span class=" '.$res['loggiaC']. '          ">ლოჯი</span>
+                    <span class=" '.$res['bathroomC']. '        ">სველი წერტილი '.$res['bathroom'].'</span>
+                    <span class=" '.$res['heatingC']. '         ">გათბობა</span>
+                    <span class=" '.$res['parkingC']. '         ">პარკინგი</span>
+                    <span class=" '.$res['storeroomC']. '       ">საწყობი</span>
+                    <span class=" '.$res['hot_waterC']. '       ">ცხელი წყალი</span>
+                    <span class=" '.$res['gasC']. '              ">გაზი</span>
+                    <span class=" '.$res['internetC']. '         ">ინტერნეტი</span>
+                    <span class=" '.$res['fireplaceC']. '        ">ბუხარი</span>
+                    <span class=" '.$res['furnitureC']. '        ">ავეჯი</span>
+                    <span class=" '.$res['passenger_elevatorC'].'">სამგზავრო ლიფტი</span>
+                    <span class=" '.$res['service_elevatorC']. ' ">სერვისის ლიფტი</span>
+                    <span class=" '.$res['telephoneC']. '        ">ქალაქის ტელეფონი</span>
+                    <span class=" '.$res['televisionC']. '       ">კონდინციონერი</span>
+                ';
+            }
             return $this->html;
         }
 

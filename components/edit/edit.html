@@ -11,18 +11,21 @@
                 <form class="" action="#">
                     <h4 id="anntypel" class="mx-auto mb-3">Announcement type</h4>
                     <div class="form-group">
+                        <input type="text" id="transactionTl_id" hidden="hidden">
                         <label id="transactionTl" class="text-sm-right col-sm-4" for="transactionT">transaction Type :</label>
                         <input class="form-control mx-auto col-10 col-sm-8 my-1 d-inline rounded float-right" list="transaction" id="transactionT" placeholder="transaction type" autocomplete="off">
                         <datalist id="transaction">
                         </datalist>
                     </div>
                     <div class="form-group">
+                        <input type="text" id="Btypel_id" hidden="hidden">
                         <label id="Btypel" class="text-sm-right col-sm-4" for="Btype">Building type :</label>
                         <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" list="btype" id="Btype" placeholder="building type" autocomplete="off">
                         <datalist id="btype">
                         </datalist>
                         </div>
                         <div class="form-group">
+                        <input type="text" id="statusI_id" hidden="hidden">
                         <label id="statusl" class="text-sm-right col-sm-4" for="statusI">Status :</label>
                         <input id="statusI" class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" list="status" placeholder="Status" autocomplete="off">
                         <datalist id="status">
@@ -35,6 +38,7 @@
                     <h2 id="locationl" class="mx-auto mt-5 mb-3">Location</h2>
                     <div class="form-group">
                         <label id="cityl" class="text-sm-right col-sm-4" for="city">City :</label>
+                        <input type="text" id="city_id" hidden="hidden">
                         <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="city" list="cities" placeholder="Select city">
                         <datalist id="cities">
                             <!-- <option id="Tbilisi" value="Tbilisi"></option>
@@ -196,103 +200,158 @@
                     </div>
                     <div class="form-group">
                         <label class="text-sm-right col-sm-4" for="district">district :</label>
+                        <input type="text" id="district_id" hidden="hidden">
                         <input class="form-control mx-auto d-inline col-10 col-sm-8 my-1 rounded float-right" id="district" list="districts" placeholder="Select district" autocomplete="off" onchange="ChildDistrict()">
                         <datalist id="districts">
                         </datalist>
                     </div><div class="form-group d-flex w-100">
+                    <input type="text" id="NH_id" hidden="hidden">
                     <input class="form-control ml-auto col-10 col-sm-8 rounded mt-1" id="NH" placeholder="All districts" autocomplete="off">
-                        <datalist id="Gldani">
-                        </datalist>
-                        <datalist id="Didube">
-                        </datalist>
-                        <datalist id="Vake">
-                        </datalist>
-                        <datalist id="Isani">
-                        </datalist>
-                        <datalist id="Krtsanisi">
-                        </datalist>
-                        <datalist id="Mtatsminda">
-                        </datalist>
-                        <datalist id="Nadzaladevi">
-                        </datalist>
-                        <datalist id="Saburtalo">
-                        </datalist>
-                        <datalist id="Samgori">
-                        </datalist>
-                        <datalist id="Chugureti">
-                        </datalist>
-                        <datalist id="Other">
-                        </datalist>
-                        <script>
-                            document.getElementById('district').addEventListener("input",(e)=>{
-                            let x = document.getElementById('district').value;
-                            switch (x) {
-                                case "Gldani":
-                                
+                    <datalist id="Gldani">
+                    </datalist>
+                    <datalist id="Didube">
+                    </datalist>
+                    <datalist id="Vake">
+                    </datalist>
+                    <datalist id="Isani">
+                    </datalist>
+                    <datalist id="Krtsanisi">
+                    </datalist>
+                    <datalist id="Mtatsminda">
+                    </datalist>
+                    <datalist id="Nadzaladevi">
+                    </datalist>
+                    <datalist id="Saburtalo">
+                    </datalist>
+                    <datalist id="Samgori">
+                    </datalist>
+                    <datalist id="Chugureti">
+                    </datalist>
+                    <datalist id="Other">
+                    </datalist>
+
+                    <datalist id="გლდანი">
+                    </datalist>
+                    <datalist id="დიდუბე">
+                    </datalist>
+                    <datalist id="ვაკე">
+                    </datalist>
+                    <datalist id="ისანი">
+                    </datalist>
+                    <datalist id="კრწანისი">
+                    </datalist>
+                    <datalist id="მთაწმინდა">
+                    </datalist>
+                    <datalist id="ნაძალადევი">
+                    </datalist>
+                    <datalist id="საბურთალო">
+                    </datalist>
+                    <datalist id="სამგორი">
+                    </datalist>
+                    <datalist id="ჩუღურეთი">
+                    </datalist>
+                    <datalist id="სხვა">
+                    </datalist>
+                    <script>
+                        document.getElementById('district').addEventListener("input",(e)=>{
+                        let x = document.getElementById('district').value;
+                        switch (x) {
+                            case "Gldani":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "გლდანი":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "Didube":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                        
+                            case "დიდუბე":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "Vake":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
                             
-                                case "Didube":
-                                
+                            case "ვაკე":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "Isani":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
                             
-                                case "Vake":
-                                
+                            case "ისანი":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Isani":
-                                
+
+                            case "Krtsanisi":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Krtsanisi":
-                                
+
+                            case "კრწანისი":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Mtatsminda":
-                                
+
+                            case "Mtatsminda":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Nadzaladevi":
-                                
+
+                            case "მთაწმინდა":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Saburtalo":
-                                
+                            case "Nadzaladevi":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Samgori":
-                                
+
+                            case "ნაძალადევი":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Chugureti":
-                                
+                            case "Saburtalo":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                case "Other":
-                                
+
+                            case "საბურთალო":
                                 document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            
-                                default:
+
+                            case "Samgori":
+                                document.getElementById('NH').setAttribute('list', x);
                                 break;
-                            }
-                            })
-                            document.getElementById('district').addEventListener("mousedown",(e)=>{
-                            if (document.getElementById('district').value != "") document.getElementById('district').value="";
-                            })
-                            document.getElementById('NH').addEventListener("mousedown",(e)=>{
-                            if (document.getElementById('NH').value != "") document.getElementById('NH').value="";
-                            });
-                        </script>
+                        
+                            case "სამგორი":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                        
+                            case "Chugureti":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "ჩუღურეთი":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+
+                            case "Other":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                        
+                            case "სხვა":
+                                document.getElementById('NH').setAttribute('list', x);
+                                break;
+                            default:
+                            break;
+                        }
+                        })
+                        document.getElementById('district').addEventListener("mousedown",(e)=>{
+                        if (document.getElementById('district').value != "") document.getElementById('district').value="";
+                        })
+                        document.getElementById('NH').addEventListener("mousedown",(e)=>{
+                        if (document.getElementById('NH').value != "") document.getElementById('NH').value="";
+                        });
+                    </script>
                         
                     </div>
                     <div class="form-group">
@@ -665,6 +724,7 @@
                         </datalist>
                     </div>
                     <div class="form-group">
+                    <input type="text" id="Conditions_id" hidden="hidden">
                     <label id="Conditionl" class="text-sm-right col-sm-4" for="Condition">Condition :</label>
                     <input autocomplete="off" class="form-control mx-auto d-inline col-8 rounded float-right mb-1" list="Conditions" id="Condition" placeholder="Condition" onmousedown="document.getElementById('Condition').value='';">
                     <datalist id="Conditions">
@@ -678,6 +738,7 @@
                     </datalist>
                 </div>
                 <div class="form-group">
+                    <input type="text" id="Designs_id" hidden="hidden">
                     <label id="Designl" class="text-sm-right col-sm-4" for="Design">Design :</label>
                     <input autocomplete="off" class="form-control mx-auto d-inline col-8 rounded float-right mb-2" list="Designs" id="Design" placeholder="Design" onmousedown="document.getElementById('Design').value='';">
                     <datalist id="Designs">

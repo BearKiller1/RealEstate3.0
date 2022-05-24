@@ -352,6 +352,7 @@ var LangSwitch = {
         "Other2": "Other",
         "Dashboard": "Dashboard",
         "incommings": "Incomming",
+        "city":"City",
     },
     "Georgian":
     {
@@ -706,10 +707,11 @@ var LangSwitch = {
         "Other": "სხვა",
         "Other2": "სხვა",
         "Dashboard": "პროფილი",
+        "city":"ქალაქი",
     }
 };
 GeoName = (Reloader = true) => {
-    console.log(Reloader);
+    
     window.localStorage.setItem("lang", 1);
 
     Ajax({

@@ -218,8 +218,8 @@ Call = (method, datalist, data = {}) => {
         type:"POST",
         success:(response) => {
             response = JSON.parse(response);
-
             $("#"+datalist).html(response.page);
+            console.log( $("#"+datalist).html())
         }
     })
 }

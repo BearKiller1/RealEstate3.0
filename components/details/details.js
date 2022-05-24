@@ -19,12 +19,13 @@ GetProductDetails = (ProductID) => {
         success:(response) => {
             response = JSON.parse(response);
             
-            console.log(response)
             $("#facilities").html(response.facilities);
             if(response.bookmark == 1){
                 $("#book").attr("class","fas fa-bookmark");
             }
             response = response[0]
+
+            if(response.build_year == null || response.build_year == undefined ){ response.build_year = 0 }
 
             if(response.images.length > 0){
                 BuildImages(response.images)
@@ -65,12 +66,23 @@ GetProductDetails = (ProductID) => {
             $("#prod_size").html(response.size      );
             $("#price1").html(response.price        );
             $("#prod_floor").html(response.floor    );
-            $("#building_type").html(response.building_type_name    );
-            $("#prod_room").html(response.number_of_rooms + " Rooms");
-            $("#prod_bedroom").html(response.bedroom + " Bedrooms"  );
-            $("#description").html(response.description_en          );
-            if(response.build_year == null || response.build_year == undefined ){ response.build_year = 0 }
-            $("#building_year").html(response.build_year + " year building");
+
+            if(window.localStorage.getItem("lang") == 1){
+                $("#description").html(response.description);
+                $("#building_type").html(response.building_type_geo_name);
+                $("#building_year").html(response.build_year + " წლის წინ");
+                $("#prod_room").html(response.number_of_rooms + " ოთახი");
+                $("#prod_bedroom").html(response.bedroom + " საძინებელი"  );
+            }
+            else if(window.localStorage.getItem("lang") == 2){
+                $("#description").html(response.description_en);
+                $("#building_type").html(response.building_type_name);
+                $("#building_year").html(response.build_year + " year building");
+                $("#prod_room").html(response.number_of_rooms + " Rooms");
+                $("#prod_bedroom").html(response.bedroom + " Bedrooms"  );
+            }
+
+            
             $("#full_adress").html(response.address);
             
             $('#us2').locationpicker({

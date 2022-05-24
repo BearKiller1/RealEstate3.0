@@ -21,14 +21,30 @@
             $this->prod_id = $this->request['id'];
             $this->sql = "  SELECT      *,
                                         products.id AS 'product_id',
+                                        transaction_type.`id` AS 'transaction_type_id',
                                         transaction_type.`name` AS transaction_type_name,
+                                        transaction_type.`geo_name` AS transaction_type_geo_name,
+                                        building_type.`id` AS 'building_type_id',
                                         building_type.`name` AS building_type_name,
+                                        building_type.`geo_name` AS building_type_geo_name,
+                                        building_status.`id` AS 'building_status_id',
                                         building_status.`name` AS building_status_name,
+                                        building_status.`geo_name` AS building_status_geo_name,
+                                        city.`id` AS 'city_id',
                                         city.`name` AS city_name,
+                                        city.`geo_name` AS city_geo_name,
+                                        districts.`id` AS 'district_id',
                                         districts.`name` AS district_name,
+                                        districts.`geo_name` AS district_geo_name,
+                                        child_districts.`id` AS 'child_district_id',
                                         child_districts.`name` AS child_district,
+                                        child_districts.`geo_name` AS child_district_geo_name,
+                                        `condition`.`id` AS 'condition_id',
                                         `condition`.`name` AS condition_name,
-                                        designs.`name` AS designs_name
+                                        `condition`.`geo_name` AS condition_geo_name,
+                                        designs.`id` AS 'designs_id',
+                                        designs.`name` AS designs_name,
+                                        designs.`geo_name` AS designs_geo_name
                             FROM products 
                             LEFT JOIN transaction_type ON products.transaction_type = transaction_type.id
                             LEFT JOIN building_type ON products.building_type = building_type.id
