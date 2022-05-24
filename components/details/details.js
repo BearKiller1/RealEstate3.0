@@ -71,7 +71,8 @@ GetProductDetails = (ProductID) => {
             $("#description").html(response.description_en          );
             if(response.build_year == null || response.build_year == undefined ){ response.build_year = 0 }
             $("#building_year").html(response.build_year + " year building");
-
+            $("#full_adress").html(response.address);
+            
             $('#us2').locationpicker({
                 location: {latitude: response.x, longitude: response.y},   
                 radius: 0,
