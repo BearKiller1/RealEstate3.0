@@ -92,6 +92,17 @@
                 $this->response['success'] = $this->user ;
             }
             
+            /**
+             * @TODO I have to loop the request and update them one by one using array keys to set the column name in database 
+             */
+            // for ($i=0; $i < COUNT($this->request); $i++) { 
+            //     // request[$i]['name']." = '".$this->request[$i]['value']."' WHERE id = '".$this->prod_id."'";
+            //     $this->response['result'][$i] = array(
+            //                                     array('name' => $this->request[$i]),
+            //                                     array('value' => array_keys($this->request)[$i])
+            //                                 );
+            // }
+
         }
 
         /**
