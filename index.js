@@ -46,10 +46,10 @@ Router = (Page, Group = '') => {
             }
 
             if(window.localStorage.getItem("lang") == 1){
-                $("#LangKa").click();
+                GeoName(false);
             }
             else if(window.localStorage.getItem("lang") == 2){
-                $("#LangEn").click();
+                EngName(false);
             }
 
         }

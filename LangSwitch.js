@@ -708,8 +708,8 @@ var LangSwitch = {
         "Dashboard": "პროფილი",
     }
 };
-GeoName = () => {
-    
+GeoName = (Reloader = true) => {
+    console.log(Reloader);
     window.localStorage.setItem("lang", 1);
 
     Ajax({
@@ -739,11 +739,16 @@ GeoName = () => {
     
     document.getElementById("createdby").innerHTML = "შექმნილია Ashkan811-ის მიერ &copy;";
     
+    if (Reloader) {
+        location.reload();
+    }
+    
 }
 
-EngName = () => {
+EngName = (Reloader = true) => {
+    console.log(Reloader);
     window.localStorage.setItem("lang", 2);
-    
+
     Ajax({
         spURL: 'components/Common.class.php',
         object: {
@@ -754,7 +759,7 @@ EngName = () => {
         },
         success : (response) =>{}
     })
-    
+
 
     document.getElementById('Langbtn').src = document.getElementById('English').src;
     ////////////////////////////////////////////////////////////////////////////////
@@ -770,6 +775,11 @@ EngName = () => {
         }
     }catch{}}
     document.getElementById("createdby").innerHTML = "Created by Ashkan811 &copy;";
+
+    if (Reloader) {
+        location.reload();
+    }
+
 }
 
 // try{
