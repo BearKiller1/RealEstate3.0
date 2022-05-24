@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 24/05/2022 14:56:24
+ Date: 24/05/2022 18:35:32
 */
 
 SET NAMES utf8mb4;
@@ -64,7 +64,7 @@ DROP TABLE IF EXISTS `city`;
 CREATE TABLE `city`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `name_geo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `geo_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `actived` int NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 156 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -416,7 +416,7 @@ CREATE TABLE `files`  (
   `product_id` int NULL DEFAULT NULL,
   `actived` int NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 513 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 592 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of files
@@ -430,10 +430,6 @@ INSERT INTO `files` VALUES (255, NULL, 'assets/uploads/bechedi.png', 125, 1);
 INSERT INTO `files` VALUES (277, NULL, 'assets/images/nophoto.webp', 132, 1);
 INSERT INTO `files` VALUES (278, NULL, 'assets/images/nophoto.webp', 133, 1);
 INSERT INTO `files` VALUES (279, NULL, 'assets/images/nophoto.webp', 134, 1);
-INSERT INTO `files` VALUES (360, NULL, 'assets/uploads/home-banner-2020-02-min.jpg', 115, 1);
-INSERT INTO `files` VALUES (361, NULL, 'assets/uploads/asd.jpg', 115, 1);
-INSERT INTO `files` VALUES (362, NULL, 'assets/uploads/asdasdasd.jpg', 115, 1);
-INSERT INTO `files` VALUES (363, NULL, 'assets/uploads/average-home-sale-price.jpg', 115, 1);
 INSERT INTO `files` VALUES (373, NULL, 'assets/images/nophoto.webp', 135, 1);
 INSERT INTO `files` VALUES (374, NULL, 'assets/uploads/Historic_House.jpg', 114, 1);
 INSERT INTO `files` VALUES (375, NULL, 'assets/uploads/Residentail-Lawn-Sunset-203268350.jpg', 114, 1);
@@ -443,15 +439,25 @@ INSERT INTO `files` VALUES (378, NULL, 'assets/uploads/Historic_House.jpg', 114,
 INSERT INTO `files` VALUES (379, NULL, 'assets/uploads/Residentail-Lawn-Sunset-203268350.jpg', 114, 1);
 INSERT INTO `files` VALUES (380, NULL, 'assets/uploads/Rufus_Rand_Summer_House.jpg', 114, 1);
 INSERT INTO `files` VALUES (381, NULL, 'assets/uploads/VhouseHiRes.jpg', 114, 1);
-INSERT INTO `files` VALUES (504, NULL, 'assets/uploads/asdasdasd.jpg', 136, 1);
-INSERT INTO `files` VALUES (505, NULL, 'assets/uploads/bechedi.png', 136, 1);
-INSERT INTO `files` VALUES (506, NULL, 'assets/uploads/chart.PNG', 136, 1);
-INSERT INTO `files` VALUES (507, NULL, 'assets/uploads/download.jpg', 136, 1);
-INSERT INTO `files` VALUES (508, NULL, 'assets/uploads/LoadFee.PNG', 136, 1);
-INSERT INTO `files` VALUES (509, NULL, 'assets/uploads/logo1.png', 136, 1);
-INSERT INTO `files` VALUES (510, NULL, 'assets/uploads/lol.PNG', 136, 1);
-INSERT INTO `files` VALUES (511, NULL, 'assets/uploads/newsa.PNG', 136, 1);
-INSERT INTO `files` VALUES (512, NULL, 'assets/uploads/numbers.PNG', 136, 1);
+INSERT INTO `files` VALUES (513, NULL, 'assets/uploads/home-banner-2020-02-min.jpg', 115, 1);
+INSERT INTO `files` VALUES (514, NULL, 'assets/uploads/asd.jpg', 115, 1);
+INSERT INTO `files` VALUES (515, NULL, 'assets/uploads/asdasdasd.jpg', 115, 1);
+INSERT INTO `files` VALUES (516, NULL, 'assets/uploads/average-home-sale-price.jpg', 115, 1);
+INSERT INTO `files` VALUES (517, NULL, 'assets/uploads/asdasdasd.jpg', 136, 1);
+INSERT INTO `files` VALUES (518, NULL, 'assets/uploads/bechedi.png', 136, 1);
+INSERT INTO `files` VALUES (519, NULL, 'assets/uploads/chart.PNG', 136, 1);
+INSERT INTO `files` VALUES (520, NULL, 'assets/uploads/download.jpg', 136, 1);
+INSERT INTO `files` VALUES (521, NULL, 'assets/uploads/LoadFee.PNG', 136, 1);
+INSERT INTO `files` VALUES (522, NULL, 'assets/uploads/logo1.png', 136, 1);
+INSERT INTO `files` VALUES (523, NULL, 'assets/uploads/lol.PNG', 136, 1);
+INSERT INTO `files` VALUES (524, NULL, 'assets/uploads/newsa.PNG', 136, 1);
+INSERT INTO `files` VALUES (525, NULL, 'assets/uploads/numbers.PNG', 136, 1);
+INSERT INTO `files` VALUES (586, NULL, 'assets/uploads/chart.PNG', 137, 1);
+INSERT INTO `files` VALUES (587, NULL, 'assets/uploads/download.jpg', 137, 1);
+INSERT INTO `files` VALUES (588, NULL, 'assets/uploads/LoadFee.PNG', 137, 1);
+INSERT INTO `files` VALUES (589, NULL, 'assets/uploads/logo1.png', 137, 1);
+INSERT INTO `files` VALUES (590, NULL, 'assets/uploads/lol.PNG', 137, 1);
+INSERT INTO `files` VALUES (591, NULL, 'assets/uploads/newsa.PNG', 137, 1);
 
 -- ----------------------------
 -- Table structure for products
@@ -510,15 +516,16 @@ CREATE TABLE `products`  (
   `y` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `actived` int NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 137 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 138 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of products
 -- ----------------------------
 INSERT INTO `products` VALUES (114, 48, '2022-05-22 16:24:57', '568141665', NULL, 123123.00, 0, 0, 1, 500, 1, 1, 1, 1, 0, 123123, 123123, 'Avlabari martyopi turn 26', 'House is great big and lorem ipsum', 'House is great big and lorem ipsum', NULL, '8', 12, 1, 2, 3, 1, 1, 1, 2, '0', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '1', 1, 1, 2.55, 4, 1, 1, '41.72449819147855', '44.77938842773437', 1);
-INSERT INTO `products` VALUES (115, 48, '2022-05-22 16:04:27', '568141665', NULL, 123123.00, 0, 0, 1, 500, 1, 1, 1, 1, 0, 123123, 123123, 'Avlabari martyopi turn 26', 'House is great big and lorem ipsum', 'House is great big and lorem ipsum', NULL, '8', 12, 1, 2, 3, 1, 1, 1, 2, '0', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '1', 1, 1, 2.55, 4, 1, 1, '41.7267082251971', '44.78389453887939', 1);
+INSERT INTO `products` VALUES (115, 48, '2022-05-24 13:23:31', '568141665', NULL, 123123.00, 0, 0, 1, 500, 1, 1, 1, 1, 0, 123123, 123123, 'Avlabari martyopi turn 26', 'House is great big and lorem ipsum', 'House is great big and lorem ipsum', NULL, '8', 12, 1, 2, 3, 1, 1, 1, 2, '0', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '1', 1, 1, 2.55, 4, 1, 1, '41.74284877452658', '44.784237861633294', 1);
 INSERT INTO `products` VALUES (135, 48, '2022-05-22 16:12:55', '', NULL, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', NULL, '  ', 0, 0, 0, 0, 1, 1, 1, 1, '0', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '1', 1, 1, 0, 0, 0, 1, '41.72100682389585', '44.79376506805419', 1);
-INSERT INTO `products` VALUES (136, 50, '2022-05-24 10:37:40', '568141665', NULL, 124124.00, 0, 0, 2, 1209000, 1, 2, 5, 4, 0, 2147483647, 124124, 'asdasdasdasdaaaaaasdasdasd', '12412412412', '12412412412', NULL, '2', 13, 13, 13, 3, 0, 0, 0, 1, '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1', 0, 0, 13, 2, 0, 0, '41.732377094501004', '44.7970266342163', 1);
+INSERT INTO `products` VALUES (136, 50, '2022-05-24 14:50:51', '568141665', NULL, 124124.00, 0, 0, NULL, 2018, NULL, NULL, NULL, NULL, 0, 2147483647, 124124, 'asdasdasdasdaaaaaasdasdasd', 'qartuli', 'inglisuri', NULL, NULL, 13, 13, 13, 3, 1, 1, 1, 1, '0', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '1', 1, 1, 13, NULL, 0, 1, '41.732377094501004', '44.7970266342163', 1);
+INSERT INTO `products` VALUES (137, 50, '2022-05-24 15:47:34', '', NULL, 700.00, 0, 0, 1, 2017, 1, 1, 1, 6, 60, 132123, 80, 'ბუხაიძის ქუჩა', 'kargi baitia mokled ra', 'igivea inglisurad', NULL, '  ', 3, 3, 2, 2, 1, 1, 1, 2, '0', 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, '0', 0, 1, 3.75, 0, 0, 0, '41.701512538636585', '44.81058251857757', 1);
 
 -- ----------------------------
 -- Table structure for transaction_type
@@ -550,7 +557,7 @@ CREATE TABLE `user_bookmarks`  (
   `product_id` int NULL DEFAULT NULL,
   `actived` int NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_bookmarks
@@ -558,6 +565,7 @@ CREATE TABLE `user_bookmarks`  (
 INSERT INTO `user_bookmarks` VALUES (27, 43, 101, 1);
 INSERT INTO `user_bookmarks` VALUES (29, 43, 109, 1);
 INSERT INTO `user_bookmarks` VALUES (40, 48, 115, 1);
+INSERT INTO `user_bookmarks` VALUES (41, 48, 136, 1);
 
 -- ----------------------------
 -- Table structure for users
