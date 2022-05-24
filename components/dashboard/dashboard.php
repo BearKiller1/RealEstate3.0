@@ -72,34 +72,40 @@
         }
 
         public function GetIncommingProduct(){
-            global $method;
-            $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
-            
-            $this->sql = "  SELECT  products.id AS product_id,
-                                    products.*,
-                                    users.username,
-                                    users.phone
-                            FROM    products 
-                            LEFT JOIN files     ON products.id = files.product_id
-                            LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
-                            LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE    products.actived = 1 AND uploaded = 0
-                            GROUP BY products.id
-                            ORDER BY products.id DESC ";
-                    
-            $this->response = Parent::GetData($this->sql, []);
-            
-            for ($i=0; $i < COUNT($this->response); $i++) {
-                $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
-            }
-            $method = '';
-            $this->response['count'] = COUNT($this->response);
-            if($this->response['count'] == 0){
-                $this->response['error'] = 'No products found';
-                $this->response['page'] = '<div class="col-md-12"><h2>No products found</h2></div>';
+            if($this->user != 48){
+                $this->response['error'] = "You Don't have permission to access this page";
+                $this->response['page'] = "<div class='col-md-12'><h2>You Don't have permission to access this page</h2></div>";
             }
             else{
-                $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 1);
+                global $method;
+                $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
+                
+                $this->sql = "  SELECT  products.id AS product_id,
+                                        products.*,
+                                        users.username,
+                                        users.phone
+                                FROM    products 
+                                LEFT JOIN files     ON products.id = files.product_id
+                                LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
+                                LEFT JOIN `condition` ON products.condition_id = `condition`.id
+                                WHERE    products.actived = 1 AND uploaded = 0
+                                GROUP BY products.id
+                                ORDER BY products.id DESC ";
+                        
+                $this->response = Parent::GetData($this->sql, []);
+                
+                for ($i=0; $i < COUNT($this->response); $i++) {
+                    $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
+                }
+                $method = '';
+                $this->response['count'] = COUNT($this->response);
+                if($this->response['count'] == 0){
+                    $this->response['error'] = 'No products found';
+                    $this->response['page'] = '<div class="col-md-12"><h2>No products found</h2></div>';
+                }
+                else{
+                    $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 1);
+                }
             }
         }
 
