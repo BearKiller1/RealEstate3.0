@@ -62,9 +62,7 @@ FillProductData = (data) => {
     else{
         $("#city").val(data.city_geo_name);
         $("#district").val(data.district_geo_name);
-
         $("#NH").val(data.child_district_geo_name);
-
         $("#transactionT").val(data.transaction_type_geo_name);
         $("#Btype").val(data.building_type_geo_name);
         $("#statusI").val(data.building_status_geo_name);
@@ -293,22 +291,39 @@ UploadProduct = () => {
     else
         image_obj.push('assets/images/nophoto.webp')
 
-    $("#NH_id").val(data.child_district_id);
-    $("#district_id").val(data.district_id);
-    $("#city_id").val(data.city_id);
-    $("#transactionTl_id").val(data.transaction_type_id);
-    $("#Btypel_id").val(data.building_type_id);
-    $("#statusI_id").val(data.building_status_id);
-    $("#Conditions_id").val(data.condition_id);
-    $("#Designs_id").val(data.designs_id);
-
-    var btype       = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
     var transaction = $("option[value='"+$("#transactionT").val()+"']").attr('data_id');
-    
+    var btype       = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
+    var status      = $("option[value='"+$("#statusI").val()+"']").attr('data_id');
+    var district    = $("option[value='"+$("#district").val()+"']").attr('data_id');
+    var child_district = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
+    var design      = $("option[value='"+$("#Design").val()+"']").attr('data_id');
+    var city        = $("option[value='"+$("#city").val()+"']").attr('data_id');
+    var contidion   = $("option[value='"+$("#Condition").val()+"']").attr('data_id')
+
     if(transaction == undefined || transaction == null){
         transaction = $("#transactionTl_id").val();
     }
-
+    if(btype == undefined || btype == null){
+        btype = $("#Btypel_id").val();
+    }
+    if(status == undefined || status == null){
+        status = $("#statusI_id").val();
+    }
+    if(district == undefined || district == null){
+        district = $("#district_id").val();
+    }
+    if(child_district == undefined || child_district == null){
+        child_district = $("#NH_id").val();
+    }
+    if(design == undefined || design == null){
+        design = $("#Designs_id").val();
+    }
+    if(city == undefined || city == null){
+        city = $("#city_id").val();
+    }
+    if(contidion == undefined || contidion == null){
+        contidion = $("#Conditions_id").val();
+    }
 
     Ajax({
         url:"edit",
@@ -321,12 +336,12 @@ UploadProduct = () => {
                 price_id           : price_id,
                 price_value        : price_val,
                 transaction_type   : transaction,
-                building_type      : $("option[value='"+$("#Btype").val()+"']").attr('data_id')         ,
-                building_status    : $("option[value='"+$("#statusI").val()+"']").attr('data_id')       ,
-                district_id        : $("option[value='"+$("#district").val()+"']").attr('data_id')      ,
-                sub_district_id    : $("option[value='"+$("#Btype").val()+"']").attr('data_id')            ,
-                designs            : $("option[value='"+$("#Design").val()+"']").attr('data_id')        ,
-                city_id            : $("option[value='"+$("#city").val()+"']").attr('data_id')          ,
+                building_type      : btype,
+                building_status    : status,
+                district_id        : district,
+                sub_district_id    : child_district,
+                designs            : design,
+                city_id            : city,
                 building_year      : $("#year").val(),
                 cadastral          : $("#Cadastral").val(),
                 address            : $("#F-address").val(),
@@ -357,7 +372,7 @@ UploadProduct = () => {
                 furniture          : $("#Furniture").is (":checked")  ? 1 : 0,
                 air_conditioner    : $("#Air-conditioner").is(":checked")  ? 1 : 0,
                 ceiling_height     : $("#Cheight").val(),
-                condition_id       : $("option[value='"+$("#Condition").val()+"']").attr('data_id'),
+                condition_id       : contidion,
                 exchange           : $("#exchangeY").is (":checked")  ? 1 : 0,
                 x                  : $("#x").val(),
                 y                  : $("#y").val(),
