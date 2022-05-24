@@ -27,7 +27,10 @@ GetProductInfo = () => {
             response = JSON.parse(response);
             FillProductData(response.data);
             GetProductFiles(response.images);
-            console.log(response.data.product_id + " " + response.data.y);
+            
+            $("#x").val(response.data.x);
+            $("#y").val(response.data.y);
+
             $('#us2').locationpicker({
                 location: {latitude: response.data.x, longitude: response.data.y},   
                 radius: 0,
@@ -70,22 +73,22 @@ FillProductData = (data) => {
         $("#Bathrooms4").prop('checked', true)
     }
     
-    data.balcony == 1 ? $("#balcony").prop('checked', true) : $("#balcony2").prop('checked', true)
-    data.loggia == 1 ? $("#loggia").prop('checked', true) : console.log(12);
-    data.veranda == 1 ? $("#veranda").prop('checked', true) : console.log(12);
-    data.Gas ==1 ? $("#Gas").prop('checked', true) : console.log(12);
-    data.Telephone == 1 ? $("#Telephone").prop('checked', true) : console.log(12);
-    data.Internet == 1 ? $("#Internet").prop('checked', true) : console.log(12);
-    data.Television == 1 ? $("#Television").prop('checked', true) : console.log(12);
-    data.HotWater == 1 ? $("#Hot-water").prop('checked', true) : console.log(12);
-    data.Heating == 1 ? $("#Heating").prop('checked', true) : console.log(12);
-    data.Parking == 1 ? $("#Parking").prop('checked', true) : console.log(12);
-    data.Storeroom == 1 ? $("#Storeroom").prop('checked', true) : console.log(12);
-    data.service_elevator == 1 ? $("#SElevator").prop('checked', true) : console.log(12);
-    data.passenger_elevator == 1 ? $("#PElevator").prop('checked', true) : console.log(12);
-    data.Fireplace == 1 ? $("#Fireplace").prop('checked', true) : console.log(12);
-    data.Furniture == 1 ? $("#Furniture").prop('checked', true) : console.log(12);
-    data.Air_conditioner == 1 ? $("#Air-conditioner").prop('checked', true) : console.log(12);
+    data.balcony    == 1 ? $("#balcony").prop('checked', true)      : $("#balcony2").prop('checked', true)
+    data.loggia     == 1 ? $("#loggia").prop('checked', true)       : console.log(12);
+    data.veranda    == 1 ? $("#veranda").prop('checked', true)      : console.log(12);
+    data.gas        == 1 ? $("#Gas").prop('checked', true)          : console.log(data.gas);
+    data.telephone  == 1 ? $("#Telephone").prop('checked', true)    : console.log(12);
+    data.internet   == 1 ? $("#Internet").prop('checked', true)     : console.log(12);
+    data.television == 1 ? $("#Television").prop('checked', true)   : console.log(12);
+    data.hot_water  == 1 ? $("#Hot-water").prop('checked', true)    : console.log(12);
+    data.heating    == 1 ? $("#Heating").prop('checked', true)      : console.log(12);
+    data.parking    == 1 ? $("#Parking").prop('checked', true)      : console.log(12);
+    data.storeroom  == 1 ? $("#Storeroom").prop('checked', true)    : console.log(12);
+    data.service_elevator   == 1 ? $("#SElevator").prop('checked', true)    : console.log(12);
+    data.passenger_elevator == 1 ? $("#PElevator").prop('checked', true)    : console.log(12);
+    data.fireplace  == 1 ? $("#Fireplace").prop('checked', true)    : console.log(12);
+    data.furniture  == 1 ? $("#Furniture").prop('checked', true)    : console.log(12);
+    data.air_conditioner    == 1 ? $("#Air-conditioner").prop('checked', true)  : console.log(12);
 
     $("#Cheight").val(data.ceiling_height);
     $("#Condition").val(data.condition_name);

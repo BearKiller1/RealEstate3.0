@@ -2,13 +2,14 @@
 <?php
     error_reporting(0);
     include_once "../includes/Lucid.class.php";
-
+    session_start();
     class Common extends Lucid{
 
         /**
          * This constructor Sets up response request and connection
          */
         public function __construct(){
+            $this->langID = $_SESSION['lang_id'];
             $this->response = array();
             $this->request  = $_REQUEST["data"];
             Parent::__construct();
@@ -156,8 +157,12 @@
             $sql = "SELECT * FROM transaction_type WHERE actived = 1";
             $this->response = Parent::GetData($sql, []);
             
-            for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            for ($i=0; $i < COUNT($this->response); $i++) {
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
 
@@ -166,7 +171,11 @@
             $this->response = Parent::GetData($sql, []);
             
             for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
 
@@ -174,8 +183,12 @@
             $sql = "SELECT * FROM city WHERE actived = 1";
             $this->response = Parent::GetData($sql, []);
             
-            for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            for ($i=0; $i < COUNT($this->response); $i++) {
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
 
@@ -183,8 +196,12 @@
             $sql = "SELECT * FROM building_status WHERE actived = 1";
             $this->response = Parent::GetData($sql, []);
             
-            for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            for ($i=0; $i < COUNT($this->response); $i++) {
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
 
@@ -192,8 +209,12 @@
             $sql = "SELECT * FROM districts WHERE parent_id = 0 AND actived = 1";
             $this->response = Parent::GetData($sql, []);
             
-            for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            for ($i=0; $i < COUNT($this->response); $i++) {
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
 
@@ -202,10 +223,19 @@
             $sql = "SELECT * FROM districts WHERE parent_id = " .$this->request['id']. " AND actived = 1";
             $this->response = Parent::GetData($sql, []);
             
-            for ($i=0; $i < COUNT($this->response); $i++) { 
-                $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+            for ($i=0; $i < COUNT($this->response); $i++) {
+                if($this->langID == 1){
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['geo_name'].'"></option>';
+                }else{
+                    $this->response['page'] .= '<option data_id=" '.$this->response[$i]['id'].' " value="'.$this->response[$i]['name'].'"></option>';
+                }
             }
         }
+
+        public function SaveLanguage(){
+            $_SESSION['lang_id'] = $this->request['id'];
+        }
+
         /**
          * This function returnt the response of this php file
          */

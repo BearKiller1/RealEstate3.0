@@ -709,7 +709,20 @@ var LangSwitch = {
     }
 };
 GeoName = () => {
+    
     window.localStorage.setItem("lang", 1);
+
+    Ajax({
+        spURL: 'components/Common.class.php',
+        object: {
+            method  : "SaveLanguage",
+            data    : {
+                id : 1,
+            }
+        },
+        success : (response) =>{}
+    })
+    
     document.getElementById('Langbtn').src = document.getElementById('Georgian').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["Georgian"]) {try{
@@ -725,10 +738,24 @@ GeoName = () => {
     }catch{}}
     
     document.getElementById("createdby").innerHTML = "შექმნილია Ashkan811-ის მიერ &copy;";
+    
 }
 
 EngName = () => {
     window.localStorage.setItem("lang", 2);
+    
+    Ajax({
+        spURL: 'components/Common.class.php',
+        object: {
+            method  : "SaveLanguage",
+            data    : {
+                id : 2,
+            }
+        },
+        success : (response) =>{}
+    })
+    
+
     document.getElementById('Langbtn').src = document.getElementById('English').src;
     ////////////////////////////////////////////////////////////////////////////////
     for (const x in LangSwitch["English"]) {try{
@@ -880,33 +907,33 @@ for (let i = 1; i < 4 ; i++) {
 }catch{}
 
 try{
-document.getElementById("change-lan-ka").addEventListener("click",(e)=>{
-    document.getElementById("change-lan-en").className = "nav-item border-bottom ";
-    document.getElementById("change-lan-ka").className = "nav-item border-bottom d-none ";
-    ////////////////////////////////////////////////////////////////////
-    for (const x in LangSwitch["Georgian"]) {try{
-        if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
-            document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
-        }else{
-        document.getElementById(x).innerText = LangSwitch["Georgian"][x];}
-        }
-        
-        catch(err){console.log(err)}}
-        document.getElementById("namdiv").className = "form-group mt-5";
-})
+    document.getElementById("change-lan-ka").addEventListener("click",(e)=>{
+        document.getElementById("change-lan-en").className = "nav-item border-bottom ";
+        document.getElementById("change-lan-ka").className = "nav-item border-bottom d-none ";
+        ////////////////////////////////////////////////////////////////////
+        for (const x in LangSwitch["Georgian"]) {try{
+            if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
+                document.getElementById(x).placeholder = LangSwitch["Georgian"][x];
+            }else{
+            document.getElementById(x).innerText = LangSwitch["Georgian"][x];}
+            }
+            
+            catch(err){console.log(err)}}
+            document.getElementById("namdiv").className = "form-group mt-5";
+    })
 
-document.getElementById("change-lan-en").addEventListener("click",(e)=>{
-    document.getElementById("change-lan-ka").className = "nav-item border-bottom ";
-    document.getElementById("change-lan-en").className = "nav-item border-bottom d-none ";
-    ////////////////////////////////////////////////////////////////////
-    for (const x in LangSwitch["English"]) {try{
-        if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
-            document.getElementById(x).placeholder = LangSwitch["English"][x];
-        }else{
-        document.getElementById(x).innerText = LangSwitch["English"][x];}
-        }
-        
-        catch(err){console.log(err)}}
-        document.getElementById("namdiv").className = "form-group";
-})
+    document.getElementById("change-lan-en").addEventListener("click",(e)=>{
+        document.getElementById("change-lan-ka").className = "nav-item border-bottom ";
+        document.getElementById("change-lan-en").className = "nav-item border-bottom d-none ";
+        ////////////////////////////////////////////////////////////////////
+        for (const x in LangSwitch["English"]) {try{
+            if ((x === "opassword" || "npassword" || "cpassword" || "username-emal" || "name" || "lname" || "phone") && document.getElementById(x).placeholder != null) {
+                document.getElementById(x).placeholder = LangSwitch["English"][x];
+            }else{
+            document.getElementById(x).innerText = LangSwitch["English"][x];}
+            }
+            
+            catch(err){console.log(err)}}
+            document.getElementById("namdiv").className = "form-group";
+    })
 }catch{}
