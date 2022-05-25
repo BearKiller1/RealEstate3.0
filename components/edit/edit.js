@@ -1,5 +1,27 @@
 var prod_id = window.localStorage.getItem('edit_prod_id');
 $(document).ready(function () {
+    var lang_id = window.localStorage.getItem('lang_id');
+
+    if(lang_id == 1){
+        $('#lanswitch1').show();
+        $('#englang1').hide();
+
+        $('#lanswitch2').show();
+        $('#englang2').hide();
+
+        $('#lanswitch2').show();
+        $('#englang2').hide();
+    }else{
+        $('#lanswitch1').hide();
+        $('#englang2').show();
+
+        $('#lanswitch2').hide();
+        $('#englang2').show();
+        
+        $('#lanswitch2').hide();
+        $('#englang2').show();
+    }
+
     if(prod_id == undefined || prod_id == null){
         Router('dashboard');
     }
