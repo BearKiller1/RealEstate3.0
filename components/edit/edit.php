@@ -75,7 +75,7 @@
                     $this->request['uploaded'] = Parent::GetData($this->sql, [$this->prod_id])[0]['uploaded'];
                     // echo COUNT($this->request);
                     for ($i=0; $i < COUNT($this->request); $i++) { 
-                        echo array_keys($this->request)[$i] .' - '. $this->request[array_keys($this->request)[$i]] . '<br>';
+                        // echo array_keys($this->request)[$i] .' - '. $this->request[array_keys($this->request)[$i]] . '<br>';
                         if(array_keys($this->request)[$i] != "id"){
                             $this->response['result'][$i] = Parent::RunQuery("UPDATE products SET ".array_keys($this->request)[$i]." = '".$this->request[array_keys($this->request)[$i]]."' WHERE id = '".$this->prod_id."'");
                         }
@@ -91,7 +91,7 @@
 
 
 
-                    // $this->response['success'] = 1;
+                    $this->response['success'] = 1;
                 }
                 else{
                     $this->response['success'] =2;
