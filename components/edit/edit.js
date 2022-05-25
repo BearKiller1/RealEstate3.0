@@ -295,7 +295,7 @@ UploadProduct = () => {
     var btype       = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
     var status      = $("option[value='"+$("#statusI").val()+"']").attr('data_id');
     var district    = $("option[value='"+$("#district").val()+"']").attr('data_id');
-    var child_district = $("option[value='"+$("#Btype").val()+"']").attr('data_id');
+    var child_district = $("option[value='"+$("#NH").val()+"']").attr('data_id');
     var design      = $("option[value='"+$("#Design").val()+"']").attr('data_id');
     var city        = $("option[value='"+$("#city").val()+"']").attr('data_id');
     var contidion   = $("option[value='"+$("#Condition").val()+"']").attr('data_id')
@@ -312,7 +312,9 @@ UploadProduct = () => {
     if(district == undefined || district == null){
         district = $("#district_id").val();
     }
+    console.log(child_district + "Ifamde") 
     if(child_district == undefined || child_district == null){
+        console.log(child_district + "IFSHI")
         child_district = $("#NH_id").val();
     }
     if(design == undefined || design == null){
@@ -324,7 +326,8 @@ UploadProduct = () => {
     if(contidion == undefined || contidion == null){
         contidion = $("#Conditions_id").val();
     }
-
+    console.log(child_district + "Ajaxamde")
+    console.log(child_district)
     Ajax({
         url:"edit",
         object:{

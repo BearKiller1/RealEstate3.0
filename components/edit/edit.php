@@ -73,16 +73,25 @@
                 if($this->prod_id > 0){
                     $this->sql = "SELECT uploaded FROM products WHERE id = ?";
                     $this->request['uploaded'] = Parent::GetData($this->sql, [$this->prod_id])[0]['uploaded'];
-                    
-                    Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
-                    Parent::InsertData('products',$this->request, true);
+                    // echo COUNT($this->request);
+                    for ($i=0; $i < COUNT($this->request); $i++) { 
+                        echo array_keys($this->request)[$i] .' - '. $this->request[array_keys($this->request)[$i]] . '<br>';
+                        if(array_keys($this->request)[$i] != "id"){
+                            $this->response['result'][$i] = Parent::RunQuery("UPDATE products SET ".array_keys($this->request)[$i]." = '".$this->request[array_keys($this->request)[$i]]."' WHERE id = '".$this->prod_id."'");
+                        }
+                    }
+                    // Parent::RunQuery("DELETE FROM products WHERE id = '".$this->prod_id."'");
+                    // Parent::InsertData('products',$this->request, true);
                     Parent::RunQuery("DELETE FROM files WHERE product_id = '".$this->prod_id."'");
                     for ($i=0; $i < COUNT($this->images['path']); $i++) {
                         $this->files['product_id'] = $this->prod_id;
                         $this->files['path'] = $this->images['path'][$i];
                         $this->response['files'] = Parent::InsertData('files',$this->files, false);
                     }
-                    $this->response['success'] = 1;
+
+
+
+                    // $this->response['success'] = 1;
                 }
                 else{
                     $this->response['success'] =2;
@@ -92,16 +101,6 @@
                 $this->response['success'] = $this->user ;
             }
             
-            /**
-             * @TODO I have to loop the request and update them one by one using array keys to set the column name in database 
-             */
-            // for ($i=0; $i < COUNT($this->request); $i++) { 
-            //     // request[$i]['name']." = '".$this->request[$i]['value']."' WHERE id = '".$this->prod_id."'";
-            //     $this->response['result'][$i] = array(
-            //                                     array('name' => $this->request[$i]),
-            //                                     array('value' => array_keys($this->request)[$i])
-            //                                 );
-            // }
 
         }
 
