@@ -153,6 +153,15 @@
             return $data;
         }
 
+        public function SetPages($res){
+            $data = '';
+            $empty = " '' ";
+            for ($i=1; $i < $res + 1; $i++) { 
+                $data .= '<li class="page-item"><a class="page-link" href="#" onclick="GetProduct('.$empty.','.$i.')" >'.$i.'</a></li>';
+            }
+            return $data;
+        }
+
         public function TransactionType(){
             $sql = "SELECT * FROM transaction_type WHERE actived = 1";
             $this->response = Parent::GetData($sql, []);

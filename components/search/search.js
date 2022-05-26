@@ -8,7 +8,7 @@ $(document).ready(() => {
     }
 })
 
-GetProduct = (search = '' ) => {
+GetProduct = (search = '', Page = 1) => {
     Loader(true);
     var sort;
 
@@ -41,6 +41,8 @@ GetProduct = (search = '' ) => {
             max_area    :   $("#iAmax").val(),
     
             sorting     :   sort,
+
+            page        :   Page
         }
     }
     Ajax({
@@ -54,7 +56,9 @@ GetProduct = (search = '' ) => {
             response = JSON.parse(response);
             
             if(response.page != ""){
+                console.log(response.pageNumbers);
                 $("#prod_container").html(response.page)
+                $("#paging").html(response.pageNumbers)
             }
             else{
                 $("#prod_container").html("<h1>No results found</h1>");
