@@ -90,14 +90,14 @@ UploadProduct = () => {
         shared = 1
     }
 
-    if($("#price_id").val == 'Price per 1 m²'){
+    if($("#price_id").val() == 'Price per 1 m²'){
         var price_id = 1
     }
     else{
         var price_id = 0
     }
 
-    if($("#price_value").val == 'GEL'){
+    if($("#price_value").val() == 'GEL'){
         var price_val = 1
     }
     else{
@@ -122,6 +122,7 @@ UploadProduct = () => {
                 price              : $("#Price").val(),
                 price_id           : price_id,
                 price_value        : price_val,
+                mobile_phone       : $("#Pnumber").val(),
                 transaction_type   : $("option[value='"+$("#transactionT").val()+"']").attr('data_id')  ,
                 building_type      : $("option[value='"+$("#Btype").val()+"']").attr('data_id')         ,
                 building_status    : $("option[value='"+$("#statusI").val()+"']").attr('data_id')       ,

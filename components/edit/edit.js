@@ -290,14 +290,14 @@ UploadProduct = () => {
         shared = 1;
     }
 
-    if($("#price_id").val == 'Price per 1 m²'){
+    if($("#price_id").val() == 'Price per 1 m²'){
         var price_id = 1
     }
     else{
         var price_id = 0
     }
 
-    if($("#price_value").val == 'GEL'){
+    if($("#price_value").val() == 'GEL'){
         var price_val = 1
     }
     else{
@@ -334,9 +334,8 @@ UploadProduct = () => {
     if(district == undefined || district == null){
         district = $("#district_id").val();
     }
-    console.log(child_district + "Ifamde") 
+    
     if(child_district == undefined || child_district == null){
-        console.log(child_district + "IFSHI")
         child_district = $("#NH_id").val();
     }
     if(design == undefined || design == null){
@@ -348,8 +347,7 @@ UploadProduct = () => {
     if(contidion == undefined || contidion == null){
         contidion = $("#Conditions_id").val();
     }
-    console.log(child_district + "Ajaxamde")
-    console.log(child_district)
+    
     Ajax({
         url:"edit",
         object:{
