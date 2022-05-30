@@ -1,4 +1,3 @@
-
 <?php
     error_reporting(0);
     include_once "../includes/Lucid.class.php";
@@ -156,6 +155,7 @@
         public function SetPages($res){
             $data = '';
             $empty = " '' ";
+            $res = $res / 6;
             for ($i=1; $i < $res + 1; $i++) { 
                 $data .= '<li class="page-item"><a class="page-link" href="#" onclick="GetProduct('.$empty.','.$i.')" >'.$i.'</a></li>';
             }

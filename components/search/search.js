@@ -8,7 +8,7 @@ $(document).ready(() => {
     }
 })
 
-GetProduct = (search = '', Page = 1) => {
+GetProduct = (search = '', Page = 1, button = '') => {
     Loader(true);
     var sort;
 
@@ -42,7 +42,8 @@ GetProduct = (search = '', Page = 1) => {
     
             sorting     :   sort,
 
-            page        :   Page
+            page        :   Page,
+            button      :   button
         }
     }
     Ajax({

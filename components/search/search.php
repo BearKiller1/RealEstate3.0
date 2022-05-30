@@ -26,47 +26,6 @@
             $this->FilterBuilder();
             $this->imageSql = "SELECT * FROM files WHERE product_id = ?";
 
-
-
-            $this->startPage = 0 ;
-            $this->endPage = 2;
-
-            $this->page = $this->request['page'];
-
-            if($this->page > 1){
-                $this->startPage = ($this->page - 1) * $this->endPage;
-                $this->endPage = $this->page * $this->endPage;
-            }
-
-            $this->sql = "  SELECT  products.id AS product_id,
-                                    products.*,
-                                    users.username,
-                                    users.phone 
-                            FROM products 
-                            LEFT JOIN files     ON products.id = files.product_id
-                            LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
-                            LEFT JOIN `condition` ON products.condition_id = `condition`.id
-                            WHERE products.actived = 1 AND products.uploaded = 1
-                            ".$this->priceFilter." 
-                            ".$this->areaFilter." 
-                            ".$this->titleFilter." 
-                            ".$this->transactionFilter." 
-                            ".$this->buildingFilter."
-                            ".$this->building_statusFilter."
-                            ".$this->districtFilter ."
-                            ".$this->child_districtFilter."
-                            ".$this->cityFilter."
-                            ".$this->conditionFilter."
-                            GROUP BY products.id
-                            ".$this->request['sorting']."
-                            LIMIT  ".$this->startPage." , ".$this->endPage;
-
-            $this->response = Parent::GetData($this->sql, []);
-
-            for ($i=0; $i < COUNT($this->response); $i++) {
-                $this->response[$i]['images'] = Parent::GetData($this->imageSql, [$this->response[$i]['product_id']]);
-            }
-
             $this->sql = "  SELECT  products.id AS product_id,
                         products.*,
                         users.username,
@@ -93,7 +52,55 @@
             $this->pages = COUNT($this->pageAll);
             $this->response["pageNumbers"] = $this->common->SetPages($this->pages - 1);
 
-            $this->response['page'] = $this->common->CreateProductHTML($this->response, COUNT($this->response) - 1, 3);
+            $this->page = $this->request['page'];
+
+            if($this->request['button'] == 'next'){
+                $this->page = $this->page + 1;
+            }else if($this->request['button'] == 'prev'){
+                if($this->page > 1){
+                    $this->page = $this->page - 1;
+                }
+                else{
+                    $this->page = 1;
+                }
+            }
+
+            $this->response['but'] = $this->page;
+
+            $this->SetLimiter($this->page,$this->pages);
+
+            $this->sql = "  SELECT  products.id AS product_id,
+                                    products.*,
+                                    users.username,
+                                    users.phone 
+                            FROM products 
+                            LEFT JOIN files     ON products.id = files.product_id
+                            LEFT JOIN users     ON products.user_id = users.id AND users.actived = 1
+                            LEFT JOIN `condition` ON products.condition_id = `condition`.id
+                            WHERE products.actived = 1 AND products.uploaded = 1
+                            ".$this->priceFilter." 
+                            ".$this->areaFilter." 
+                            ".$this->titleFilter." 
+                            ".$this->transactionFilter." 
+                            ".$this->buildingFilter."
+                            ".$this->building_statusFilter."
+                            ".$this->districtFilter ."
+                            ".$this->child_districtFilter."
+                            ".$this->cityFilter."
+                            ".$this->conditionFilter."
+                            GROUP BY products.id
+                            ".$this->request['sorting']."
+                            ". $this->Limiter;
+
+            $this->response['prod'] = Parent::GetData($this->sql, []);
+
+            for ($i=0; $i < COUNT($this->response['prod']); $i++) {
+                $this->response['prod'][$i]['images'] = Parent::GetData($this->imageSql, [$this->response['prod'][$i]['product_id']]);
+            }
+
+
+
+            $this->response['page'] = $this->common->CreateProductHTML($this->response['prod'], COUNT($this->response['prod']), 3);
         }
 
         public function FilterBuilder(){
@@ -158,6 +165,22 @@
             if($this->condition != 0 && $this->condition != ''){
                 $this->conditionFilter = " AND condition_id = ".$this->condition;
             }
+        }
+
+        public function SetLimiter($limit, $max){
+            $start = 0;
+            $end = 6;
+
+            if($limit > $max / $end){
+                $starter = $limit * $end - $max;
+                $this->response['trest'] = $limit;
+                $this->Limiter = "LIMIT ".($limit - 1 ) * $end.", ".$starter;
+            }
+            else{
+                $this->Limiter = "LIMIT ".$start.", ".$end;
+            }
+
+
         }
 
         /**
